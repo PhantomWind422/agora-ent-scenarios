@@ -7,13 +7,14 @@
 
 import Foundation
 import AgoraRtcKit
+import MoonLight_iOS
 
 struct ShowPanelData {
     let left: String
     let right: String
 }
 
-class ShowDataPanelPresenter {
+class ShowDataPanelPresenter: NSObject {
     
     private var isH265 = false
     
@@ -22,9 +23,22 @@ class ShowDataPanelPresenter {
     private var localAudioStats = AgoraRtcLocalAudioStats()
     private var remoteVideoStats = AgoraRtcRemoteVideoStats()
     private var remoteAudioStats = AgoraRtcRemoteAudioStats()
+    private var moonlight: MoonLight?
+    private var moonlightLeft: String = "--"
+    private var moonlightRight: String = "--"
     private var uplink: Int32 = 0
     private var downlink: Int32 = 0
     private var callTs: Int = 0
+    
+    override init() {
+        super.init()
+        moonlight = MoonLight.init(delegate: self, timeInterval: 2)
+        moonlight?.startTimer()
+    }
+    
+    deinit {
+        moonlight?.stopTimer()
+    }
 
     func updateChannelStats(_ stats: AgoraChannelStats) {
         channelStats = stats
@@ -164,8 +178,24 @@ class ShowDataPanelPresenter {
         //svc switch
         let svc = send ? (params.svc ? onStr : offStr) : "--"
         let svcStr = "show_statistic_svc_switch".show_localized + ": " + svc
-        let left = [title, startupStr, h265Str, srStr].joined(separator: "\n") + "\n"
-        let right = ["  ", levelStr,  pvcStr, localUidStr].joined(separator: "\n") + "\n"
+        let left = [title, startupStr, h265Str, srStr, moonlightLeft].joined(separator: "\n") + "\n"
+        let right = ["  ", levelStr,  pvcStr, localUidStr, moonlightRight].joined(separator: "\n") + "\n"
         return ShowPanelData(left: left, right: right)
+    }
+}
+
+extension ShowDataPanelPresenter: MoonLightDelegate {
+    
+    func captureOutputAppCPU(_ appCPU: Float, systemCPU: Float, appMemory: Float, gpuUsage: Float, gpuInfo: String) {
+        guard let moonLight = moonlight else {
+            return
+        }
+        
+        let appCPU = String.init(format: "%0.2f", appCPU)
+        let systemCPU = String.init(format: "%0.2f", systemCPU)
+        let appMemory = String.init(format: "%0.2f", appMemory)
+        let gpuUsage = String.init(format: "%0.2f", gpuUsage)
+        self.moonlightLeft = "SysCPU:\(systemCPU) AppCPU:\(appCPU)"
+        self.moonlightRight = "AppMem:\(appMemory) GPU:\(gpuUsage)"
     }
 }
