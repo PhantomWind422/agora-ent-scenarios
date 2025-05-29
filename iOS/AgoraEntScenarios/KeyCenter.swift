@@ -23,7 +23,7 @@ class KeyCenter: NSObject {
      进入声网控制台(https://console.shengwang.cn/)，创建一个项目，进入项目配置页，即可看到APP ID。
      */
 
-    static let AppId: String = <#Your AppId#>
+    static let AppId: String = "72d8d5c7b38445e5bb26f1f270ee4649"
   
     /**
      Certificate.
@@ -38,7 +38,7 @@ class KeyCenter: NSObject {
      注意：如果项目没有开启证书鉴权，这个字段留空。
      */
 
-    static let Certificate: String? = <#Your Certificate#>
+    static let Certificate: String? = ""
     
     /**
      EaseMob APPKEY.
@@ -84,7 +84,7 @@ class KeyCenter: NSObject {
     static let RestfulApiSecret: String? = nil
 
     //dynamic resource manifest download url
-    static let DynamicResourceUrl: String? = nil
+    static let DynamicResourceUrl: String? = "https://fullapp.oss-cn-beijing.aliyuncs.com/ent-scenarios/resource/manifest/5_0_0/manifestList"
 
     static let SUDMGP_APP_ID: String? = nil
     static let SUDMGP_APP_KEY: String? = nil

@@ -34,14 +34,12 @@ class ShowBeautyFaceVC: UIViewController {
     static var filterData = BeautyModel.createFilterData()
     static var stickerData = BeautyModel.createStickerData()
     static var animojData = BeautyModel.createAnimojiData()
-    static var shapeData = BeautyModel.createAgoraShapeData()
     static var backgroundData = BeautyModel.createBackgroundData()
      
     private lazy var dataArray: [BeautyModel] = {
         var tempArray: [BeautyModel] = []
         switch type {
         case .beauty: tempArray = ShowBeautyFaceVC.beautyData
-        case .shape: tempArray = ShowBeautyFaceVC.shapeData
         case .style: tempArray = ShowBeautyFaceVC.styleData
         case .filter: tempArray = ShowBeautyFaceVC.filterData
         case .adjust: tempArray = ShowBeautyFaceVC.adjustData
@@ -80,7 +78,6 @@ class ShowBeautyFaceVC: UIViewController {
     
     static func resetData(){
         beautyData = BeautyModel.createBeautyData()
-        shapeData = BeautyModel.createShapBeautyData()
         styleData = BeautyModel.createStyleData()
         adjustData = BeautyModel.createAdjustData()
         filterData = BeautyModel.createFilterData()
@@ -111,6 +108,15 @@ class ShowBeautyFaceVC: UIViewController {
                                                     key: model.key,
                                                     value: model.value)
             
+        case .filter:
+            if isReset {
+                BeautyManager.shareManager.resetFilter(datas: dataArray)
+                return
+            }
+            BeautyManager.shareManager.setFilter(path: model.path,
+                                                 key: model.key,
+                                                 value: model.value)
+            
         case .sticker:
             BeautyManager.shareManager.setSticker(path: model.path)
             
@@ -135,11 +141,6 @@ class ShowBeautyFaceVC: UIViewController {
                                                                     isOn: true,
                                                                     greenCapacity: Float(value))
             }
-            
-        case .shape:
-            BeautyManager.shareManager.setBeauty(path: model.path,
-                                                     key: model.key,
-                                                     value: model.value)
         case .filter:
             if isReset {
                 BeautyManager.shareManager.resetFilter(datas: dataArray)

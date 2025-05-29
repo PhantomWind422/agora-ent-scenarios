@@ -9,7 +9,7 @@
 //#import "SBGServiceModel.h"
 //#import "VLHomeItemModel.h"
 #import "VLBaseViewController.h"
-#import "VLOnLineListVC.h"
+// #import "VLOnLineListVC.h"
 #import "VLBaseViewController.h"
 //#import "AEACategoryView.h"
 //#import "AEAListContainerView.h"

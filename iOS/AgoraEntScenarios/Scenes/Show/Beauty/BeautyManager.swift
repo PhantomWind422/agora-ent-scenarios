@@ -49,11 +49,7 @@ class BeautyManager: NSObject {
         didSet {
             switch BeautyModel.beautyType {
             case .agora:
-                if isEnableBeauty == false {
-                    AgoraBeautyManager.shareManager.setBeauty(path: nil, key: nil, value: 0)
-                }else{
-                    AgoraBeautyManager.shareManager.setBeauty(path: nil, key: "init", value: 0)
-                }
+                AgoraBeautyManager.shareManager.enable(isEnableBeauty)
             default:
                 beautyAPI.enable(isEnableBeauty)
             }
@@ -83,6 +79,7 @@ class BeautyManager: NSObject {
         case .agora:
             config.beautyRender = AgoraBeautyManager.shareManager.render
             AgoraBeautyManager.shareManager.agoraKit = agoraKit
+            AgoraBeautyManager.shareManager.initBeautyEffect()
         }
         config.statsEnable = false
         config.statsDuration = 1
@@ -103,7 +100,9 @@ class BeautyManager: NSObject {
         configBeautyAPI()
         if BeautyModel.beautyType == .agora {
             AgoraBeautyManager.shareManager.setBeauty(path: nil, key: "init", value: 0)
+            beautyAPI.stopVideoFrameObserve()
         } else {
+            beautyAPI.startVideoFrameObserve()
             beautyAPI.setBeautyPreset(.default)
         }
     }
@@ -260,6 +259,6 @@ class BeautyManager: NSObject {
         ShowAgoraKitManager.shared.enableVirtualBackground(isOn: false,
                                                            greenCapacity: 0)
         ShowAgoraKitManager.shared.seVirtualtBackgoundImage(imagePath: nil, isOn: false)
-        BeautyModel.beautyType = .sense
+        BeautyModel.beautyType = .agora
     }
 }

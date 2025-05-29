@@ -10,7 +10,6 @@ import JXCategoryView
 
 enum ShowBeautyFaceVCType: CaseIterable {
     case beauty
-    case shape
     case style
     case filter
     case adjust
@@ -26,7 +25,6 @@ enum ShowBeautyFaceVCType: CaseIterable {
         case .adjust: return "create_beauty_setting_special_adjust".show_localized
         case .animoj: return "create_beauty_setting_special_animoji".show_localized
         case .sticker: return "create_beauty_setting_sticker".show_localized
-        case .shape: return "create_beauty_setting_shape".show_localized
         case .background: return "背景".show_localized
         }
     }
@@ -58,11 +56,11 @@ class ShowBeautySettingVC: UIViewController {
     private var titles: [String] {
         ShowBeautyFaceVCType.allCases.filter({
             if BeautyModel.beautyType == .byte {
-                return $0 != .animoj && $0 != .shape && $0 != .filter
+                return $0 != .animoj && $0 != .filter
             } else if BeautyModel.beautyType == .agora {
-                return $0 != .animoj && $0 != .sticker
+                return $0 != .animoj && $0 != .sticker && $0 != .filter
             } else {
-                return $0 != .animoj && $0 != .shape && $0 != .filter
+                return $0 != .animoj && $0 != .filter
             }
         }).map({ $0.title })
     }
@@ -207,11 +205,11 @@ class ShowBeautySettingVC: UIViewController {
     private func createBeautyVC() -> [ShowBeautyFaceVC] {
         ShowBeautyFaceVCType.allCases.filter({
             if BeautyModel.beautyType == .byte {
-                return $0 != .animoj && $0 != .filter && $0 != .shape
+                return $0 != .animoj && $0 != .filter
             } else if BeautyModel.beautyType == .agora {
-                return $0 != .animoj && $0 != .sticker
+                return $0 != .animoj && $0 != .sticker && $0 != .filter
             } else {
-                return $0 != .animoj && $0 != .filter && $0 != .shape
+                return $0 != .animoj && $0 != .filter
             }
         }).map({ ShowBeautyFaceVC(type: $0) })
     }

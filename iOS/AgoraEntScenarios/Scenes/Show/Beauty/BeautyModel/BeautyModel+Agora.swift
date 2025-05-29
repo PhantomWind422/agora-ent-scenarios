@@ -15,6 +15,7 @@ extension BeautyModel {
         model.icon = "show_beauty_none"
         dataArray.append(model)
         
+        // smoothness
         model = BeautyModel()
         model.path = ""
         model.key = "smoothnessLevel"
@@ -24,6 +25,7 @@ extension BeautyModel {
         model.isSelected = true
         dataArray.append(model)
         
+        // whiten
         model = BeautyModel()
         model.path = ""
         model.key = "lighteningLevel"
@@ -32,25 +34,25 @@ extension BeautyModel {
         model.icon = "meiyan_icon_meibai"
         dataArray.append(model)
         
+        // Face thinning
         model = BeautyModel()
         model.path = ""
-        model.key = "rednessLevel"
-        model.value = 0
-        model.name = "show_beauty_item_beauty_rosy".show_localized
-        model.icon = "meiyan_icon_meibai_hongrun"
-        dataArray.append(model)
-             
-        return dataArray
-    }
-
-    static func createAgoraShapeData() -> [BeautyModel] {
-        var dataArray = [BeautyModel]()
-        var model = BeautyModel()
-        model.name = "show_beauty_item_none".show_localized
-        model.icon = "show_beauty_none"
+        model.key = "facecontour"
+        model.value = 0.1
+        model.name = "show_beauty_item_beauty_overall".show_localized
+        model.icon = "meiyan_icon_shoulian"
         dataArray.append(model)
         
-        // 1. Eye enlarging
+        // Cheekbone
+        model = BeautyModel()
+        model.path = ""
+        model.key = "cheekbone"
+        model.value = 0.5
+        model.name = "show_beauty_item_beauty_cheekbone".show_localized
+        model.icon = "meiyan_icon_xiahegu"
+        dataArray.append(model)
+        
+        // Eye enlarging
         model = BeautyModel()
         model.path = ""
         model.key = "eyescale"
@@ -59,43 +61,7 @@ extension BeautyModel {
         model.icon = "meiyan_icon_dayan"
         dataArray.append(model)
         
-        // 2. Chin lengthening
-        model = BeautyModel()
-        model.path = ""
-        model.key = "chin"
-        model.value = 0
-        model.name = "show_beauty_item_beauty_agora_chin".show_localized
-        model.icon = "meiyan_icon_xiaba"
-        dataArray.append(model)
-        
-        // 3. Face thinning
-        model = BeautyModel()
-        model.path = ""
-        model.key = "facewidth"
-        model.value = 0.1
-        model.name = "show_beauty_item_beauty_overall".show_localized
-        model.icon = "meiyan_icon_shoulian"
-        dataArray.append(model)
-        
-        // 4. Cheekbone thinning
-        model = BeautyModel()
-        model.path = ""
-        model.key = "cheekbone"
-        model.value = 0.43
-        model.name = "show_beauty_item_beauty_cheekbones_chin".show_localized
-        model.icon = "meiyan_icon_shouquangu"
-        dataArray.append(model)
-        
-        // 5. Nose lengthening
-        model = BeautyModel()
-        model.path = ""
-        model.key = "noselength"
-        model.value = 0
-        model.name = "show_beauty_item_beauty_noselength".show_localized
-        model.icon = "meiyan_icon_changbi"
-        dataArray.append(model)
-        
-        // 6. Nose thinning
+        // Nose thinning
         model = BeautyModel()
         model.path = ""
         model.key = "nosewidth"
@@ -104,34 +70,34 @@ extension BeautyModel {
         model.icon = "meiyan_icon_shoubi"
         dataArray.append(model)
         
-        // 7. Mouth shape
+        // Chin lengthening
         model = BeautyModel()
         model.path = ""
-        model.key = "mouthscale"
-        model.value = 0.2
-        model.name = "show_beauty_item_beauty_mouth".show_localized
-        model.icon = "meiyan_icon_zuixing"
+        model.key = "chin"
+        model.value = 0
+        model.name = "show_beauty_item_beauty_agora_chin".show_localized
+        model.icon = "meiyan_icon_xiaba"
         dataArray.append(model)
         
-//        // 8. Jawline
-//        model = BeautyModel()
-//        model.path = ""
-//        model.key = "facecontour"
-//        model.value = 0.1
-//        model.name = "show_beauty_item_beauty_jawbone".show_localized
-//        model.icon = "meiyan_icon_contouring"
-//        dataArray.append(model)
+        // Cheekbone thinning
+        model = BeautyModel()
+        model.path = ""
+        model.key = "cheekbone"
+        model.value = 0.43
+        model.name = "show_beauty_item_beauty_cheekbones_chin".show_localized
+        model.icon = "meiyan_icon_shouquangu"
+        dataArray.append(model)
         
-        // 9. Jaw
+        // Jawline
         model = BeautyModel()
         model.path = ""
         model.key = "cheek"
-        model.value = 0.5
+        model.value = 0.1
         model.name = "show_beauty_item_beauty_jawbone".show_localized
         model.icon = "meiyan_icon_xiahegu"
         dataArray.append(model)
         
-        // 10. Hairline
+        // Hairline
         model = BeautyModel()
         model.path = ""
         model.key = "forehead"
@@ -140,20 +106,49 @@ extension BeautyModel {
         model.icon = "meiyan_icon_etou"
         dataArray.append(model)
         
+        // Mouth shape
         model = BeautyModel()
         model.path = ""
-        model.key = "gentlemaneface"
-        model.value = 0.5
-        model.name = "show_beauty_item_beauty_male".show_localized
-        model.icon = "meiyan_icon_male"
+        model.key = "mouthscale"
+        model.value = 0.2
+        model.name = "show_beauty_item_beauty_mouth".show_localized
+        model.icon = "meiyan_icon_zuixing"
         dataArray.append(model)
         
+        // whiten teeth
         model = BeautyModel()
         model.path = ""
-        model.key = "ladyface"
-        model.value = 0.8
-        model.name = "show_beauty_item_beauty_female".show_localized
-        model.icon = "meiyan_icon_female"
+        model.key = "whitenTeeth"
+        model.value = 0.0
+        model.name = "show_beauty_item_beauty_teeth".show_localized
+        model.icon = "meiyan_icon_meiya"
+        dataArray.append(model)
+        
+        // brighten eye
+        model = BeautyModel()
+        model.path = ""
+        model.key = "brightenEye"
+        model.value = 0.0
+        model.name = "show_beauty_item_beauty_liangyan".show_localized
+        model.icon = "meiyan_icon_liangyan"
+        dataArray.append(model)
+        
+        // remove nasolabial fold
+        model = BeautyModel()
+        model.path = ""
+        model.key = "nasolabialFolds"
+        model.value = 0.0
+        model.name = "show_beauty_item_beauty_qufalingwen".show_localized
+        model.icon = "meiyan_icon_qufalingwen"
+        dataArray.append(model)
+        
+        // remove eye pouch
+        model = BeautyModel()
+        model.path = ""
+        model.key = "eyePouch"
+        model.value = 0.0
+        model.name = "show_beauty_item_beauty_heiyanquan".show_localized
+        model.icon = "meiyan_icon_heiyanquan"
         dataArray.append(model)
         
         return dataArray
@@ -228,7 +223,7 @@ extension BeautyModel {
         // Mixed blood
         model = BeautyModel()
         model.path = ""
-        model.key = "makeup1"
+        model.key = "xuejie"
         model.value = 0.5
         model.name = "show_beauty_item_effect_hunxue".show_localized
         model.icon = "meiyan_hunxue"
@@ -237,7 +232,7 @@ extension BeautyModel {
         // European and American
         model = BeautyModel()
         model.path = ""
-        model.key = "makeup2"
+        model.key = "xuemei"
         model.value = 0.5
         model.name = "show_beauty_item_effect_oumei".show_localized
         model.icon = "meiyan_oumei"

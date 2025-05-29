@@ -7,11 +7,11 @@
 
 import UIKit
 import JXCategoryView
-import Pure1v1;
-import ShowTo1v1;
+// import Pure1v1;
+// import ShowTo1v1;
 import AgoraCommon
-import Cantata
-import Joy
+// import Cantata
+// import Joy
 import InteractiveJoy
 import AIChat
 import SVProgressHUD
@@ -82,61 +82,64 @@ class HomeContentViewController: UIViewController {
         case .solo:
 //            ToastView.show(text: NSLocalizedString("app_coming_soon", comment: ""))
 //            return
-            let vc = VLOnLineListVC()
-            navigationController?.pushViewController(vc, animated: true)
+            // let vc = VLOnLineListVC()
+            // navigationController?.pushViewController(vc, animated: true)
+            break
         case .chorus:
 //            ToastView.show(text: NSLocalizedString("app_coming_soon", comment: ""))
 //            return
-            let vc = CantataPlugin.getCantataRootViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            // let vc = CantataPlugin.getCantataRootViewController()
+            // self.navigationController?.pushViewController(vc, animated: true)
+            break
         case .voice_chat:
-            let vc = VRRoomsViewController(user: VLUserCenter.user)
-            navigationController?.pushViewController(vc, animated: true)
-            
+            // let vc = VRRoomsViewController(user: VLUserCenter.user)
+            // navigationController?.pushViewController(vc, animated: true)
+            break
         case .spatial_voice:
-            let vc = SARoomsViewController(user: VLUserCenter.user)
-            navigationController?.pushViewController(vc, animated: true)
+            // let vc = SARoomsViewController(user: VLUserCenter.user)
+            // navigationController?.pushViewController(vc, animated: true)
             break
         case .show:
             let vc = ShowRoomListVC()
             navigationController?.pushViewController(vc, animated: true)
-            
+            break
         case .one_v_one:
-            let userInfo = Pure1v1UserInfo()
-            userInfo.userId = VLUserCenter.user.id
-            userInfo.userName = VLUserCenter.user.name
-            userInfo.avatar = VLUserCenter.user.headUrl
-            Pure1v1Context.showScene(viewController: self,
-                                     userInfo: userInfo)
-            
+            // let userInfo = Pure1v1UserInfo()
+            // userInfo.userId = VLUserCenter.user.id
+            // userInfo.userName = VLUserCenter.user.name
+            // userInfo.avatar = VLUserCenter.user.headUrl
+            // Pure1v1Context.showScene(viewController: self,
+            //                          userInfo: userInfo)
+            break
         case .multiple:
             break
             
         case .show_private_one_v_one:
-            let userInfo = ShowTo1v1UserInfo()
-            userInfo.uid = VLUserCenter.user.id
-            userInfo.userName = VLUserCenter.user.name
-            userInfo.avatar = VLUserCenter.user.headUrl
-            ShowTo1v1Context.showScene(viewController: self,
-                                       userInfo: userInfo)
-       
+            // let userInfo = ShowTo1v1UserInfo()
+            // userInfo.uid = VLUserCenter.user.id
+            // userInfo.userName = VLUserCenter.user.name
+            // userInfo.avatar = VLUserCenter.user.headUrl
+            // ShowTo1v1Context.showScene(viewController: self,
+            //                            userInfo: userInfo)
+            break
         case .game:
-            let userInfo = JoyUserInfo()
-            userInfo.userId = UInt(VLUserCenter.user.id) ?? 0
-            userInfo.userName = VLUserCenter.user.name
-            userInfo.avatar = VLUserCenter.user.headUrl
-            JoyContext.showScene(viewController: self, appId: KeyCenter.AppId, host: AppContext.shared.roomManagerUrl, appCertificate: KeyCenter.Certificate ?? "", userInfo: userInfo)
-            
+            // let userInfo = JoyUserInfo()
+            // userInfo.userId = UInt(VLUserCenter.user.id) ?? 0
+            // userInfo.userName = VLUserCenter.user.name
+            // userInfo.avatar = VLUserCenter.user.headUrl
+            // JoyContext.showScene(viewController: self, appId: KeyCenter.AppId, host: AppContext.shared.roomManagerUrl, appCertificate: KeyCenter.Certificate ?? "", userInfo: userInfo)
+            break
         case .interactive_game:
-            let userInfo = InteractiveJoyUserInfo()
-            userInfo.userId = UInt(VLUserCenter.user.id) ?? 0
-            userInfo.userName = VLUserCenter.user.name
-            userInfo.avatar = VLUserCenter.user.headUrl
-            InteractiveJoyContext.showScene(viewController: self, appId: KeyCenter.AppId, host: AppContext.shared.roomManagerUrl, appCertificate: KeyCenter.Certificate ?? "", sudmegAppId: KeyCenter.SUDMGP_APP_ID ?? "", sudmegAppkey: KeyCenter.SUDMGP_APP_KEY ?? "", userInfo: userInfo)
-
+            // let userInfo = InteractiveJoyUserInfo()
+            // userInfo.userId = UInt(VLUserCenter.user.id) ?? 0
+            // userInfo.userName = VLUserCenter.user.name
+            // userInfo.avatar = VLUserCenter.user.headUrl
+            // InteractiveJoyContext.showScene(viewController: self, appId: KeyCenter.AppId, host: AppContext.shared.roomManagerUrl, appCertificate: KeyCenter.Certificate ?? "", sudmegAppId: KeyCenter.SUDMGP_APP_ID ?? "", sudmegAppkey: KeyCenter.SUDMGP_APP_KEY ?? "", userInfo: userInfo)
+            break
         case .ai_chat:
-            let vc = AIChatMainViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            // let vc = AIChatMainViewController()
+            // self.navigationController?.pushViewController(vc, animated: true)
+            break
         }
     }
 }
@@ -174,7 +177,7 @@ extension HomeContentViewController: UICollectionViewDelegate, UICollectionViewD
                     // Check realNameVerifyStatus field
                     if let jsonDict = responseData as? [String: Any] {
                         if let realNameVerifyStatus = jsonDict["realNameVerifyStatus"] as? Bool {
-                            loginModel.realNameVerifyStatus = realNameVerifyStatus
+                            loginModel.realNameVerifyStatus = true
                         } else {
                             // If field doesn't exist, set to true
                             loginModel.realNameVerifyStatus = true

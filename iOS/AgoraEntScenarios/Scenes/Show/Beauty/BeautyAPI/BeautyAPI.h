@@ -193,6 +193,10 @@ typedef NS_ENUM(NSInteger, MirrorMode) {
  **/
 - (NSString *)getVersion;
 
+- (void)startVideoFrameObserve;
+- (void)stopVideoFrameObserve;
+- (BOOL)getBeautyMirrorMode;
+
 @end
 
 typedef NS_ENUM(NSInteger, LogLevel) {

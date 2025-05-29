@@ -1,4 +1,4 @@
-source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://github.com/CocoaPods/Specs.git'
 
 platform :ios, '13.0'
 inhibit_all_warnings!
@@ -42,17 +42,17 @@ def all_pods
 #  pod 'AgoraRtm', '2.2.1'
   pod 'AgoraRtm', :path => 'AgoraRtm.podspec'
 
-  pod 'AudioScenarioApi', :path => 'AgoraEntScenarios/Common/API/AudioScenarioApi'
+  # pod 'AudioScenarioApi', :path => 'AgoraEntScenarios/Common/API/AudioScenarioApi'
   pod 'RTMSyncManager', :path => 'AgoraEntScenarios/Common/API/RTMSyncManager'
   pod 'AGResourceManager', :path => 'AgoraEntScenarios/Common/API/AGResourceManager'
 
   pod 'CallAPI', :path => 'AgoraEntScenarios/Common/API/CallAPI'
   pod 'VideoLoaderAPI', :path => 'AgoraEntScenarios/Common/API/VideoLoaderAPI'
-  pod 'Pure1v1', :path => 'AgoraEntScenarios/Scenes/Pure1v1'
-  pod 'ShowTo1v1', :path => 'AgoraEntScenarios/Scenes/ShowTo1v1'
-  pod 'Cantata', :path => 'AgoraEntScenarios/Scenes/Cantata'
+  # pod 'Pure1v1', :path => 'AgoraEntScenarios/Scenes/Pure1v1'
+  # pod 'ShowTo1v1', :path => 'AgoraEntScenarios/Scenes/ShowTo1v1'
+  # pod 'Cantata', :path => 'AgoraEntScenarios/Scenes/Cantata'
   pod 'AgoraCommon', :path => 'AgoraEntScenarios'
-  pod 'Joy', :path => 'AgoraEntScenarios/Scenes/Joy'
+  # pod 'Joy', :path => 'AgoraEntScenarios/Scenes/Joy'
   pod 'InteractiveJoy', :path => 'AgoraEntScenarios/Scenes/InteractiveJoy'
   pod 'AIChat', :path => 'AgoraEntScenarios/Scenes/AIChat'
   pod 'AUIIMKit', :path => 'AgoraEntScenarios/Common/UIComponents/AUIIMKit'
@@ -68,6 +68,8 @@ def all_pods
 
   pod 'Zip'
   pod 'MJRefresh'
+  
+  pod 'MoonLight_iOS'
 
   
   # Swift Code Formatter

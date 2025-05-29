@@ -11,7 +11,6 @@ import UIKit
 import YYCategories
 import VideoLoaderAPI
 import AgoraCommon
-import AudioScenarioApi
 
 class ShowAgoraKitManager: NSObject {
     private static var _sharedManager: ShowAgoraKitManager?
@@ -39,7 +38,7 @@ class ShowAgoraKitManager: NSObject {
     
     private var channelIdUidCanvasMap: [String: UInt] = [:]
     
-    private var audioApi: AudioScenarioApi?
+//    private var audioApi: AudioScenarioApi?
     
 //    var exposureRangeX: Int?
 //    var exposureRangeY: Int?
@@ -59,10 +58,10 @@ class ShowAgoraKitManager: NSObject {
     public var engine: AgoraRtcEngineKit? {
         didSet {
             if oldValue != engine {
-                audioApi = nil
+//                audioApi = nil
             }
             if let engine = engine {
-                audioApi = AudioScenarioApi(rtcEngine: engine)
+//                audioApi = AudioScenarioApi(rtcEngine: engine)
             }
         }
     }
@@ -191,7 +190,7 @@ class ShowAgoraKitManager: NSObject {
         mediaOptions.autoSubscribeVideo = true
         mediaOptions.clientRoleType = .broadcaster
         
-        audioApi?.setAudioScenario(sceneType: .Show, audioScenarioType: .Show_Host)
+//        audioApi?.setAudioScenario(sceneType: .Show, audioScenarioType: .Show_Host)
         
         updateVideoEncoderConfigurationForConnenction(currentChannelId: currentChannelId)
 
@@ -376,9 +375,9 @@ class ShowAgoraKitManager: NSObject {
         }
         
         ShowLogger.info("switchRole[\(channelId)], role: \(role?.rawValue ?? -1) localUid:\(UserInfo.userId) uid: \(uid)", context: kShowLogBaseContext)
-        if role == .broadcaster {
-            audioApi?.setAudioScenario(sceneType: .Show, audioScenarioType: .Show_InteractiveAudience)
-        } 
+//        if role == .broadcaster {
+//            audioApi?.setAudioScenario(sceneType: .Show, audioScenarioType: .Show_InteractiveAudience)
+//        } 
         
         if let role = role {
             let roleOptions = AgoraRtcChannelMediaOptions()
@@ -505,9 +504,14 @@ class ShowAgoraKitManager: NSObject {
             assert(true, "rtc engine not initlized")
             return
         }
+        var mirror = mirrorMode;
+        let beautyMirror = BeautyManager.shareManager.beautyAPI.getBeautyMirrorMode()
+        if (beautyMirror) {
+            mirror = .enabled;
+        }
         let canvas = AgoraRtcVideoCanvas()
         canvas.view = canvasView
-        canvas.mirrorMode = mirrorMode
+        canvas.mirrorMode = mirror
         engine.setupLocalVideo(canvas)
         engine.startPreview()
         engine.setDefaultAudioRouteToSpeakerphone(true)

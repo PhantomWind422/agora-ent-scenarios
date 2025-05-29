@@ -72,10 +72,10 @@ static NSString *const beautyAPIVersion = @"1.0.4";
     }
     [LogUtil log:[NSString stringWithFormat:@"beautyRender == %@", config.beautyRender.description]];
     self.beautyRender = config.beautyRender;
+    [self setupMirror];
     if (config.captureMode == CaptureModeAgora) {
 #if __has_include(<AgoraRtcKit/AgoraRtcKit.h>)
         [LogUtil log:@"captureMode == Agora"];
-        [config.rtcEngine setVideoFrameDelegate:self];
         NSDictionary *dict = @{
             @"rtcVersion": [AgoraRtcEngineKit getSdkVersion],
             @"beautyRender": config.beautyRender.description,
@@ -109,11 +109,11 @@ static NSString *const beautyAPIVersion = @"1.0.4";
 - (AgoraVideoMirrorMode)setupMirror {
     AgoraVideoMirrorMode mode = AgoraVideoMirrorModeDisabled;
     if (self.isFrontCamera) {
-        if (self.config.cameraConfig.frontMirror == MirrorMode_LOCAL_ONLY || self.config.cameraConfig.frontMirror == MirrorMode_REMOTE_ONLY) {
+        if (self.config.cameraConfig.frontMirror == MirrorMode_LOCAL_ONLY || self.config.cameraConfig.frontMirror == MirrorMode_REMOTE_ONLY || self.config.cameraConfig.frontMirror == MirrorMode_LOCAL_REMOTE) {
             mode = AgoraVideoMirrorModeEnabled;
         }
     } else {
-        if (self.config.cameraConfig.backMirror ==  MirrorMode_REMOTE_ONLY || self.config.cameraConfig.backMirror == MirrorMode_LOCAL_ONLY) {
+        if (self.config.cameraConfig.backMirror ==  MirrorMode_REMOTE_ONLY || self.config.cameraConfig.backMirror == MirrorMode_LOCAL_ONLY || self.config.cameraConfig.backMirror == MirrorMode_LOCAL_REMOTE) {
             mode = AgoraVideoMirrorModeEnabled;
         }
     }
@@ -164,6 +164,19 @@ static NSString *const beautyAPIVersion = @"1.0.4";
     return 0;
 }
 
+- (BOOL)getBeautyMirrorMode {
+    if (self.isFrontCamera) {
+        if (self.config.cameraConfig.frontMirror == MirrorMode_LOCAL_ONLY || self.config.cameraConfig.frontMirror == MirrorMode_REMOTE_ONLY || self.config.cameraConfig.frontMirror == MirrorMode_LOCAL_REMOTE) {
+            return true;
+        }
+    } else {
+        if (self.config.cameraConfig.backMirror ==  MirrorMode_REMOTE_ONLY || self.config.cameraConfig.backMirror == MirrorMode_LOCAL_ONLY || self.config.cameraConfig.backMirror == MirrorMode_LOCAL_REMOTE) {
+            return true;
+        }
+    }
+    return false;
+}
+
 #if __has_include(<AgoraRtcKit/AgoraRtcKit.h>)
 - (int)setupLocalVideo:(UIView *)view renderMode:(AgoraVideoRenderMode)renderMode {
     self.renderMode = renderMode;
@@ -188,6 +201,14 @@ static NSString *const beautyAPIVersion = @"1.0.4";
     }
     [self.config.beautyRender setBeautyPreset];
     return 0;
+}
+
+- (void)startVideoFrameObserve {
+    [self.config.rtcEngine setVideoFrameDelegate:self];
+}
+
+- (void)stopVideoFrameObserve {
+    [self.config.rtcEngine setVideoFrameDelegate:nil];
 }
 
 - (int)destroy {
@@ -282,10 +303,8 @@ static NSString *const beautyAPIVersion = @"1.0.4";
 }
 
 - (BOOL)getMirrorApplied{
-    if (self.isFrontCamera) {
-            return self.config.cameraConfig.frontMirror == MirrorMode_REMOTE_ONLY || self.config.cameraConfig.frontMirror == MirrorMode_LOCAL_REMOTE;
-        }
-    return self.config.cameraConfig.backMirror == MirrorMode_REMOTE_ONLY || self.config.cameraConfig.backMirror == MirrorMode_LOCAL_REMOTE;
+    // use mirror mode instead
+    return false;
 }
 
 - (BOOL)getRotationApplied {

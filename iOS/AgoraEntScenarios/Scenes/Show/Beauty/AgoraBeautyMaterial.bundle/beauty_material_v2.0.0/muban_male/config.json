@@ -1,0 +1,15 @@
+{
+    "beauty_effect_option": {
+        "enable": true,
+        "smoothness": 0.0,
+        "lightness": 0.0,
+        "redness": 0.0,
+        "sharpness": 0.0,
+        "contrast_strength": 0.5
+    },
+    "face_shape_beauty_option": {
+        "enable": true,
+        "style": 1,
+        "intensity": 50
+    }
+}
