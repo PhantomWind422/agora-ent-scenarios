@@ -12,11 +12,14 @@ import io.agora.beautyapi.bytedance.EventCallback
 import io.agora.beautyapi.bytedance.createByteDanceBeautyAPI
 import io.agora.beautyapi.faceunity.FaceUnityBeautyAPI
 import io.agora.beautyapi.faceunity.createFaceUnityBeautyAPI
+import io.agora.beautyapi.sensetime.BeautyStats
 import io.agora.beautyapi.sensetime.CaptureMode
 import io.agora.beautyapi.sensetime.Config
+import io.agora.beautyapi.sensetime.IEventCallback
 import io.agora.beautyapi.sensetime.STHandlers
 import io.agora.beautyapi.sensetime.SenseTimeBeautyAPI
 import io.agora.beautyapi.sensetime.createSenseTimeBeautyAPI
+import io.agora.beautyapi.sensetime.utils.LogUtils
 import io.agora.rtc2.Constants
 import io.agora.rtc2.RtcEngine
 import io.agora.rtc2.video.IVideoFrameObserver
@@ -193,6 +196,11 @@ object BeautyManager {
                                     SenseTimeBeautySDK.mobileEffectNative,
                                     SenseTimeBeautySDK.humanActionNative
                                 ),
+                                eventCallback = object : IEventCallback {
+                                    override fun onBeautyStats(stats: BeautyStats) {
+                                        LogUtils.i("BeautyStats", "cost time >> min = ${stats.minCostMs}, max = ${stats.maxCostMs}, avg = ${stats.averageCostMs}")
+                                    }
+                                },
                                 captureMode = CaptureMode.Custom
                             )
                         )
@@ -327,7 +335,7 @@ object BeautyManager {
                 }
 
                 BeautyType.Agora -> {
-                    AgoraBeautySDK.initBeautySDK(ctx, rtc, BuildConfig.BEAUTY_RESOURCE.isEmpty())
+                    AgoraBeautySDK.initBeautySDK(ctx, rtc)
                     AgoraBeautySDK.enable(enable)
                     mainExecutor.postDelayed({
                         videoView?.get()?.let {

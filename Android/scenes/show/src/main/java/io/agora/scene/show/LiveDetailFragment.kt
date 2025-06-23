@@ -1876,15 +1876,6 @@ class LiveDetailFragment : Fragment() {
             }
         }
 
-        override fun onDownlinkNetworkInfoUpdated(info: DownlinkNetworkInfo) {
-            super.onDownlinkNetworkInfoUpdated(info)
-            runOnUiThread {
-                refreshStatisticInfo(
-                    downLinkBps = info.bandwidth_estimation_bps
-                )
-            }
-        }
-
         override fun onJoinChannelSuccess(channel: String?, uid: Int, elapsed: Int) {
             super.onJoinChannelSuccess(channel, uid, elapsed)
             enableContentInspectEx()
@@ -2492,13 +2483,6 @@ class LiveDetailFragment : Fragment() {
                         audioBitrate = stats.receivedBitrate,
                         audioLossPackage = stats.audioLossRate
                     )
-                }
-            }
-
-            override fun onDownlinkNetworkInfoUpdated(info: DownlinkNetworkInfo) {
-                super.onDownlinkNetworkInfoUpdated(info)
-                activity?.runOnUiThread {
-                    refreshStatisticInfo(downLinkBps = info.bandwidth_estimation_bps)
                 }
             }
 

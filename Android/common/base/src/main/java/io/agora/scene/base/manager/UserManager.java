@@ -97,6 +97,6 @@ public final class UserManager {
 
     public boolean isRealNameAuth() {
         User user = getUser();
-        return user!=null && user.realNameVerifyStatus == 1;
+        return true;
     }
 }

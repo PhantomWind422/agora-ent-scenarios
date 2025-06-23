@@ -77,7 +77,7 @@ data class Config(
     val eventCallback: IEventCallback? = null, // 事件回调
     val captureMode: CaptureMode = CaptureMode.Agora, // 处理模式
     val statsDuration: Long = 1000, // 统计区间
-    val statsEnable: Boolean = false, // 是否开启统计
+    val statsEnable: Boolean = true, // 是否开启统计
     val cameraConfig: CameraConfig = CameraConfig() // 摄像头镜像配置
 )
 
