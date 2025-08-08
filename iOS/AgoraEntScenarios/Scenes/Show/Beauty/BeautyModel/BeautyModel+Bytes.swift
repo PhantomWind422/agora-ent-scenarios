@@ -261,6 +261,8 @@ extension BeautyModel {
         model.path = "stickers_zhaocaimao"
         model.name = "show_beauty_item_sticker_zhaocaimao".show_localized
         model.icon = "meiyan_sticker_zhaocaimao"
+        model.key = "zhaocaimao"
+        model.value = 0.5
         dataArray.append(model)
         
         return dataArray

@@ -64,6 +64,23 @@ class AgoraBeautyManager: NSObject {
             return _makeupTemplate
         }
     }
+    private var _stickerTemplate: String? = nil
+    var stickerTemplate: String? {
+        set {
+            if _stickerTemplate == newValue {
+                return
+            }
+            _stickerTemplate = newValue
+            if _stickerTemplate == nil {
+                enableSticker(false)
+            } else {
+                enableSticker(true)
+            }
+        }
+        get {
+            return _stickerTemplate
+        }
+    }
     lazy var render = AgoraBeautyRender()
     private static var _sharedManager: AgoraBeautyManager?
     static var shareManager: AgoraBeautyManager {
@@ -93,7 +110,7 @@ class AgoraBeautyManager: NSObject {
         // copy bundle
         copyBeautyBundle()
         // enter beauty effect
-        let path = material_copy_dest_path + "/" + "beauty_material_v2.0.0";
+        let path = material_copy_dest_path + "/" + "sticker_material";
         beautyEffect = agoraKit?.createVideoEffectObject(bundlePath: path, sourceType: AgoraMediaSourceType.primaryCamera)
     }
     
@@ -203,6 +220,27 @@ class AgoraBeautyManager: NSObject {
         }
     }
     
+    func setSticker(path: String?, key: String?, value: CGFloat) {
+        if key == nil {
+            // close sticker effect
+            stickerTemplate = nil
+        }
+        else if key == "init" {
+            // load stylemakeup default template
+            stickerTemplate = ""
+        }
+        switch key ?? "" {
+        case "zhaocaimao":
+            stickerTemplate = "招财猫"
+        break
+        case "milu":
+            stickerTemplate = "鹿"
+        break
+        default:
+        break
+        }
+    }
+    
     func setFilter(path: String?, key: String?, value: CGFloat) {
         if key == nil {
             // close filter effect
@@ -260,10 +298,19 @@ class AgoraBeautyManager: NSObject {
         }
     }
     
+    func enableSticker(_ enabled: Bool) {
+        if (enabled) {
+            beautyEffect?.addOrUpdateVideoEffect(nodeId: AgoraVideoEffectNodeId.sticker.rawValue, templateName: _stickerTemplate ?? "")
+        } else {
+            beautyEffect?.removeVideoEffect(nodeId: AgoraVideoEffectNodeId.sticker.rawValue)
+        }
+    }
+    
     func enable(_ enabled: Bool) {
         enableBeauty(enabled)
         enableMakeup(enabled)
         enableFilter(enabled)
+        enableSticker(enabled)
     }
     
     func reset(datas: [BeautyModel]) {
@@ -276,6 +323,10 @@ class AgoraBeautyManager: NSObject {
     
     func resetFilter(datas: [BeautyModel]) {
         filterTemplate = nil
+    }
+    
+    func resetSticker(datas: [BeautyModel]) {
+        stickerTemplate = nil
     }
             
     func destroy() {

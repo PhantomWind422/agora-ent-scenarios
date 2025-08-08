@@ -118,7 +118,13 @@ class ShowBeautyFaceVC: UIViewController {
                                                  value: model.value)
             
         case .sticker:
-            BeautyManager.shareManager.setSticker(path: model.path)
+            if isReset {
+                BeautyManager.shareManager.resetSticker(datas: dataArray)
+                return
+            }
+            BeautyManager.shareManager.setSticker(path: model.path,
+                                                  key: model.key,
+                                                  value: model.value)
             
         case .animoj:
             BeautyManager.shareManager.setAnimoji(path: model.path)

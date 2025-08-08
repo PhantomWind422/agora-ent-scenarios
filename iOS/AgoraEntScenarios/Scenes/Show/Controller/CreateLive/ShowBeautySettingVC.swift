@@ -58,7 +58,7 @@ class ShowBeautySettingVC: UIViewController {
             if BeautyModel.beautyType == .byte {
                 return $0 != .animoj && $0 != .filter
             } else if BeautyModel.beautyType == .agora {
-                return $0 != .animoj && $0 != .sticker && $0 != .filter
+                return $0 != .animoj && $0 != .filter
             } else {
                 return $0 != .animoj && $0 != .filter
             }
@@ -207,7 +207,7 @@ class ShowBeautySettingVC: UIViewController {
             if BeautyModel.beautyType == .byte {
                 return $0 != .animoj && $0 != .filter
             } else if BeautyModel.beautyType == .agora {
-                return $0 != .animoj && $0 != .sticker && $0 != .filter
+                return $0 != .animoj && $0 != .filter
             } else {
                 return $0 != .animoj && $0 != .filter
             }

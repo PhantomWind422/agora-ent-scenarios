@@ -240,4 +240,33 @@ extension BeautyModel {
         
         return dataArray
     }
+    
+    static func createAgoraStickerData() -> [BeautyModel] {
+        var dataArray = [BeautyModel]()
+        var model = BeautyModel()
+        model.name = "show_beauty_item_none".show_localized
+        model.icon = "show_beauty_none"
+        model.isSelected = true
+        dataArray.append(model)
+        
+        // Mixed blood
+        model = BeautyModel()
+        model.path = ""
+        model.key = "zhaocaimao"
+        model.value = 0.5
+        model.name = "show_beauty_item_effect_hunxue".show_localized
+        model.icon = "meiyan_hunxue"
+        dataArray.append(model)
+        
+        // European and American
+        model = BeautyModel()
+        model.path = ""
+        model.key = "milu"
+        model.value = 0.5
+        model.name = "show_beauty_item_effect_oumei".show_localized
+        model.icon = "meiyan_oumei"
+        dataArray.append(model)
+        
+        return dataArray
+    }
 }

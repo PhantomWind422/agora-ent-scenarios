@@ -2734,8 +2734,6 @@
 					"-framework",
 					"\"CoreVideo\"",
 					"-framework",
-					"\"FLAnimatedImage\"",
-					"-framework",
 					"\"Foundation\"",
 					"-framework",
 					"\"ImageIO\"",

@@ -161,7 +161,7 @@ class BeautyManager: NSObject {
         
     }
     
-    func setSticker(path: String?) {
+    func setSticker(path: String?, key: String?, value: CGFloat) {
         switch BeautyModel.beautyType {
         case .byte:
             ByteBeautyManager.shareManager.setSticker(path: path)
@@ -172,7 +172,8 @@ class BeautyManager: NSObject {
         case .fu:
             FUBeautyManager.shareManager.setSticker(path: path)
             
-        case .agora: break
+        case .agora:
+            AgoraBeautyManager.shareManager.setSticker(path: path, key: key, value: value)
         }
     }
     
@@ -235,7 +236,8 @@ class BeautyManager: NSObject {
         case .fu:
             FUBeautyManager.shareManager.resetSticker(datas: datas)
             
-        case .agora: break
+        case .agora:
+            AgoraBeautyManager.shareManager.resetSticker(datas: datas)
         }
     }
     
