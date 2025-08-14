@@ -1,0 +1,58 @@
+{
+    "lists" : [
+        {
+            "name": "zhaocaimao_erduo",
+            "type": 3,
+            "resourceType": "gif",
+            "path": "../../sticker_resource/zhaocaimao/erduo",
+            "follow": 2,
+            "followIndex": 0,
+            "blendMode": 0,
+            "fps": 10
+        },
+        {
+            "name": "zhaocaimao_huzi",
+            "type": 3,
+            "resourceType": "gif",
+            "path": "../../sticker_resource/zhaocaimao/huzi",
+            "follow": 5,
+            "followIndex": 0,
+            "blendMode": 0,
+            "fps": 10
+        },
+        {
+            "name": "zhaocaimao_lingdang",
+            "type": 3,
+            "resourceType": "gif",
+            "path": "../../sticker_resource/zhaocaimao/lingdang",
+            "anchor": 4,
+            "follow": 9,
+            "followIndex": 0,
+            "followOffset": [0, 25],
+            "blendMode": 0,
+            "fps": 10
+        },
+        {
+            "name": "zhaocaimao_zhua1",
+            "type": 3,
+            "resourceType": "gif",
+            "path": "../../sticker_resource/zhaocaimao/zhaocaizhua",
+            "follow": 10,
+            "followIndex": 1,
+            "followOffset": [-20, 50],
+            "blendMode": 0,
+            "fps": 10
+        },
+        {
+            "name": "zhaocaimao_zhua2",
+            "type": 3,
+            "resourceType": "gif",
+            "path": "../../sticker_resource/zhaocaimao/zhua",
+            "follow": 10,
+            "followIndex": 2,
+            "followOffset": [20, 50],
+            "blendMode": 0,
+            "fps": 10
+        }
+    ]
+}

@@ -21,6 +21,7 @@ object AgoraBeautySDK {
     private var beautyEnable = false
     private var filterEnable = false
     private var makeupEnable = false
+    private var stickerEnable = false
     private const val assetsPath = "beauty_agora"
     private var materialPath = ""
     private var materialCopied = false
@@ -72,6 +73,7 @@ object AgoraBeautySDK {
         beautyEnable = false
         filterEnable = false
         makeupEnable = false
+        stickerEnable = false
     }
 
     fun enable(enable: Boolean) {
@@ -79,10 +81,12 @@ object AgoraBeautySDK {
             enableBeauty(true)
             enableFilter(true)
             enableMakeup(true)
+            enableSticker(true)
         } else {
             enableBeauty(false)
             enableFilter(false)
             enableMakeup(false)
+            enableSticker(false)
         }
     }
 
@@ -121,7 +125,7 @@ object AgoraBeautySDK {
     private fun enableMakeup(enable: Boolean) {
         val effect = beautyEffect ?: return
         if (enable == makeupEnable) return
-        if (enable ) {
+        if (enable) {
             if(beautyConfig.makeupName != null) {
                 effect.addOrUpdateVideoEffect(
                     IVideoEffectObject.VIDEO_EFFECT_NODE_ID.STYLE_MAKEUP.value,
@@ -132,6 +136,22 @@ object AgoraBeautySDK {
             effect.removeVideoEffect(IVideoEffectObject.VIDEO_EFFECT_NODE_ID.STYLE_MAKEUP.value)
         }
         this.makeupEnable = enable
+    }
+
+    private fun enableSticker(enable: Boolean) {
+        val effect = beautyEffect ?: return
+        if (enable == stickerEnable) return
+        if (enable) {
+            if(beautyConfig.stickerName != null) {
+                effect.addOrUpdateVideoEffect(
+                    IVideoEffectObject.VIDEO_EFFECT_NODE_ID.STICKER.value,
+                    beautyConfig.stickerName
+                )
+            }
+        } else {
+            effect.removeVideoEffect(IVideoEffectObject.VIDEO_EFFECT_NODE_ID.STICKER.value)
+        }
+        this.stickerEnable = enable
     }
 
     class BeautyConfig {
@@ -312,6 +332,29 @@ object AgoraBeautySDK {
                 beautyEffect?.setVideoEffectFloatParam("style_makeup_option", "styleIntensity", value)
             }
 
+        var sticker: Boolean = false
+            set(value) {
+                field = value
+                enableSticker(value)
+            }
+
+        // 贴纸素材
+        var stickerName: String? = null
+            set(value) {
+                if (field == value) {
+                    return
+                }
+                field = value
+                beautyEffect?.addOrUpdateVideoEffect(IVideoEffectObject.VIDEO_EFFECT_NODE_ID.STICKER.value, value)
+            }
+
+        // 贴纸强度
+        var stickerStrength: Float = 0.95f
+            set(value) {
+                field = value
+                beautyEffect?.setVideoEffectFloatParam("sticker_effect_option", "strength", value)
+            }
+
         internal fun reset() {
             beautyName = ""
             smooth = 0.5f
@@ -325,6 +368,8 @@ object AgoraBeautySDK {
             filterStrength = 0.5f
             makeupName = null
             makeupStrength = 0.5f
+            stickerName = null
+            stickerStrength = 0.5f
 
             enlargeEye = 53
             chinLength = -20
@@ -349,6 +394,8 @@ object AgoraBeautySDK {
             filterStrength = filterStrength
             makeupName = makeupName
             makeupStrength = makeupStrength
+            stickerName = stickerName
+            stickerStrength = stickerStrength
 
             enlargeEye =
                 rtcEngine?.getFaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYESCALE)?.shapeIntensity ?: 53

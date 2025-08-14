@@ -6,6 +6,7 @@ import android.view.View
 import androidx.core.view.isVisible
 import io.agora.scene.show.R
 import io.agora.scene.show.beauty.AgoraBeautySDK
+import io.agora.scene.show.beauty.FaceUnityBeautySDK
 
 class AgoraControllerView : BaseControllerView {
 
@@ -259,6 +260,67 @@ class AgoraControllerView : BaseControllerView {
                             beautyConfig.sharpen = value
                         }
                     ),
+                )
+            ),
+            PageInfo(
+                R.string.show_beauty_group_sticker,
+                listOf(
+                    ItemInfo(
+                        R.string.show_beauty_item_none,
+                        R.mipmap.show_beauty_ic_none,
+                        isSelected = !beautyConfig.sticker,
+                        onValueChanged = { _ ->
+                            beautyConfig.sticker = false
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_sticker_sdlu,
+                        R.mipmap.show_beauty_ic_sticker_elk,
+                        withPadding = false,
+                        isSelected = beautyConfig.stickerName == "鹿",
+                        value = beautyConfig.stickerStrength,
+                        onValueChanged = { value ->
+                            beautyConfig.sticker = true
+                            beautyConfig.stickerName = "鹿"
+                            beautyConfig.stickerStrength = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_sticker_zhaocaimao,
+                        R.mipmap.show_beauty_ic_sticer_zhaocaimao,
+                        withPadding = false,
+                        isSelected = beautyConfig.stickerName == "招财猫",
+                        value = beautyConfig.stickerStrength,
+                        onValueChanged = { value ->
+                            beautyConfig.sticker = true
+                            beautyConfig.stickerName = "招财猫"
+                            beautyConfig.stickerStrength = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_sticker_qianjing,
+                        R.mipmap.show_beauty_ic_sticer_zhaocaimao,
+                        withPadding = false,
+                        isSelected = beautyConfig.stickerName == "前景",
+                        value = beautyConfig.stickerStrength,
+                        onValueChanged = { value ->
+                            beautyConfig.sticker = true
+                            beautyConfig.stickerName = "前景"
+                            beautyConfig.stickerStrength = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_sticker_guofeng,
+                        R.mipmap.show_beauty_ic_sticer_zhaocaimao,
+                        withPadding = false,
+                        isSelected = beautyConfig.stickerName == "国风",
+                        value = beautyConfig.stickerStrength,
+                        onValueChanged = { value ->
+                            beautyConfig.sticker = true
+                            beautyConfig.stickerName = "国风"
+                            beautyConfig.stickerStrength = value
+                        }
+                    )
                 )
             )
         )

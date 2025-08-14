@@ -290,6 +290,8 @@
     <string name="show_beauty_item_beauty_fajixian">发际线</string>
     <string name="show_beauty_item_beauty_white_teeth">白牙</string>
     <string name="show_beauty_item_sticker_zhaocaimao">招财猫</string>
+    <string name="show_beauty_item_sticker_qianjing">前景</string>
+    <string name="show_beauty_item_sticker_guofeng">国风</string>
     <string name="show_create_micseat_apply_error">网络异常, 申请上麦失败, 错误: %s</string>
     <string name="show_accept_micseat_apply_error">网络异常, 同意上麦失败, 错误: %s</string>
     <string name="show_create_micseat_invitation_error">网络异常, 邀请连麦失败, 错误: %s</string>
