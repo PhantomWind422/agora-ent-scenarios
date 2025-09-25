@@ -1,0 +1,69 @@
+{
+    "lists" : [
+        {
+            "name": "milu_ear_left",
+            "type": 3,
+            "resourceType": "gif",
+            "path": "../../sticker_resource/milu/ear_l",
+            "anchor": 3,
+            "follow": 8,
+            "followIndex": 1,
+            "followOffset": [15, -30],
+            "blendMode": 0,
+            "fps": 5
+        },
+        {
+            "name": "milu_ear_right",
+            "type": 3,
+            "resourceType": "gif",
+            "path": "../../sticker_resource/milu/ear_r",
+            "anchor": 2,
+            "follow": 8,
+            "followIndex": 2,
+            "followOffset": [-15, -30],
+            "blendMode": 0,
+            "fps": 5
+        },
+        {
+            "name": "milu_eyebrow",
+            "type": 3,
+            "resourceType": "png",
+            "path": "../../sticker_resource/milu/eyebrow_c/deer_eyebrow_c000.png",
+            "follow": 4,
+            "followIndex": 0,
+            "blendMode": 0
+        },
+        {
+            "name": "milu_head",
+            "type": 3,
+            "resourceType": "png",
+            "path": "../../sticker_resource/milu/head/deer_head000.png",
+            "anchor": 5,
+            "follow": 2,
+            "followIndex": 0,
+            "followOffset": [0, 40],
+            "blendMode": 0
+        },
+        {
+            "name": "milu_lingdang",
+            "type": 3,
+            "resourceType": "gif",
+            "path": "../../sticker_resource/milu/lingdang",
+            "anchor": 4,
+            "follow": 9,
+            "followIndex": 0,
+            "followOffset": [0, 30],
+            "blendMode": 0,
+            "fps": 5
+        },
+        {
+            "name": "milu_nose",
+            "type": 3,
+            "resourceType": "png",
+            "path": "../../sticker_resource/milu/nose/deer_nose000.png",
+            "follow": 5,
+            "followIndex": 0,
+            "blendMode": 0
+        }
+    ]
+}

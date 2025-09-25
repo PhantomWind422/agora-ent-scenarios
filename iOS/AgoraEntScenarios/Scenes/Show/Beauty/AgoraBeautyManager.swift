@@ -110,7 +110,7 @@ class AgoraBeautyManager: NSObject {
         // copy bundle
         copyBeautyBundle()
         // enter beauty effect
-        let path = material_copy_dest_path + "/" + "sticker_material";
+        let path = material_copy_dest_path + "/" + "sticker_material_v2.1.0";
         beautyEffect = agoraKit?.createVideoEffectObject(bundlePath: path, sourceType: AgoraMediaSourceType.primaryCamera)
     }
     

@@ -13,14 +13,9 @@
         "学妹妆": "xuemei/",
         "原生": "yuansheng/",
         "冷白": "lengbai/",
-        "嫩白": "nenbai/",
-        "前景": "sticker-front/",
-        "招财猫": "sticker-zhaocaimao/",
-        "鹿": "sticker-milu/",
-        "国风": "sticker-guofeng/"
+        "嫩白": "nenbai/"
     },
     "beauty_config" : "模板女",
     "makeup_config" : "学妹妆",
-    "filter_config" : "原生",
-    "sticker_config" : "招财猫"
+    "filter_config" : "原生"
 }

@@ -36,7 +36,7 @@ object AgoraBeautySDK {
             FileUtils.copyAssets(context, "${assetsPath}", destPath)
             materialCopied = true
         }
-        materialPath = "$storagePath/beauty_agora/beauty_material_v2.0.0"
+        materialPath = "$storagePath/beauty_agora/sticker_material_v2.1.0"
 
         this.rtcEngine = rtcEngine
         val ret = rtcEngine.enableExtension(
