@@ -43,27 +43,9 @@ class MultiBeautyDialog : BottomSheetDialog {
 
 
     private fun initView() {
-        when (BeautyManager.beautyType) {
-            BeautyManager.BeautyType.SenseTime -> {
-                mBinding.ctvBeauty.setText(R.string.show_multi_beauty_sensetime)
-                mBinding.rgBeauty.check(R.id.rbSenseTime)
-            }
+        mBinding.ctvBeauty.setText(R.string.show_multi_beauty_agora)
+        mBinding.rgBeauty.check(R.id.rbAgora)
 
-            BeautyManager.BeautyType.FaceUnity -> {
-                mBinding.ctvBeauty.setText(R.string.show_multi_beauty_faceunity)
-                mBinding.rgBeauty.check(R.id.rbFaceUnity)
-            }
-
-            BeautyManager.BeautyType.ByteDance -> {
-                mBinding.ctvBeauty.setText(R.string.show_multi_beauty_bytedance)
-                mBinding.rgBeauty.check(R.id.rbByteDance)
-            }
-
-            BeautyManager.BeautyType.Agora -> {
-                mBinding.ctvBeauty.setText(R.string.show_multi_beauty_agora)
-                mBinding.rgBeauty.check(R.id.rbAgora)
-            }
-        }
 
         mBinding.ctvBeauty.setOnClickListener {
             mBinding.ctvBeauty.isChecked = !mBinding.ctvBeauty.isChecked
@@ -71,22 +53,12 @@ class MultiBeautyDialog : BottomSheetDialog {
                 mBinding.ctvBeauty.setText(R.string.show_multi_beauty_factory)
                 mBinding.rgBeauty.isVisible = true
             } else {
-                when (BeautyManager.beautyType) {
-                    BeautyManager.BeautyType.SenseTime -> mBinding.ctvBeauty.setText(R.string.show_multi_beauty_sensetime)
-                    BeautyManager.BeautyType.FaceUnity -> mBinding.ctvBeauty.setText(R.string.show_multi_beauty_faceunity)
-                    BeautyManager.BeautyType.ByteDance -> mBinding.ctvBeauty.setText(R.string.show_multi_beauty_bytedance)
-                    BeautyManager.BeautyType.Agora -> mBinding.ctvBeauty.setText(R.string.show_multi_beauty_agora)
-                }
+                mBinding.ctvBeauty.setText(R.string.show_multi_beauty_agora)
                 mBinding.rgBeauty.isVisible = false
             }
         }
         mBinding.rgBeauty.setOnCheckedChangeListener { _, checkedId ->
-            when (checkedId) {
-                R.id.rbSenseTime -> BeautyManager.beautyType = BeautyManager.BeautyType.SenseTime
-                R.id.rbFaceUnity -> BeautyManager.beautyType = BeautyManager.BeautyType.FaceUnity
-                R.id.rbByteDance -> BeautyManager.beautyType = BeautyManager.BeautyType.ByteDance
-                R.id.rbAgora -> BeautyManager.beautyType = BeautyManager.BeautyType.Agora
-            }
+            BeautyManager.beautyType = BeautyManager.BeautyType.Agora
             // resetVirtualBackground()
             mBinding.ctvBeauty.performClick()
             updateControllerView(BeautyManager.beautyType)
@@ -98,12 +70,7 @@ class MultiBeautyDialog : BottomSheetDialog {
 
     private fun updateControllerView(beautyType: BeautyManager.BeautyType) {
         mBinding.controllerContainer.removeAllViews()
-        val controllerView = when (beautyType) {
-            BeautyManager.BeautyType.SenseTime -> SenseTimeControllerView(context)
-            BeautyManager.BeautyType.FaceUnity -> FaceUnityControllerView(context)
-            BeautyManager.BeautyType.ByteDance -> ByteDanceControllerView(context)
-            BeautyManager.BeautyType.Agora -> AgoraControllerView(context)
-        }
+        val controllerView = AgoraControllerView(context)
         setupControllerView(controllerView)
         mBinding.controllerContainer.addView(controllerView)
     }
