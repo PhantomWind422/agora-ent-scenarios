@@ -64,6 +64,15 @@
             "follow": 5,
             "followIndex": 0,
             "blendMode": 0
+        },
+        {
+            "name": "front_heart",
+            "type": 4,
+            "resourceType": "gif",
+            "path": "../../sticker_resource/front/front-heart",
+            "fillScreen": true,
+            "blendMode": 0,
+            "fps": 10
         }
     ]
 }

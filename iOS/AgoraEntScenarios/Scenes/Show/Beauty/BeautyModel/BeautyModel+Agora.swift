@@ -225,7 +225,7 @@ extension BeautyModel {
         model.path = ""
         model.key = "xuejie"
         model.value = 0.5
-        model.name = "show_beauty_item_effect_hunxue".show_localized
+        model.name = "show_beauty_item_effect_xuejie".show_localized
         model.icon = "meiyan_hunxue"
         dataArray.append(model)
         
@@ -234,7 +234,7 @@ extension BeautyModel {
         model.path = ""
         model.key = "xuemei"
         model.value = 0.5
-        model.name = "show_beauty_item_effect_oumei".show_localized
+        model.name = "show_beauty_item_effect_xuemei".show_localized
         model.icon = "meiyan_oumei"
         dataArray.append(model)
         
@@ -249,22 +249,28 @@ extension BeautyModel {
         model.isSelected = true
         dataArray.append(model)
         
-        // Mixed blood
         model = BeautyModel()
         model.path = ""
         model.key = "zhaocaimao"
         model.value = 0.5
-        model.name = "show_beauty_item_effect_hunxue".show_localized
-        model.icon = "meiyan_hunxue"
+        model.name = "show_beauty_item_sticker_zhaocaimao".show_localized
+        model.icon = "meiyan_sticker_zhaocaimao"
         dataArray.append(model)
         
-        // European and American
         model = BeautyModel()
         model.path = ""
         model.key = "milu"
         model.value = 0.5
-        model.name = "show_beauty_item_effect_oumei".show_localized
-        model.icon = "meiyan_oumei"
+        model.name = "show_beauty_item_sticker_milu".show_localized
+        model.icon = "sdlu"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "guofeng"
+        model.value = 0.5
+        model.name = "show_beauty_item_sticker_guofeng".show_localized
+        model.icon = "meiyan_sticker_zhaocaimao"
         dataArray.append(model)
         
         return dataArray

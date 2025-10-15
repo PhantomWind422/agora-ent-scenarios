@@ -53,6 +53,15 @@
             "followOffset": [20, 50],
             "blendMode": 0,
             "fps": 10
+        },
+        {
+            "name": "front_flower",
+            "type": 4,
+            "resourceType": "gif",
+            "path": "../../sticker_resource/front/front-flower",
+            "fillScreen": true,
+            "blendMode": 0,
+            "fps": 10
         }
     ]
 }

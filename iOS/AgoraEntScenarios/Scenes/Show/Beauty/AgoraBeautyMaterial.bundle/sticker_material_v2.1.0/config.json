@@ -6,14 +6,20 @@
         "preferred_fps": 24
     },
     "user_interface_option": {
+        "模板女": "muban_female/",
+        "模板男": "muban_male/",
         "模板自然": "muban_natural/",
+        "学姐妆": "xuejie/",
         "学妹妆": "xuemei/",
+        "原生": "yuansheng/",
+        "冷白": "lengbai/",
         "嫩白": "nenbai/",
         "招财猫": "sticker-zhaocaimao/",
-        "鹿": "sticker-milu/"
+        "麋鹿": "sticker-milu/",
+        "国风": "sticker-guofeng/"
     },
     "beauty_config" : "模板自然",
-    "makeup_config" : "学妹妆",
-    "filter_config" : "嫩白",
-    "sticker_config" : "招财猫"
+    "beauty_custom_option": {
+        "auto_sharpness": true
+    }
 }

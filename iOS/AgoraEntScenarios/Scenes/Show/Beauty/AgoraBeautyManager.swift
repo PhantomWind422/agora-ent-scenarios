@@ -234,7 +234,10 @@ class AgoraBeautyManager: NSObject {
             stickerTemplate = "招财猫"
         break
         case "milu":
-            stickerTemplate = "鹿"
+            stickerTemplate = "麋鹿"
+        break
+        case "guofeng":
+            stickerTemplate = "国风"
         break
         default:
         break
