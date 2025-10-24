@@ -94,15 +94,15 @@ class ShowCreateLiveVC: UIViewController {
             
             BeautyManager.shareManager.initBeautyRender()
             
-            // 美颜设置
-            BeautyManager.shareManager.configBeautyAPI()
-            
             // 创建默认美颜效果
             ShowBeautyFaceVC.beautyData.forEach({
                 BeautyManager.shareManager.setBeauty(path: $0.path,
                                                      key: $0.key,
                                                      value: $0.value)
             })
+            
+            // 美颜设置
+            BeautyManager.shareManager.configBeautyAPI()
         }
     }
     
@@ -143,20 +143,6 @@ extension ShowCreateLiveVC: ShowCreateLiveViewDelegate {
     
     func onClickStartBtnAction() {
         guard isBeautyDownloaded() else { return }
-        
-        let alert = UIAlertController.init(title: "确认", message: "是否开启PVC, 默认关闭", preferredStyle: .alert)
-        alert.addAction(UIAlertAction.init(title: "打开", style: .default, handler: { [weak self] _ in
-            ShowAgoraKitManager.shared.setPVCon(true)
-            self?.onCreateRoom()
-        }))
-        alert.addAction(UIAlertAction.init(title: "关闭", style: .default, handler: { [weak self] _ in
-            ShowAgoraKitManager.shared.setPVCon(false)
-            self?.onCreateRoom()
-        }))
-        present(alert, animated: true, completion: nil)
-    }
-    
-    private func onCreateRoom() {
         guard let roomName = createView.roomName, roomName.count > 0 else {
             ToastView.show(text: "create_room_name_can_not_empty".show_localized)
             return
@@ -166,10 +152,10 @@ extension ShowCreateLiveVC: ShowCreateLiveViewDelegate {
             ToastView.show(text: "create_room_name_too_long".show_localized)
             return
         }
-        SVProgressHUD.show()
-        self.view.isUserInteractionEnabled = false
         ShowLogger.info("onClickStartBtnAction[\(createView.roomNo)]", context: kCreateLiveVCTag)
         let roomId = createView.roomNo
+        SVProgressHUD.show()
+        self.view.isUserInteractionEnabled = false
         AppContext.showServiceImp()?.createRoom(roomId: createView.roomNo,
                                                 roomName: roomName) { [weak self] err, detailModel in
             guard let wSelf = self else { return }
