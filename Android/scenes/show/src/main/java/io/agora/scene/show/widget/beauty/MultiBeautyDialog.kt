@@ -91,80 +91,80 @@ class MultiBeautyDialog : BottomSheetDialog {
             }
 
         // Virtual background configuration
-        controllerView.pageList = ArrayList(controllerView.pageList).apply {
-            add(
-                BaseControllerView.PageInfo(
-                    R.string.show_beauty_group_virtual_bg,
-                    listOf(
-                        BaseControllerView.ItemInfo(
-                            R.string.show_beauty_item_none,
-                            R.mipmap.show_beauty_ic_none,
-                            isSelected = RtcEngineInstance.virtualBackgroundSource.backgroundSourceType == VirtualBackgroundSource.BACKGROUND_COLOR,
-                            onValueChanged = { _ ->
-                                RtcEngineInstance.virtualBackgroundSource.backgroundSourceType =
-                                    VirtualBackgroundSource.BACKGROUND_COLOR
-                                RtcEngineInstance.virtualBackgroundSegmentation.modelType = SegmentationProperty.SEG_MODEL_AI
-                                RtcEngineInstance.virtualBackgroundSegmentation.greenCapacity = 0.5f
-                                controllerView.updateItemInfo {
-                                    if (it.name == R.string.show_beauty_item_virtual_bg_mitao
-                                        || it.name == R.string.show_beauty_item_virtual_bg_blur
-                                    ) {
-                                        it.value = 0.5f
-                                    }
-                                    false
-                                }
-                                virtualBgBinding.mSwitchMaterial.isChecked = false
-                                RtcEngineInstance.rtcEngine.enableVirtualBackground(
-                                    false,
-                                    RtcEngineInstance.virtualBackgroundSource,
-                                    RtcEngineInstance.virtualBackgroundSegmentation
-                                )
-                            }
-                        ),
-                        BaseControllerView.ItemInfo(
-                            R.string.show_beauty_item_virtual_bg_blur,
-                            R.mipmap.show_beauty_ic_virtual_bg_blur,
-                            value = RtcEngineInstance.virtualBackgroundSegmentation.greenCapacity,
-                            isSelected = RtcEngineInstance.virtualBackgroundSource.backgroundSourceType == VirtualBackgroundSource.BACKGROUND_BLUR,
-                            onValueChanged = { value ->
-                                RtcEngineInstance.virtualBackgroundSource.backgroundSourceType =
-                                    VirtualBackgroundSource.BACKGROUND_BLUR
-                                RtcEngineInstance.virtualBackgroundSegmentation.greenCapacity =
-                                    value
-                                RtcEngineInstance.rtcEngine.enableVirtualBackground(
-                                    true,
-                                    RtcEngineInstance.virtualBackgroundSource,
-                                    RtcEngineInstance.virtualBackgroundSegmentation
-                                )
-                            }
-                        ),
-                        BaseControllerView.ItemInfo(
-                            R.string.show_beauty_item_virtual_bg_mitao,
-                            R.mipmap.show_beauty_ic_virtual_bg_mitao,
-                            value = RtcEngineInstance.virtualBackgroundSegmentation.greenCapacity,
-                            isSelected = RtcEngineInstance.virtualBackgroundSource.backgroundSourceType == VirtualBackgroundSource.BACKGROUND_IMG,
-                            onValueChanged = { value ->
-                                RtcEngineInstance.virtualBackgroundSource.backgroundSourceType =
-                                    VirtualBackgroundSource.BACKGROUND_IMG
-                                RtcEngineInstance.virtualBackgroundSource.source =
-                                    FileUtils.copyFileFromAssets(
-                                        context,
-                                        "virtualbackgroud_mitao.jpg",
-                                        context.externalCacheDir!!.absolutePath
-                                    )
-                                RtcEngineInstance.virtualBackgroundSegmentation.greenCapacity =
-                                    value
-                                RtcEngineInstance.rtcEngine.enableVirtualBackground(
-                                    true,
-                                    RtcEngineInstance.virtualBackgroundSource,
-                                    RtcEngineInstance.virtualBackgroundSegmentation
-                                )
-                            }
-                        )
-                    )
-                )
-            )
-        }
+//        controllerView.pageList = ArrayList(controllerView.pageList).apply {
+//            add(
+//                BaseControllerView.PageInfo(
+//                    R.string.show_beauty_group_virtual_bg,
+//                    listOf(
+//                        BaseControllerView.ItemInfo(
+//                            R.string.show_beauty_item_none,
+//                            R.mipmap.show_beauty_ic_none,
+//                            isSelected = RtcEngineInstance.virtualBackgroundSource.backgroundSourceType == VirtualBackgroundSource.BACKGROUND_COLOR,
+//                            onValueChanged = { _ ->
+//                                RtcEngineInstance.virtualBackgroundSource.backgroundSourceType =
+//                                    VirtualBackgroundSource.BACKGROUND_COLOR
+//                                RtcEngineInstance.virtualBackgroundSegmentation.modelType = SegmentationProperty.SEG_MODEL_AI
+//                                RtcEngineInstance.virtualBackgroundSegmentation.greenCapacity = 0.5f
+//                                controllerView.updateItemInfo {
+//                                    if (it.name == R.string.show_beauty_item_virtual_bg_mitao
+//                                        || it.name == R.string.show_beauty_item_virtual_bg_blur
+//                                    ) {
+//                                        it.value = 0.5f
+//                                    }
+//                                    false
+//                                }
+//                                virtualBgBinding.mSwitchMaterial.isChecked = false
+//                                RtcEngineInstance.rtcEngine.enableVirtualBackground(
+//                                    false,
+//                                    RtcEngineInstance.virtualBackgroundSource,
+//                                    RtcEngineInstance.virtualBackgroundSegmentation
+//                                )
+//                            }
+//                        ),
+//                        BaseControllerView.ItemInfo(
+//                            R.string.show_beauty_item_virtual_bg_blur,
+//                            R.mipmap.show_beauty_ic_virtual_bg_blur,
+//                            value = RtcEngineInstance.virtualBackgroundSegmentation.greenCapacity,
+//                            isSelected = RtcEngineInstance.virtualBackgroundSource.backgroundSourceType == VirtualBackgroundSource.BACKGROUND_BLUR,
+//                            onValueChanged = { value ->
+//                                RtcEngineInstance.virtualBackgroundSource.backgroundSourceType =
+//                                    VirtualBackgroundSource.BACKGROUND_BLUR
+//                                RtcEngineInstance.virtualBackgroundSegmentation.greenCapacity =
+//                                    value
+//                                RtcEngineInstance.rtcEngine.enableVirtualBackground(
+//                                    true,
+//                                    RtcEngineInstance.virtualBackgroundSource,
+//                                    RtcEngineInstance.virtualBackgroundSegmentation
+//                                )
+//                            }
+//                        ),
+//                        BaseControllerView.ItemInfo(
+//                            R.string.show_beauty_item_virtual_bg_mitao,
+//                            R.mipmap.show_beauty_ic_virtual_bg_mitao,
+//                            value = RtcEngineInstance.virtualBackgroundSegmentation.greenCapacity,
+//                            isSelected = RtcEngineInstance.virtualBackgroundSource.backgroundSourceType == VirtualBackgroundSource.BACKGROUND_IMG,
+//                            onValueChanged = { value ->
+//                                RtcEngineInstance.virtualBackgroundSource.backgroundSourceType =
+//                                    VirtualBackgroundSource.BACKGROUND_IMG
+//                                RtcEngineInstance.virtualBackgroundSource.source =
+//                                    FileUtils.copyFileFromAssets(
+//                                        context,
+//                                        "virtualbackgroud_mitao.jpg",
+//                                        context.externalCacheDir!!.absolutePath
+//                                    )
+//                                RtcEngineInstance.virtualBackgroundSegmentation.greenCapacity =
+//                                    value
+//                                RtcEngineInstance.rtcEngine.enableVirtualBackground(
+//                                    true,
+//                                    RtcEngineInstance.virtualBackgroundSource,
+//                                    RtcEngineInstance.virtualBackgroundSegmentation
+//                                )
+//                            }
+//                        )
+//                    )
+//                )
+//            )
+//        }
 
         virtualBgBinding.mSwitchMaterial.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {

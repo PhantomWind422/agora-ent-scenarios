@@ -94,15 +94,15 @@ class ShowCreateLiveVC: UIViewController {
             
             BeautyManager.shareManager.initBeautyRender()
             
+            // 美颜设置
+            BeautyManager.shareManager.configBeautyAPI()
+            
             // 创建默认美颜效果
             ShowBeautyFaceVC.beautyData.forEach({
                 BeautyManager.shareManager.setBeauty(path: $0.path,
                                                      key: $0.key,
                                                      value: $0.value)
             })
-            
-            // 美颜设置
-            BeautyManager.shareManager.configBeautyAPI()
         }
     }
     

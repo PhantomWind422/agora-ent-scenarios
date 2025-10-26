@@ -127,8 +127,8 @@ extension ShowCreateLiveVC {
             return
         }
         
-        guard setupStResource() else {
-            let type = BeautyFactoryType.sense
+//        guard setupStResource() else {
+//            let type = BeautyFactoryType.sense
 //            self.updateDownloadProgress(title: type.title, progress: 0)
 //            AGResourceManager.autoDownload(uris: [kSenseLicUri, kSenseUri]) {[weak self] progress in
 //                self?.updateDownloadProgress(title: type.title, progress: progress)
@@ -139,12 +139,12 @@ extension ShowCreateLiveVC {
 //                setupStResource()
 //                self.checkAndSetupBeautyPath(completion: completion)
 //            }
-            return
-        }
+//            return
+//        }
         
         //setup byte effect path
-        guard setupBeResource() else {
-            let type = BeautyFactoryType.byte
+//        guard setupBeResource() else {
+//            let type = BeautyFactoryType.byte
 //            self.updateDownloadProgress(title: type.title, progress: 0)
 //            AGResourceManager.autoDownload(uris: [kByteLicUri, kByteUri]) {[weak self] progress in
 //                self?.updateDownloadProgress(title: type.title, progress: progress)
@@ -155,12 +155,12 @@ extension ShowCreateLiveVC {
 //                setupBeResource()
 //                self.checkAndSetupBeautyPath(completion: completion)
 //            }
-            return
-        }
+//            return
+//        }
         
         //setup fu effect path
-        guard setupFuResource() else {
-            let type = BeautyFactoryType.fu
+//        guard setupFuResource() else {
+//            let type = BeautyFactoryType.fu
 //            self.updateDownloadProgress(title: type.title, progress: 0)
 //            AGResourceManager.autoDownload(uris: [kFuLicUri, kFuUri]) {[weak self] progress in
 //                self?.updateDownloadProgress(title: type.title, progress: progress)
@@ -171,8 +171,8 @@ extension ShowCreateLiveVC {
 //                setupFuResource()
 //                self.checkAndSetupBeautyPath(completion: completion)
 //            }
-            return
-        }
+//            return
+//        }
         
         ShowLogger.info("checkAndSetupBeautyPath done", context: kCreateLiveVCTag)
         completion?(nil)
