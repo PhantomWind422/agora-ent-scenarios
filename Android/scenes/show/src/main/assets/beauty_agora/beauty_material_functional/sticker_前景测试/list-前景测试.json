@@ -1,0 +1,14 @@
+{
+    "lists" : [
+        {
+            "name": "前景测试_whole",
+            "type": 4,
+            "resourceType": "png",
+            "path": "前景测试/前景.png",
+            "anchor": 4,
+            "pos": [360, 0],
+            "fillScreen": true,
+            "blendMode": 0
+        }
+    ]
+}

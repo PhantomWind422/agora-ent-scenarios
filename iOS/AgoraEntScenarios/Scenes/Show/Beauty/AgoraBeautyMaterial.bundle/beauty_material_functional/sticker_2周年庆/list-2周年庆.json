@@ -1,0 +1,28 @@
+{
+    "lists" : [
+        {
+            "name": "2周年_blush",
+            "type": 3,
+            "resourceType": "png",
+            "path": "2周年庆/blush.png",
+            "anchor": 1,
+            "follow": 3,
+            "followIndex": 3,
+            "followCtrls": [109, 3, 288, 3, 199, 79],
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        },
+        {
+            "name": "2周年_headband",
+            "type": 3,
+            "resourceType": "png",
+            "path": "2周年庆/headband.png",
+            "anchor": 1,
+            "follow": 2,
+            "followIndex": 3,
+            "followCtrls": [56, 296, 420, 296, 240, 200],
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        }
+    ]
+}

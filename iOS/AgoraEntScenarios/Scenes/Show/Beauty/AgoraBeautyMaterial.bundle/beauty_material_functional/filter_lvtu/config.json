@@ -1,0 +1,7 @@
+{
+    "filter_effect_option": {
+        "enable": true,
+        "path": "../../resource/filters/lvtu.png",
+        "strength": 0.3
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "lists" : [
+        {
+            "name": "猫猫眼_whole",
+            "type": 3,
+            "resourceType": "png",
+            "path": "猫猫眼/whole_face.png",
+            "anchor": 1,
+            "follow": 1,
+            "followIndex": 3,
+            "followCtrls": [98, 54, 276, 54, 187, 131],
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        },
+        {
+            "name": "猫猫眼_headband",
+            "type": 3,
+            "resourceType": "png",
+            "path": "猫猫眼/headband.png",
+            "anchor": 1,
+            "follow": 2,
+            "followIndex": 3,
+            "followCtrls": [77, 194, 430, 194, 253, 92],
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "lists" : [
+        {
+            "name": "花海口罩_facemask",
+            "type": 3,
+            "resourceType": "png",
+            "path": "花海口罩/facemask.png",
+            "anchor": 1,
+            "follow": 11,
+            "followIndex": 3,
+            "followCtrls": [344, 109, 168, 187, 344, 370, 344, 109, 516, 187, 344, 370],
+            "blendMode": 0
+        }
+    ]
+}

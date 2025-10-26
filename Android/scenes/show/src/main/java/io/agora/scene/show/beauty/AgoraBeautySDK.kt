@@ -36,7 +36,7 @@ object AgoraBeautySDK {
             FileUtils.copyAssets(context, "${assetsPath}", destPath)
             materialCopied = true
         }
-        materialPath = "$storagePath/beauty_agora/sticker_material_v2.1.0"
+        materialPath = "$storagePath/beauty_agora/beauty_material_functional"
 
         this.rtcEngine = rtcEngine
         val ret = rtcEngine.enableExtension(
@@ -172,7 +172,7 @@ object AgoraBeautySDK {
             }
 
         // 磨皮程度，取值范围为 [0.0,1.0]，其中 0.0 表示原始磨皮程度，默认值为 0.5。取值越大，磨皮程度越大。
-        var smooth: Float = 0.5f
+        var smooth: Float = 0.35f
             set(value) {
                 field = value
                 enableBeauty(true)
@@ -180,7 +180,7 @@ object AgoraBeautySDK {
             }
 
         // 美白程度，取值范围为 [0.0,1.0]，其中 0.0 表示原始亮度，默认值为 0.6。取值越大，美白程度越大。
-        var whiten: Float = 0.6f
+        var whiten: Float = 0.25f
             set(value) {
                 field = value
                 enableBeauty(true)
@@ -188,35 +188,70 @@ object AgoraBeautySDK {
             }
 
         // 锐化程度，取值范围为 [0.0,1.0]，其中 0.0 表示原始锐度，默认值为 0.3。取值越大，锐化程度越大。
-        var sharpen: Float = 0.3f
+        var sharpen: Float = 0.15f
             set(value) {
                 field = value
                 enableBeauty(true)
                 beautyEffect?.setVideoEffectFloatParam("beauty_effect_option", "sharpness", value)
             }
 
-        var whiten_teeth: Float = 0.0f
+        var clarity: Float = 0.2f
+            set(value) {
+                field = value
+                enableBeauty(true)
+                beautyEffect?.setVideoEffectFloatParam("beauty_effect_option", "contrast_strength", value)
+            }
+
+        var redness: Float = 0.2f
+            set(value) {
+                field = value
+                enableBeauty(true)
+                beautyEffect?.setVideoEffectFloatParam("beauty_effect_option", "redness", value)
+            }
+
+        var hue: Float = 0.0f
+            set(value) {
+                field = value
+                enableBeauty(true)
+                beautyEffect?.setVideoEffectFloatParam("beauty_effect_option", "redness", value)
+            }
+
+        var saturation: Float = 0.0f
+            set(value) {
+                field = value
+                enableBeauty(true)
+                beautyEffect?.setVideoEffectFloatParam("beauty_effect_option", "saturation", value)
+            }
+
+        var brightness: Float = 0.0f
+            set(value) {
+                field = value
+                enableBeauty(true)
+                beautyEffect?.setVideoEffectFloatParam("beauty_effect_option", "brightness", value)
+            }
+
+        var whiten_teeth: Float = 0.35f
             set(value) {
                 field = value
                 enableBeauty(true)
                 beautyEffect?.setVideoEffectFloatParam("face_buffing_option", "whiten_teeth", value)
             }
 
-        var brighten_eye: Float = 0.0f
+        var brighten_eye: Float = 0.4f
             set(value) {
                 field = value
                 enableBeauty(true)
                 beautyEffect?.setVideoEffectFloatParam("face_buffing_option", "brighten_eye", value)
             }
 
-        var nasolabial_folds: Float = 0.0f
+        var nasolabial_folds: Float = 0.35f
             set(value) {
                 field = value
                 enableBeauty(true)
                 beautyEffect?.setVideoEffectFloatParam("face_buffing_option", "nasolabial_fold", value)
             }
 
-        var eye_pouch: Float = 0.0f
+        var eye_pouch: Float = 0.3f
             set(value) {
                 field = value
                 enableBeauty(true)
@@ -246,15 +281,43 @@ object AgoraBeautySDK {
             }
 
         // 大眼 对应修饰力度范围为 [0,100]，值越大，眼睛越大，预设值为 53。
-        var enlargeEye = 53
+        var enlargeEye = 30
             set(value) {
                 field = value
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYESCALE, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
+        var eyePosition = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYEPOSITION, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
+        var eyeDistance = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYEDISTANCE, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
+        var eyeInnerCorner = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYEINNERCORNER, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
+        var eyeOuterCorner = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYEOUTERCORNER, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
         // 下巴 对应修饰力度范围为 [-100,100]，正值为拉长，负值为变短，绝对值越大修饰效果越强，预设值为 -20。
-        var chinLength = -20
+        var chinLength = 15
             set(value) {
                 field = value
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_CHIN, value);
@@ -262,39 +325,81 @@ object AgoraBeautySDK {
             }
 
         // 瘦脸 对应修饰力度范围为 [0,100]，值越大瘦脸效果越强，预设值为 10。
-        var thinFace = 10
+        var thinFace = 40
             set(value) {
                 field = value
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_FACECONTOUR, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
+        var headScale = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_HEADSCALE, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
         // 瘦颧骨 对应修饰力度范围为 [0,100]，值越大颧骨越窄，预设值为 43。
-        var shrinkCheekbone = 43
+        var shrinkCheekbone = 0
             set(value) {
                 field = value
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_CHEEKBONE, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
+        var faceWidth = 10
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_FACEWIDTH, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
+        var shrinkCheek = 30
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_CHEEK, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
         // 瘦鼻 对应修饰力度范围为 [-100,100]，正值为变宽，负值为变窄，绝对值越大修饰效果越强，预设值为 72。
-        var narrowNose = 72
+        var narrowNose = 15
             set(value) {
                 field = value
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_NOSEWIDTH, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
+        var noseLength = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_NOSELENGTH, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
         // 嘴型 对应修饰力度范围为 [-100,100]，正值为变大，负值为变小，绝对值越大修饰效果越强，预设值为 20。
-        var mouthSize = 20
+        var mouthSize = 15
             set(value) {
                 field = value
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_MOUTHSCALE, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
+        var mouthPosition = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_MOUTHPOSITION, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
+        var mouthSmile = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_MOUTHSMILE, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
         // 下颌骨 对应修饰力度范围为 [0,100]，值越大脸颊越窄，预设值为 50。
-        var shrinkJawbone = 50
+        var shrinkJawbone = 0
             set(value) {
                 field = value
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_CHEEK, value);
@@ -348,73 +453,19 @@ object AgoraBeautySDK {
                 beautyEffect?.addOrUpdateVideoEffect(IVideoEffectObject.VIDEO_EFFECT_NODE_ID.STICKER.value, value)
             }
 
-        // 贴纸强度
-        var stickerStrength: Float = 0.95f
-            set(value) {
-                field = value
-                beautyEffect?.setVideoEffectFloatParam("sticker_effect_option", "strength", value)
-            }
-
         internal fun reset() {
+            beautyName = null
             beautyName = ""
-            smooth = 0.5f
-            whiten = 0.6f
-            sharpen = 0.3f
-            whiten_teeth = 0.0f
-            brighten_eye = 0.0f
-            nasolabial_folds = 0.0f
-            eye_pouch = 0.0f
             filterName = null
-            filterStrength = 0.5f
             makeupName = null
-            makeupStrength = 0.5f
             stickerName = null
-            stickerStrength = 0.5f
-
-            enlargeEye = 53
-            chinLength = -20
-            thinFace = 10
-            shrinkCheekbone = 43
-            narrowNose = 72
-            mouthSize = 20
-            shrinkJawbone = 50
-            hairlineHeight = 50
         }
 
         internal fun resume() {
             beautyName = beautyName
-            smooth = smooth
-            whiten = whiten
-            sharpen = sharpen
-            whiten_teeth = whiten_teeth
-            brighten_eye = brighten_eye
-            nasolabial_folds = nasolabial_folds
-            eye_pouch = eye_pouch
             filterName = filterName
-            filterStrength = filterStrength
             makeupName = makeupName
-            makeupStrength = makeupStrength
             stickerName = stickerName
-            stickerStrength = stickerStrength
-
-            enlargeEye =
-                rtcEngine?.getFaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYESCALE)?.shapeIntensity ?: 53
-            chinLength =
-                rtcEngine?.getFaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_CHIN)?.shapeIntensity ?: -20
-            thinFace =
-                rtcEngine?.getFaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_FACECONTOUR)?.shapeIntensity
-                    ?: 10
-            shrinkCheekbone =
-                rtcEngine?.getFaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_CHEEKBONE)?.shapeIntensity ?: 43
-            narrowNose =
-                rtcEngine?.getFaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_NOSEWIDTH)?.shapeIntensity ?: 72
-            mouthSize =
-                rtcEngine?.getFaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_MOUTHSCALE)?.shapeIntensity
-                    ?: 20
-            shrinkJawbone =
-                rtcEngine?.getFaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_CHEEK)?.shapeIntensity ?: 50
-            hairlineHeight =
-                rtcEngine?.getFaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_FOREHEAD)?.shapeIntensity ?: 50
         }
     }
 }

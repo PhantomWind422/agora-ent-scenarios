@@ -1,0 +1,36 @@
+{
+    "lists" : [
+        {
+            "name": "新年快乐_headband",
+            "type": 3,
+            "resourceType": "png",
+            "path": "新年快乐/headband.png",
+            "anchor": 1,
+            "follow": 2,
+            "followIndex": 3,
+            "followCtrls": [163, 211, 517, 211, 339, 109],
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        },
+        {
+            "name": "新年快乐_shoulder1",
+            "type": 3,
+            "resourceType": "png",
+            "path": "新年快乐/shoulder01.png",
+            "follow": 10,
+            "followIndex": 1,
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        },
+        {
+            "name": "新年快乐_shoulder2",
+            "type": 3,
+            "resourceType": "png",
+            "path": "新年快乐/shoulder02.png",
+            "follow": 10,
+            "followIndex": 2,
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        }
+    ]
+}

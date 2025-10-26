@@ -1,0 +1,26 @@
+{
+    "lists" : [
+        {
+            "name": "兔耳朵_ears",
+            "type": 3,
+            "resourceType": "png",
+            "path": "兔耳朵/bunny_ears.png",
+            "follow": 2,
+            "followIndex": 0,
+            "followOffset": [-20, -65],
+            "blendMode": 0
+        },
+        {
+            "name": "兔耳朵_blush",
+            "type": 3,
+            "resourceType": "png",
+            "path": "兔耳朵/blush.png",
+            "anchor": 1,
+            "follow": 3,
+            "followIndex": 3,
+            "followCtrls": [134, 10, 313, 10, 224, 87],
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        }
+    ]
+}

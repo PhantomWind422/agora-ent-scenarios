@@ -1,0 +1,16 @@
+{
+    "lists" : [
+        {
+            "name": "爱心_headband",
+            "type": 3,
+            "resourceType": "png",
+            "path": "爱心/headband.png",
+            "anchor": 1,
+            "follow": 2,
+            "followIndex": 3,
+            "followCtrls": [54, 204, 407, 204, 230, 101],
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        }
+    ]
+}

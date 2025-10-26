@@ -110,7 +110,7 @@ class AgoraBeautyManager: NSObject {
         // copy bundle
         copyBeautyBundle()
         // enter beauty effect
-        let path = material_copy_dest_path + "/" + "sticker_material_v2.1.0";
+        let path = material_copy_dest_path + "/" + "beauty_material_functional";
         beautyEffect = agoraKit?.createVideoEffectObject(bundlePath: path, sourceType: AgoraMediaSourceType.primaryCamera)
     }
     
@@ -131,6 +131,21 @@ class AgoraBeautyManager: NSObject {
         case "rednessLevel":
             beautyEffect?.setVideoEffectFloatParam(option: "beauty_effect_option", key: "redness", floatValue: Float(value))
         break
+        case "sharpnessLevel":
+            beautyEffect?.setVideoEffectFloatParam(option: "beauty_effect_option", key: "sharpness", floatValue: Float(value))
+        break
+        case "clarityLevel":
+            beautyEffect?.setVideoEffectFloatParam(option: "beauty_effect_option", key: "contrast_strength", floatValue: Float(value))
+        break
+        case "hue":
+            beautyEffect?.setVideoEffectFloatParam(option: "beauty_effect_option", key: "hue", floatValue: Float(value))
+        break
+        case "saturation":
+            beautyEffect?.setVideoEffectFloatParam(option: "beauty_effect_option", key: "saturation", floatValue: Float(value))
+        break
+        case "brightness":
+            beautyEffect?.setVideoEffectFloatParam(option: "beauty_effect_option", key: "brightness", floatValue: Float(value))
+        break
         
         case "forehead":
             let areaOption = AgoraFaceShapeAreaOptions()
@@ -141,6 +156,18 @@ class AgoraBeautyManager: NSObject {
         case "facecontour":
             let areaOption = AgoraFaceShapeAreaOptions()
             areaOption.shapeArea = AgoraFaceShapeArea.faceContour
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
+        case "headscale":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.headScale
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
+        case "facewidth":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.faceWidth
             areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
             agoraKit?.setFaceShapeAreaOptions(areaOption)
         break
@@ -168,15 +195,57 @@ class AgoraBeautyManager: NSObject {
             areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
             agoraKit?.setFaceShapeAreaOptions(areaOption)
         break
+        case "eyeposition":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.eyePosition
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
+        case "eyedistance":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.eyeDistance
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
+        case "eyeinnercorner":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.eyeInnerCorner
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
+        case "eyeoutercorner":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.eyeOuterCorner
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
         case "nosewidth":
             let areaOption = AgoraFaceShapeAreaOptions()
             areaOption.shapeArea = AgoraFaceShapeArea.noseWidth
             areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
             agoraKit?.setFaceShapeAreaOptions(areaOption)
         break
+        case "noselength":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.noseLength
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
         case "mouthscale":
             let areaOption = AgoraFaceShapeAreaOptions()
             areaOption.shapeArea = AgoraFaceShapeArea.mouthScale
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
+        case "mouthposition":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.mouthPosition
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
+        case "mouthsmile":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.mouthSmile
             areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
             agoraKit?.setFaceShapeAreaOptions(areaOption)
         break
@@ -229,19 +298,7 @@ class AgoraBeautyManager: NSObject {
             // load stylemakeup default template
             stickerTemplate = ""
         }
-        switch key ?? "" {
-        case "zhaocaimao":
-            stickerTemplate = "招财猫"
-        break
-        case "milu":
-            stickerTemplate = "麋鹿"
-        break
-        case "guofeng":
-            stickerTemplate = "国风"
-        break
-        default:
-        break
-        }
+        stickerTemplate = key
     }
     
     func setFilter(path: String?, key: String?, value: CGFloat) {
@@ -253,22 +310,8 @@ class AgoraBeautyManager: NSObject {
             // load filter default template
             filterTemplate = ""
         }
-        switch key ?? "" {
-        case "yuansheng":
-            filterTemplate = "原生"
-            beautyEffect?.setVideoEffectFloatParam(option: "filter_effect_option", key: "strength", floatValue: Float(value))
-        break
-        case "lengbai":
-            filterTemplate = "冷白"
-            beautyEffect?.setVideoEffectFloatParam(option: "filter_effect_option", key: "strength", floatValue: Float(value))
-        break
-        case "nenbai":
-            filterTemplate = "嫩白"
-            beautyEffect?.setVideoEffectFloatParam(option: "filter_effect_option", key: "strength", floatValue: Float(value))
-        break
-        default:
-        break
-        }
+        filterTemplate = key
+        beautyEffect?.setVideoEffectFloatParam(option: "filter_effect_option", key: "strength", floatValue: Float(value))
     }
     
     func enableBeauty(_ enabled: Bool) {

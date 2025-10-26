@@ -19,7 +19,7 @@ extension BeautyModel {
         model = BeautyModel()
         model.path = ""
         model.key = "smoothnessLevel"
-        model.value = 0.75
+        model.value = 0.35
         model.name = "show_beauty_item_beauty_smooth".show_localized
         model.icon = "meiyan_icon_mopi"
         model.isSelected = true
@@ -29,126 +29,207 @@ extension BeautyModel {
         model = BeautyModel()
         model.path = ""
         model.key = "lighteningLevel"
-        model.value = 0.75
-        model.name = "show_beauty_item_beauty_whiten".show_localized
+        model.value = 0.25
+        model.name = "美白"
         model.icon = "meiyan_icon_meibai"
         dataArray.append(model)
         
-        // Face thinning
+        // sharpen
+        model = BeautyModel()
+        model.name = "show_beauty_item_adjust_sharpen".show_localized
+        model.icon = "show_beauty_ic_adjust_sharp"
+        model.path = ""
+        model.key = "sharpnessLevel"
+        model.value = 0.15
+        dataArray.append(model)
+        
+        // clarity
+        model = BeautyModel()
+        model.name = "show_beauty_item_adjust_clarity".show_localized
+        model.icon = "show_beauty_ic_adjust_clear"
+        model.path = ""
+        model.key = "clarityLevel"
+        model.value = 0.2
+        dataArray.append(model)
+        
+        // shoulian
         model = BeautyModel()
         model.path = ""
         model.key = "facecontour"
-        model.value = 0.1
+        model.value = 0.4
         model.name = "show_beauty_item_beauty_overall".show_localized
         model.icon = "meiyan_icon_shoulian"
         dataArray.append(model)
         
-        // Cheekbone
+        // xiaolian
         model = BeautyModel()
         model.path = ""
-        model.key = "cheekbone"
-        model.value = 0.5
-        model.name = "show_beauty_item_beauty_cheekbone".show_localized
-        model.icon = "meiyan_icon_xiahegu"
-        dataArray.append(model)
-        
-        // Eye enlarging
-        model = BeautyModel()
-        model.path = ""
-        model.key = "eyescale"
-        model.value = 0.53
-        model.name = "show_beauty_item_beauty_eye".show_localized
-        model.icon = "meiyan_icon_dayan"
-        dataArray.append(model)
-        
-        // Nose thinning
-        model = BeautyModel()
-        model.path = ""
-        model.key = "nosewidth"
-        model.value = 0.72
-        model.name = "show_beauty_item_beauty_nose".show_localized
-        model.icon = "meiyan_icon_shoubi"
-        dataArray.append(model)
-        
-        // Chin lengthening
-        model = BeautyModel()
-        model.path = ""
-        model.key = "chin"
+        model.key = "headscale"
         model.value = 0
-        model.name = "show_beauty_item_beauty_agora_chin".show_localized
-        model.icon = "meiyan_icon_xiaba"
+        model.name = "小脸"
+        model.icon = "meiyan_icon_shoulian"
         dataArray.append(model)
         
-        // Cheekbone thinning
+        // zhailian
         model = BeautyModel()
         model.path = ""
-        model.key = "cheekbone"
-        model.value = 0.43
-        model.name = "show_beauty_item_beauty_cheekbones_chin".show_localized
-        model.icon = "meiyan_icon_shouquangu"
+        model.key = "facewidth"
+        model.value = 0.1
+        model.name = "窄脸"
+        model.icon = "meiyan_icon_shoulian"
         dataArray.append(model)
         
         // Jawline
         model = BeautyModel()
         model.path = ""
         model.key = "cheek"
-        model.value = 0.1
+        model.value = 0.3
         model.name = "show_beauty_item_beauty_jawbone".show_localized
         model.icon = "meiyan_icon_xiahegu"
+        dataArray.append(model)
+        
+        // Chin lengthening
+        model = BeautyModel()
+        model.path = ""
+        model.key = "chin"
+        model.value = 0.15
+        model.name = "show_beauty_item_beauty_agora_chin".show_localized
+        model.icon = "meiyan_icon_xiaba"
         dataArray.append(model)
         
         // Hairline
         model = BeautyModel()
         model.path = ""
         model.key = "forehead"
-        model.value = 0.5
+        model.value = 0.0
         model.name = "show_beauty_item_beauty_hairline".show_localized
         model.icon = "meiyan_icon_etou"
-        dataArray.append(model)
-        
-        // Mouth shape
-        model = BeautyModel()
-        model.path = ""
-        model.key = "mouthscale"
-        model.value = 0.2
-        model.name = "show_beauty_item_beauty_mouth".show_localized
-        model.icon = "meiyan_icon_zuixing"
-        dataArray.append(model)
-        
-        // whiten teeth
-        model = BeautyModel()
-        model.path = ""
-        model.key = "whitenTeeth"
-        model.value = 0.0
-        model.name = "show_beauty_item_beauty_teeth".show_localized
-        model.icon = "meiyan_icon_meiya"
-        dataArray.append(model)
-        
-        // brighten eye
-        model = BeautyModel()
-        model.path = ""
-        model.key = "brightenEye"
-        model.value = 0.0
-        model.name = "show_beauty_item_beauty_liangyan".show_localized
-        model.icon = "meiyan_icon_liangyan"
         dataArray.append(model)
         
         // remove nasolabial fold
         model = BeautyModel()
         model.path = ""
         model.key = "nasolabialFolds"
-        model.value = 0.0
+        model.value = 0.35
         model.name = "show_beauty_item_beauty_qufalingwen".show_localized
         model.icon = "meiyan_icon_qufalingwen"
+        dataArray.append(model)
+        
+        // Eye enlarging
+        model = BeautyModel()
+        model.path = ""
+        model.key = "eyescale"
+        model.value = 0.3
+        model.name = "show_beauty_item_beauty_eye".show_localized
+        model.icon = "meiyan_icon_dayan"
+        dataArray.append(model)
+        
+        // eye position
+        model = BeautyModel()
+        model.path = ""
+        model.key = "eyeposition"
+        model.value = 0.0
+        model.name = "眼移动"
+        model.icon = "meiyan_icon_intensityEyeHeight"
+        dataArray.append(model)
+        
+        // eye distance
+        model = BeautyModel()
+        model.path = ""
+        model.key = "eyedistance"
+        model.value = 0.0
+        model.name = "眼距"
+        model.icon = "meiyan_icon_eyeSpace"
+        dataArray.append(model)
+        
+        // eye innercorner
+        model = BeautyModel()
+        model.path = ""
+        model.key = "eyeinnercorner"
+        model.value = 0.0
+        model.name = "内眼角"
+        model.icon = "meiyan_icon_eyeLid"
+        dataArray.append(model)
+        
+        // eye outercorner
+        model = BeautyModel()
+        model.path = ""
+        model.key = "eyeoutercorner"
+        model.value = 0.0
+        model.name = "外眼角"
+        model.icon = "meiyan_icon_eyeLid"
+        dataArray.append(model)
+        
+        // brighten eye
+        model = BeautyModel()
+        model.path = ""
+        model.key = "brightenEye"
+        model.value = 0.4
+        model.name = "show_beauty_item_beauty_liangyan".show_localized
+        model.icon = "meiyan_icon_liangyan"
         dataArray.append(model)
         
         // remove eye pouch
         model = BeautyModel()
         model.path = ""
         model.key = "eyePouch"
-        model.value = 0.0
+        model.value = 0.3
         model.name = "show_beauty_item_beauty_heiyanquan".show_localized
         model.icon = "meiyan_icon_heiyanquan"
+        dataArray.append(model)
+        
+        // Nose thinning
+        model = BeautyModel()
+        model.path = ""
+        model.key = "nosewidth"
+        model.value = 0.15
+        model.name = "show_beauty_item_beauty_nose".show_localized
+        model.icon = "meiyan_icon_shoubi"
+        dataArray.append(model)
+        
+        // Nose length
+        model = BeautyModel()
+        model.path = ""
+        model.key = "noselength"
+        model.value = 0.0
+        model.name = "长鼻"
+        model.icon = "meiyan_icon_changbi"
+        dataArray.append(model)
+        
+        // Mouth shape
+        model = BeautyModel()
+        model.path = ""
+        model.key = "mouthscale"
+        model.value = 0.15
+        model.name = "show_beauty_item_beauty_mouth".show_localized
+        model.icon = "meiyan_icon_zuixing"
+        dataArray.append(model)
+        
+        // Mouth position
+        model = BeautyModel()
+        model.path = ""
+        model.key = "mouthposition"
+        model.value = 0.0
+        model.name = "缩人中"
+        model.icon = "meiyan_icon_mouthPosition"
+        dataArray.append(model)
+        
+        // smile
+        model = BeautyModel()
+        model.path = ""
+        model.key = "mouthsmile"
+        model.value = 0.0
+        model.name = "微笑"
+        model.icon = "meiyan_icon_smile"
+        dataArray.append(model)
+        
+        // whiten teeth
+        model = BeautyModel()
+        model.path = ""
+        model.key = "whitenTeeth"
+        model.value = 0.35
+        model.name = "show_beauty_item_beauty_teeth".show_localized
+        model.icon = "meiyan_icon_meiya"
         dataArray.append(model)
         
         return dataArray
@@ -164,11 +245,35 @@ extension BeautyModel {
         dataArray.append(model)
         
         model = BeautyModel()
-        model.name = "show_beauty_item_adjust_sharpen".show_localized
-        model.icon = "show_beauty_ic_adjust_sharp"
         model.path = ""
-        model.key = "sharpnessLevel"
-        model.value = 0
+        model.key = "rednessLevel"
+        model.value = 0.2
+        model.name = "红润"
+        model.icon = "meiyan_icon_meibai_hongrun"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "hue"
+        model.value = 0.0
+        model.name = "色调"
+        model.icon = "show_beauty_ic_adjust_clear"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "saturation"
+        model.value = 0.0
+        model.name = "饱合度"
+        model.icon = "show_beauty_ic_adjust_saturation"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "brightness"
+        model.value = 0.0
+        model.name = "亮度"
+        model.icon = "show_beauty_ic_adjust_clear"
         dataArray.append(model)
                 
         return dataArray
@@ -182,31 +287,92 @@ extension BeautyModel {
         model.isSelected = true
         dataArray.append(model)
         
-        // Original
         model = BeautyModel()
         model.path = ""
-        model.key = "yuansheng"
-        model.value = 0.7
-        model.name = "show_beauty_item_effect_lut_yuansheng".show_localized
+        model.key = "CT"
+        model.value = 0.5
+        model.name = "CT"
         model.icon = "meiyan_icon_yuansheng"
         dataArray.append(model)
         
-        // Fresh white
         model = BeautyModel()
         model.path = ""
-        model.key = "nenbai"
-        model.value = 0.7
-        model.name = "show_beauty_item_effect_lut_nenbai".show_localized
+        model.key = "暖黄"
+        model.value = 0.5
+        model.name = "暖黄"
         model.icon = "meiyan_icon_nenbai"
         dataArray.append(model)
         
-        // Cool white
         model = BeautyModel()
         model.path = ""
-        model.key = "lengbai"
-        model.value = 0.7
-        model.name = "show_beauty_item_effect_lut_lengbai".show_localized
+        model.key = "旅途"
+        model.value = 0.5
+        model.name = "旅途"
         model.icon = "meiyan_icon_lengbai"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "美式胶片"
+        model.value = 0.5
+        model.name = "美式胶片"
+        model.icon = "meiyan_icon_yuansheng"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "蓝调胶片"
+        model.value = 0.5
+        model.name = "蓝调胶片"
+        model.icon = "meiyan_icon_nenbai"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "日杂"
+        model.value = 0.5
+        model.name = "日杂"
+        model.icon = "meiyan_icon_lengbai"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "京都"
+        model.value = 0.5
+        model.name = "京都"
+        model.icon = "meiyan_icon_yuansheng"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "爱之城"
+        model.value = 0.5
+        model.name = "爱之城"
+        model.icon = "meiyan_icon_nenbai"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "蜜桃"
+        model.value = 0.5
+        model.name = "蜜桃"
+        model.icon = "meiyan_icon_lengbai"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "黑金"
+        model.value = 0.5
+        model.name = "黑金"
+        model.icon = "meiyan_icon_yuansheng"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "洛丽塔"
+        model.value = 0.5
+        model.name = "洛丽塔"
+        model.icon = "meiyan_icon_nenbai"
         dataArray.append(model)
         
         return dataArray
@@ -220,7 +386,7 @@ extension BeautyModel {
         model.isSelected = true
         dataArray.append(model)
         
-        // Mixed blood
+        // xuejie
         model = BeautyModel()
         model.path = ""
         model.key = "xuejie"
@@ -229,7 +395,7 @@ extension BeautyModel {
         model.icon = "meiyan_hunxue"
         dataArray.append(model)
         
-        // European and American
+        // xuemei
         model = BeautyModel()
         model.path = ""
         model.key = "xuemei"
@@ -251,25 +417,113 @@ extension BeautyModel {
         
         model = BeautyModel()
         model.path = ""
-        model.key = "zhaocaimao"
-        model.value = 0.5
-        model.name = "show_beauty_item_sticker_zhaocaimao".show_localized
+        model.key = "2周年庆"
+        model.name = "2周年庆"
         model.icon = "meiyan_sticker_zhaocaimao"
         dataArray.append(model)
         
         model = BeautyModel()
         model.path = ""
-        model.key = "milu"
-        model.value = 0.5
-        model.name = "show_beauty_item_sticker_milu".show_localized
-        model.icon = "sdlu"
+        model.key = "3周年庆"
+        model.name = "3周年庆"
+        model.icon = "meiyan_sticker_zhaocaimao"
         dataArray.append(model)
         
         model = BeautyModel()
         model.path = ""
-        model.key = "guofeng"
-        model.value = 0.5
-        model.name = "show_beauty_item_sticker_guofeng".show_localized
+        model.key = "爱心"
+        model.name = "爱心"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "哈芝节"
+        model.name = "哈芝节"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "蝴蝶结"
+        model.name = "蝴蝶结"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "花海口罩"
+        model.name = "花海口罩"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "滑雪镜"
+        model.name = "滑雪镜"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "猫猫眼"
+        model.name = "猫猫眼"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "前景测试"
+        model.name = "前景测试"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "世界杯"
+        model.name = "世界杯"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "屠妖节"
+        model.name = "屠妖节"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "兔耳朵"
+        model.name = "兔耳朵"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "兔子耳朵"
+        model.name = "兔子耳朵"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "兔子眼罩"
+        model.name = "兔子眼罩"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "小熊眼罩"
+        model.name = "小熊眼罩"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "新年快乐"
+        model.name = "新年快乐"
         model.icon = "meiyan_sticker_zhaocaimao"
         dataArray.append(model)
         

@@ -1,0 +1,28 @@
+{
+    "lists" : [
+        {
+            "name": "世界杯_blush",
+            "type": 3,
+            "resourceType": "png",
+            "path": "世界杯/eye_mask.png",
+            "anchor": 1,
+            "follow": 3,
+            "followIndex": 3,
+            "followCtrls": [89, -42, 268, -42, 179, 35],
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        },
+        {
+            "name": "世界杯_headband",
+            "type": 3,
+            "resourceType": "png",
+            "path": "世界杯/scarf.png",
+            "anchor": 1,
+            "follow": 2,
+            "followIndex": 3,
+            "followCtrls": [168, 310, 521, 310, 344, 207],
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        }
+    ]
+}

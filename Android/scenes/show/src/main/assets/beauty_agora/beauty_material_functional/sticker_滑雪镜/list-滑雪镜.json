@@ -1,0 +1,16 @@
+{
+    "lists" : [
+        {
+            "name": "滑雪镜_whole",
+            "type": 3,
+            "resourceType": "png",
+            "path": "滑雪镜/whole_face.png",
+            "anchor": 1,
+            "follow": 1,
+            "followIndex": 3,
+            "followCtrls": [221, 379, 400, 379, 311, 455],
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        }
+    ]
+}
