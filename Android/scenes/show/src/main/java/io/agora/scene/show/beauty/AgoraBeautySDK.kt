@@ -213,7 +213,7 @@ object AgoraBeautySDK {
             set(value) {
                 field = value
                 enableBeauty(true)
-                beautyEffect?.setVideoEffectFloatParam("beauty_effect_option", "redness", value)
+                beautyEffect?.setVideoEffectFloatParam("beauty_effect_option", "hue", value)
             }
 
         var saturation: Float = 0.0f

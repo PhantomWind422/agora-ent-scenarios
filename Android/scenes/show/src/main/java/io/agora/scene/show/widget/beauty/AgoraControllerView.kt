@@ -515,16 +515,6 @@ class AgoraControllerView : BaseControllerView {
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_sticker4,
-                        R.mipmap.show_beauty_ic_sticer_zhaocaimao,
-                        withPadding = false,
-                        isSelected = beautyConfig.stickerName == "哈芝节",
-                        onValueChanged = { value ->
-                            beautyConfig.sticker = true
-                            beautyConfig.stickerName = "哈芝节"
-                        }
-                    ),
-                    ItemInfo(
                         R.string.show_beauty_item_sticker5,
                         R.mipmap.show_beauty_ic_sticer_zhaocaimao,
                         withPadding = false,
@@ -562,17 +552,6 @@ class AgoraControllerView : BaseControllerView {
                         onValueChanged = { value ->
                             beautyConfig.sticker = true
                             beautyConfig.stickerName = "猫猫眼"
-
-                        }
-                    ),
-                    ItemInfo(
-                        R.string.show_beauty_item_sticker9,
-                        R.mipmap.show_beauty_ic_sticer_zhaocaimao,
-                        withPadding = false,
-                        isSelected = beautyConfig.stickerName == "前景测试",
-                        onValueChanged = { value ->
-                            beautyConfig.sticker = true
-                            beautyConfig.stickerName = "前景测试"
 
                         }
                     ),
