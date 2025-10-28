@@ -61,13 +61,13 @@ extension ShowAgoraKitManager {
     
     func setupAudienceProfile() {
         setSuperResolutionOn(true)
-        setPVCon(true)
+        setPVCon(false)
         _presetValuesWith(encodeSize: ._360x640, fps: .fps15, bitRate: 0, h265On: true)
     }
     
     func setupBroadcasterProfile() {
         setSuperResolutionOn(false)
-        setPVCon(true)
+        setPVCon(false)
         updateVideoProfileForMode(.single)
     }
     
