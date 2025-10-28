@@ -3,7 +3,7 @@
         "enable_mu": true,
         "resPath": "../../resource",
         "browStyle": 2,
-        "browColor": 2,
+        "browColor": 1,
         "browStrength": 1.0,
         "lashStyle": 4,
         "lashColor": 1,
@@ -18,7 +18,7 @@
         "lipStyle": 3,
         "lipColor": 4,
         "lipStrength": 1.0,
-        "facialStyle": 2,
+        "facialStyle": 7,
         "facialStrength": 1.0,
         "wocanStyle": 2,
         "wocanStrength": 0.0
