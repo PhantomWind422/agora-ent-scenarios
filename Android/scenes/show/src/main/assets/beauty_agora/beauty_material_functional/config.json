@@ -38,5 +38,12 @@
         "小熊眼罩": "sticker_小熊眼罩/",
         "新年快乐": "sticker_新年快乐/"
     },
-    "beauty_config" : "美颜模板"
+    "beauty_config" : "美颜模板",
+    "beauty_custom_option": {
+        "brightness_scale": 1.5
+    },
+    "face_shape_custom_option": {
+        "eye_custom_factor": 1.5,
+        "mouth_custom_factor": 1.5
+    }
 }

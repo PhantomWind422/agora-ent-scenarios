@@ -40,6 +40,11 @@
     },
     "beauty_config" : "美颜模板",
     "beauty_custom_option": {
-        "auto_sharpness": true
+        "auto_sharpness": true,
+        "brightness_scale": 1.5
+    },
+    "face_shape_custom_option": {
+        "eye_custom_factor": 1.5,
+        "mouth_custom_factor": 1.5
     }
 }
