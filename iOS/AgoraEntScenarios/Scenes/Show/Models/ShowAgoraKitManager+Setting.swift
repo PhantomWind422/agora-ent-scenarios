@@ -18,14 +18,14 @@ enum ShowMode {
     case pk // pk模式
 }
 
-private let fpsItems: [AgoraVideoFrameRate] = [
-    .fps1,
-    .fps7,
-    .fps10,
-    .fps15,
-    .fps24,
-    .fps30,
-    .fps60
+private let fpsItems: [Int] = [
+    1,
+    7,
+    10,
+    15,
+    24,
+    30,
+    60
 ]
 
 // 超分倍数
@@ -56,13 +56,13 @@ class ShowRTCParams {
 extension ShowAgoraKitManager {
     
     func updateAudienceProfile() {
-        _presetValuesWith(encodeSize: ._360x640, fps: .fps15, bitRate: 0, h265On: true)
+        _presetValuesWith(encodeSize: ._360x640, fps: 15, bitRate: 0, h265On: true)
     }
     
     func setupAudienceProfile() {
         setSuperResolutionOn(true)
         setPVCon(false)
-        _presetValuesWith(encodeSize: ._360x640, fps: .fps15, bitRate: 0, h265On: true)
+        _presetValuesWith(encodeSize: ._360x640, fps: 15, bitRate: 0, h265On: true)
     }
     
     func setupBroadcasterProfile() {
@@ -130,7 +130,7 @@ extension ShowAgoraKitManager {
     }
     
     // 预设模式
-    private func _presetValuesWith(encodeSize: ShowAgoraVideoDimensions, fps: AgoraVideoFrameRate, bitRate: Float, h265On: Bool) {
+    private func _presetValuesWith(encodeSize: ShowAgoraVideoDimensions, fps: Int, bitRate: Float, h265On: Bool) {
         if AppContext.shared.isDeveloperMode {
             return
         }
@@ -161,17 +161,17 @@ extension ShowAgoraKitManager {
         rtcParam.suggested = true
         if (showMode == .single) {
             if (machine == .high) {
-                _presetValuesWith(encodeSize: ._1080x1920, fps: .fps24, bitRate: 0, h265On: true)
+                _presetValuesWith(encodeSize: ._1080x1920, fps: 24, bitRate: 0, h265On: true)
             } else if (machine == .medium) {
-                _presetValuesWith(encodeSize: ._720x1280, fps: .fps24, bitRate: 0, h265On: true)
+                _presetValuesWith(encodeSize: ._720x1280, fps: 24, bitRate: 0, h265On: true)
             } else if (machine == .low) {
-                _presetValuesWith(encodeSize: ._720x1280, fps: .fps15, bitRate: 0, h265On: true)
+                _presetValuesWith(encodeSize: ._720x1280, fps: 15, bitRate: 0, h265On: true)
             }
         } else {
             if (machine == .high) {
-                _presetValuesWith(encodeSize: ._720x1280, fps: .fps15, bitRate: 0, h265On: true)
+                _presetValuesWith(encodeSize: ._720x1280, fps: 15, bitRate: 0, h265On: true)
             } else {
-                _presetValuesWith(encodeSize: ._540x960, fps: .fps15, bitRate: 0, h265On: true)
+                _presetValuesWith(encodeSize: ._540x960, fps: 15, bitRate: 0, h265On: true)
             }
         }
     }
@@ -229,7 +229,7 @@ extension ShowAgoraKitManager {
             let captureConfig = getCaptureConfig()
             encoderConfig.frameRate = fpsItems[index]
             // 采集帧率
-            captureConfig.frameRate = Int32(fpsItems[index].rawValue)
+            captureConfig.frameRate = Int32(fpsItems[index])
             engine?.setCameraCapturerConfiguration(captureConfig)
             if let currentChannelId = currentChannelId {
                 updateVideoEncoderConfigurationForConnenction(currentChannelId: currentChannelId)
@@ -265,7 +265,7 @@ extension ShowAgoraKitManager {
                 encoderConfig.dimensions = CGSize(width: encodeWidth, height: encodeHeight)
             }
             if let fps: Int = UserDefaults.standard.value(forKey: kEncodeFPS) as? Int {
-                encoderConfig.frameRate =  AgoraVideoFrameRate(rawValue: fps) ?? .fps15
+                encoderConfig.frameRate = fps
             }
             if let bitrate: Int = UserDefaults.standard.value(forKey: kEncodeBitrate) as? Int {
                 encoderConfig.bitrate = bitrate
@@ -313,7 +313,7 @@ extension ShowAgoraKitManager {
         
         let fpsIndex = ShowSettingKey.FPS.intValue
         let idx = fpsIndex % fpsItems.count
-        config.frameRate = Int32(fpsItems[idx].rawValue)
+        config.frameRate = Int32(fpsItems[idx])
         
         return config
     }
