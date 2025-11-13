@@ -15,6 +15,16 @@ extension BeautyModel {
         model.icon = "show_beauty_none"
         dataArray.append(model)
         
+        // template
+        model = BeautyModel()
+        model.path = ""
+        model.key = "templateBaitu"
+        model.value = 0
+        model.name = "模板-白兔"
+        model.icon = "meiyan_fgz_tianmei"
+        model.isSelected = true
+        dataArray.append(model)
+        
         // smoothness
         model = BeautyModel()
         model.path = ""
@@ -22,15 +32,38 @@ extension BeautyModel {
         model.value = 0.35
         model.name = "show_beauty_item_beauty_smooth".show_localized
         model.icon = "meiyan_icon_mopi"
-        model.isSelected = true
         dataArray.append(model)
         
         // whiten
         model = BeautyModel()
         model.path = ""
-        model.key = "lighteningLevel"
+        model.key = "whitenNatural"
         model.value = 0.25
-        model.name = "美白"
+        model.name = "自然白"
+        model.icon = "meiyan_icon_meibai"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "whitenCold"
+        model.value = 0.25
+        model.name = "冷白"
+        model.icon = "meiyan_icon_meibai"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "whitenPink"
+        model.value = 0.25
+        model.name = "粉白"
+        model.icon = "meiyan_icon_meibai"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "whitenSuper"
+        model.value = 0.25
+        model.name = "超白"
         model.icon = "meiyan_icon_meibai"
         dataArray.append(model)
         
@@ -50,6 +83,30 @@ extension BeautyModel {
         model.path = ""
         model.key = "clarityLevel"
         model.value = 0.2
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "fsstyleFemale"
+        model.value = 0.0
+        model.name = "美型-女"
+        model.icon = "meiyan_icon_shoulian"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "fsstyleMale"
+        model.value = 0.0
+        model.name = "美型-男"
+        model.icon = "meiyan_icon_shoulian"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "fsstyleNatural"
+        model.value = 0.0
+        model.name = "美型-自然"
+        model.icon = "meiyan_icon_shoulian"
         dataArray.append(model)
         
         // shoulian
@@ -142,24 +199,6 @@ extension BeautyModel {
         model.icon = "meiyan_icon_eyeSpace"
         dataArray.append(model)
         
-        // eye innercorner
-        model = BeautyModel()
-        model.path = ""
-        model.key = "eyeinnercorner"
-        model.value = 0.0
-        model.name = "内眼角"
-        model.icon = "meiyan_icon_eyeLid"
-        dataArray.append(model)
-        
-        // eye outercorner
-        model = BeautyModel()
-        model.path = ""
-        model.key = "eyeoutercorner"
-        model.value = 0.0
-        model.name = "外眼角"
-        model.icon = "meiyan_icon_eyeLid"
-        dataArray.append(model)
-        
         // brighten eye
         model = BeautyModel()
         model.path = ""
@@ -230,6 +269,24 @@ extension BeautyModel {
         model.value = 0.35
         model.name = "show_beauty_item_beauty_teeth".show_localized
         model.icon = "meiyan_icon_meiya"
+        dataArray.append(model)
+        
+        // eyebrow position
+        model = BeautyModel()
+        model.path = ""
+        model.key = "eyebrowposition"
+        model.value = 0.0
+        model.name = "眉上下"
+        model.icon = "meiyan_icon_browPosition"
+        dataArray.append(model)
+        
+        // eyebrow thickness
+        model = BeautyModel()
+        model.path = ""
+        model.key = "eyebrowthickness"
+        model.value = 0.0
+        model.name = "眉粗细"
+        model.icon = "meiyan_icon_browThickness"
         dataArray.append(model)
         
         return dataArray
@@ -401,6 +458,24 @@ extension BeautyModel {
         model.key = "xuemei"
         model.value = 0.5
         model.name = "show_beauty_item_effect_xuemei".show_localized
+        model.icon = "meiyan_oumei"
+        dataArray.append(model)
+        
+        // baitu1
+        model = BeautyModel()
+        model.path = ""
+        model.key = "baitu1"
+        model.value = 0.5
+        model.name = "白兔妆1"
+        model.icon = "meiyan_hunxue"
+        dataArray.append(model)
+        
+        // baitu2
+        model = BeautyModel()
+        model.path = ""
+        model.key = "baitu2"
+        model.value = 0.5
+        model.name = "白兔妆2"
         model.icon = "meiyan_oumei"
         dataArray.append(model)
         

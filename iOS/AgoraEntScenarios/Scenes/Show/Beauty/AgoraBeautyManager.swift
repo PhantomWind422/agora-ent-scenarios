@@ -122,10 +122,26 @@ class AgoraBeautyManager: NSObject {
         // beauty has no template ui selection. use default template
         beautyTemplate = ""
         switch key ?? "" {
+        case "templateBaitu":
+            beautyTemplate = "美颜模板"
+        break
         case "smoothnessLevel":
             beautyEffect?.setVideoEffectFloatParam(option: "beauty_effect_option", key: "smoothness", floatValue: Float(value))
         break
-        case "lighteningLevel":
+        case "whitenNatural":
+            beautyEffect?.setVideoEffectStringParam(option: "beauty_effect_option", key: "whiten_lut_path", stringValue: "")
+            beautyEffect?.setVideoEffectFloatParam(option: "beauty_effect_option", key: "lightness", floatValue: Float(value))
+        break
+        case "whitenCold":
+            beautyEffect?.setVideoEffectStringParam(option: "beauty_effect_option", key: "whiten_lut_path", stringValue: "../resource/whiten/lengbai.png")
+            beautyEffect?.setVideoEffectFloatParam(option: "beauty_effect_option", key: "lightness", floatValue: Float(value))
+        break
+        case "whitenPink":
+            beautyEffect?.setVideoEffectStringParam(option: "beauty_effect_option", key: "whiten_lut_path", stringValue: "../resource/whiten/fenbai.png")
+            beautyEffect?.setVideoEffectFloatParam(option: "beauty_effect_option", key: "lightness", floatValue: Float(value))
+        break
+        case "whitenSuper":
+            beautyEffect?.setVideoEffectStringParam(option: "beauty_effect_option", key: "whiten_lut_path", stringValue: "../resource/whiten/chaobai.png")
             beautyEffect?.setVideoEffectFloatParam(option: "beauty_effect_option", key: "lightness", floatValue: Float(value))
         break
         case "rednessLevel":
@@ -146,7 +162,19 @@ class AgoraBeautyManager: NSObject {
         case "brightness":
             beautyEffect?.setVideoEffectFloatParam(option: "beauty_effect_option", key: "brightness", floatValue: Float(value))
         break
-        
+             
+        case "fsstyleFemale":
+            beautyEffect?.setVideoEffectIntParam(option: "face_shape_beauty_option", key: "style", intValue: 0)
+            beautyEffect?.setVideoEffectIntParam(option: "face_shape_beauty_option", key: "intensity", intValue: AgoraBeautyManager.castToPositive100(Float(value)))
+        break
+        case "fsstyleMale":
+             beautyEffect?.setVideoEffectIntParam(option: "face_shape_beauty_option", key: "style", intValue: 1)
+             beautyEffect?.setVideoEffectIntParam(option: "face_shape_beauty_option", key: "intensity", intValue: AgoraBeautyManager.castToPositive100(Float(value)))
+        break
+        case "fsstyleNatural":
+             beautyEffect?.setVideoEffectIntParam(option: "face_shape_beauty_option", key: "style", intValue: 2)
+             beautyEffect?.setVideoEffectIntParam(option: "face_shape_beauty_option", key: "intensity", intValue: AgoraBeautyManager.castToPositive100(Float(value)))
+        break
         case "forehead":
             let areaOption = AgoraFaceShapeAreaOptions()
             areaOption.shapeArea = AgoraFaceShapeArea.forehead
@@ -207,15 +235,15 @@ class AgoraBeautyManager: NSObject {
             areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
             agoraKit?.setFaceShapeAreaOptions(areaOption)
         break
-        case "eyeinnercorner":
+        case "eyebrowposition":
             let areaOption = AgoraFaceShapeAreaOptions()
-            areaOption.shapeArea = AgoraFaceShapeArea.eyeInnerCorner
+            areaOption.shapeArea = AgoraFaceShapeArea.eyebrowPosition
             areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
             agoraKit?.setFaceShapeAreaOptions(areaOption)
         break
-        case "eyeoutercorner":
+        case "eyebrowthickness":
             let areaOption = AgoraFaceShapeAreaOptions()
-            areaOption.shapeArea = AgoraFaceShapeArea.eyeOuterCorner
+            areaOption.shapeArea = AgoraFaceShapeArea.eyebrowThickness
             areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
             agoraKit?.setFaceShapeAreaOptions(areaOption)
         break
@@ -282,6 +310,14 @@ class AgoraBeautyManager: NSObject {
         break
         case "xuemei":
             makeupTemplate = "学妹妆"
+            beautyEffect?.setVideoEffectFloatParam(option: "style_makeup_option", key: "styleIntensity", floatValue: Float(value))
+        break
+        case "baitu1":
+            makeupTemplate = "白兔妆1"
+            beautyEffect?.setVideoEffectFloatParam(option: "style_makeup_option", key: "styleIntensity", floatValue: Float(value))
+        break
+        case "baitu2":
+            makeupTemplate = "白兔妆2"
             beautyEffect?.setVideoEffectFloatParam(option: "style_makeup_option", key: "styleIntensity", floatValue: Float(value))
         break
         default:

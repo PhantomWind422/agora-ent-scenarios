@@ -10,6 +10,8 @@
         "美颜模板": "beauty_baitu/",
         "学姐妆": "stylemakeup_xuejie/",
         "学妹妆": "stylemakeup_xuemei/",
+        "白兔妆1": "stylemakeup_baitu1/",
+        "白兔妆2": "stylemakeup_baitu2/",
         "CT" : "filter_ct/",
         "暖黄" : "filter_nuanhuang/",
         "旅途" : "filter_lvtu/",
@@ -40,10 +42,12 @@
     },
     "beauty_config" : "美颜模板",
     "beauty_custom_option": {
-        "brightness_scale": 1.5
+        "smooth_factor": 1.0
     },
     "face_shape_custom_option": {
-        "eye_custom_factor": 1.5,
-        "mouth_custom_factor": 1.5
+        "face_custom_factor": 1.2,
+        "eye_custom_factor": 1.2,
+        "mouth_custom_factor": 1.2,
+        "max_crop_percent": 0.02
     }
 }

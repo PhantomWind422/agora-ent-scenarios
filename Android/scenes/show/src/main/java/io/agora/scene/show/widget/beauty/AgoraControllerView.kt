@@ -28,14 +28,48 @@ class AgoraControllerView : BaseControllerView {
                         R.string.show_beauty_item_none,
                         R.mipmap.show_beauty_ic_none,
                         onValueChanged = { _ ->
-                            beautyConfig.beauty = false
+                            beautyConfig.beautyName = null
                         }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_baitu,
+                        R.mipmap.show_beauty_ic_effect_tianmei,
+                        isSelected = true,
+                        onValueChanged = { _ ->
+                            beautyConfig.beautyName = "美颜模板"
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_faceshape_female,
+                        R.mipmap.show_beauty_ic_effect_tianmei,
+                        beautyConfig.femaleStyle.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.femaleStyle = value.toInt()
+                        },
+                        valueRange =  0f..100f
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_faceshape_male,
+                        R.mipmap.show_beauty_ic_effect_tianmei,
+                        beautyConfig.maleStyle.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.maleStyle = value.toInt()
+                        },
+                        valueRange =  0f..100f
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_faceshape_natural,
+                        R.mipmap.show_beauty_ic_effect_tianmei,
+                        beautyConfig.naturalStyle.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.naturalStyle = value.toInt()
+                        },
+                        valueRange =  0f..100f
                     ),
                     ItemInfo(
                         R.string.show_beauty_item_beauty_smooth,
                         R.mipmap.show_beauty_ic_face_mopi,
                         beautyConfig.smooth,
-                        isSelected = true,
                         onValueChanged = { value ->
                             beautyConfig.smooth = value
                         }
@@ -43,9 +77,33 @@ class AgoraControllerView : BaseControllerView {
                     ItemInfo(
                         R.string.show_beauty_item_beauty_whiten,
                         R.mipmap.show_beauty_ic_face_meibai,
-                        beautyConfig.whiten,
+                        beautyConfig.whitenNatural,
                         onValueChanged = { value ->
-                            beautyConfig.whiten = value
+                            beautyConfig.whitenNatural = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_beauty_whiten_cold,
+                        R.mipmap.show_beauty_ic_face_meibai,
+                        beautyConfig.whitenCold,
+                        onValueChanged = { value ->
+                            beautyConfig.whitenCold = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_beauty_whiten_pink,
+                        R.mipmap.show_beauty_ic_face_meibai,
+                        beautyConfig.whitenPink,
+                        onValueChanged = { value ->
+                            beautyConfig.whitenPink = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_beauty_whiten_super,
+                        R.mipmap.show_beauty_ic_face_meibai,
+                        beautyConfig.whitenSuper,
+                        onValueChanged = { value ->
+                            beautyConfig.whitenSuper = value
                         }
                     ),
                     ItemInfo(
@@ -154,24 +212,6 @@ class AgoraControllerView : BaseControllerView {
                         valueRange =  0f..100f
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_beauty_eye_innercorner,
-                        R.mipmap.show_beauty_ic_face_eye,
-                        beautyConfig.eyeInnerCorner.toFloat(),
-                        onValueChanged = { value ->
-                            beautyConfig.eyeInnerCorner = value.toInt()
-                        },
-                        valueRange =  0f..100f
-                    ),
-                    ItemInfo(
-                        R.string.show_beauty_item_beauty_eye_outercorner,
-                        R.mipmap.show_beauty_ic_face_eye,
-                        beautyConfig.eyeOuterCorner.toFloat(),
-                        onValueChanged = { value ->
-                            beautyConfig.eyeOuterCorner = value.toInt()
-                        },
-                        valueRange =  0f..100f
-                    ),
-                    ItemInfo(
                         R.string.show_beauty_item_beauty_bright_eye,
                         R.mipmap.show_beauty_ic_face_bright_eye,
                         beautyConfig.brighten_eye,
@@ -239,6 +279,24 @@ class AgoraControllerView : BaseControllerView {
                         onValueChanged = { value ->
                             beautyConfig.whiten_teeth = value
                         }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_beauty_eyebrow_position,
+                        R.mipmap.show_beauty_ic_face_eye,
+                        beautyConfig.eyebrowPosition.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.eyebrowPosition = value.toInt()
+                        },
+                        valueRange =  0f..100f
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_beauty_eyebrow_thickness,
+                        R.mipmap.show_beauty_ic_face_eye,
+                        beautyConfig.eyebrowThickness.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.eyebrowThickness = value.toInt()
+                        },
+                        valueRange =  0f..100f
                     )
                 )
             ),
@@ -254,10 +312,10 @@ class AgoraControllerView : BaseControllerView {
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_effect_hunxue,
+                        R.string.show_beauty_item_effect_xuejie,
                         R.mipmap.show_beauty_ic_effect_hunxue,
                         withPadding = false,
-                        isSelected = beautyConfig.makeupName == "学姐",
+                        isSelected = beautyConfig.makeupName == "学姐妆",
                         value = beautyConfig.makeupStrength,
                         onValueChanged = { value ->
                             beautyConfig.stylemakeup = true
@@ -266,10 +324,10 @@ class AgoraControllerView : BaseControllerView {
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_effect_oumei,
+                        R.string.show_beauty_item_effect_xuemei,
                         R.mipmap.show_beauty_ic_effect_oumei,
                         withPadding = false,
-                        isSelected = beautyConfig.makeupName == "学妹",
+                        isSelected = beautyConfig.makeupName == "学妹妆",
                         value = beautyConfig.makeupStrength,
                         onValueChanged = { value ->
                             beautyConfig.stylemakeup = true
@@ -277,6 +335,30 @@ class AgoraControllerView : BaseControllerView {
                             beautyConfig.makeupStrength = value
                         }
                     ),
+                    ItemInfo(
+                        R.string.show_beauty_item_effect_baitu1,
+                        R.mipmap.show_beauty_ic_effect_hunxue,
+                        withPadding = false,
+                        isSelected = beautyConfig.makeupName == "白兔妆1",
+                        value = beautyConfig.makeupStrength,
+                        onValueChanged = { value ->
+                            beautyConfig.stylemakeup = true
+                            beautyConfig.makeupName = "白兔妆1"
+                            beautyConfig.makeupStrength = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_effect_baitu2,
+                        R.mipmap.show_beauty_ic_effect_oumei,
+                        withPadding = false,
+                        isSelected = beautyConfig.makeupName == "白兔妆2",
+                        value = beautyConfig.makeupStrength,
+                        onValueChanged = { value ->
+                            beautyConfig.stylemakeup = true
+                            beautyConfig.makeupName = "白兔妆2"
+                            beautyConfig.makeupStrength = value
+                        }
+                    )
                 )
             ),
             PageInfo(
