@@ -118,12 +118,19 @@ class AgoraBeautyManager: NSObject {
         if key == nil {
             // close beauty effect
             beautyTemplate = nil
+            return
         }
         // beauty has no template ui selection. use default template
         beautyTemplate = ""
         switch key ?? "" {
+        case "templateNormal":
+            beautyTemplate = "基础模板"
+        break
+        case "templateShow":
+            beautyTemplate = "秀场模板"
+        break
         case "templateBaitu":
-            beautyTemplate = "美颜模板"
+            beautyTemplate = "白兔模板"
         break
         case "smoothnessLevel":
             beautyEffect?.setVideoEffectFloatParam(option: "beauty_effect_option", key: "smoothness", floatValue: Float(value))
@@ -312,12 +319,8 @@ class AgoraBeautyManager: NSObject {
             makeupTemplate = "学妹妆"
             beautyEffect?.setVideoEffectFloatParam(option: "style_makeup_option", key: "styleIntensity", floatValue: Float(value))
         break
-        case "baitu1":
-            makeupTemplate = "白兔妆1"
-            beautyEffect?.setVideoEffectFloatParam(option: "style_makeup_option", key: "styleIntensity", floatValue: Float(value))
-        break
-        case "baitu2":
-            makeupTemplate = "白兔妆2"
+        case "baitu":
+            makeupTemplate = "白兔妆"
             beautyEffect?.setVideoEffectFloatParam(option: "style_makeup_option", key: "styleIntensity", floatValue: Float(value))
         break
         default:

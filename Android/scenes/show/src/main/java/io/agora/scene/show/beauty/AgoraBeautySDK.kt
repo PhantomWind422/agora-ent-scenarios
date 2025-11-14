@@ -162,7 +162,7 @@ object AgoraBeautySDK {
             }
 
         // 美颜模板，空字符串表示素材默认
-        var beautyName: String? = ""
+        var beautyName: String? = "基础模板"
             set(value) {
                 if (field == value) {
                     return
@@ -481,7 +481,7 @@ object AgoraBeautySDK {
             }
 
         // 美妆强度
-        var makeupStrength: Float = 0.95f
+        var makeupStrength: Float = 0.85f
             set(value) {
                 field = value
                 beautyEffect?.setVideoEffectFloatParam("style_makeup_option", "styleIntensity", value)

@@ -1,0 +1,16 @@
+{
+    "beauty_effect_option": {
+        "enable": true,
+        "smoothness": 0.6,
+        "lightness": 0.5,
+        "redness": 0.2,
+        "contrast_strength": 0.2,
+        "brightness": 0.5
+    },
+    "face_buffing_option": {
+        "eye_pouch": 0.6,
+        "brighten_eye": 0.8,
+        "nasolabial_fold": 0.7,
+        "whiten_teeth": 0.8
+    }
+}

@@ -34,6 +34,8 @@
     <string name="show_beauty_group_beauty">美颜</string>
     <string name="show_beauty_item_none">无</string>
     <string name="show_beauty_item_baitu">模板-白兔</string>
+    <string name="show_beauty_item_normal">模板-基础</string>
+    <string name="show_beauty_item_show">模板-秀场</string>
     <string name="show_beauty_item_faceshape_male">美型-男</string>
     <string name="show_beauty_item_faceshape_female">美型-女</string>
     <string name="show_beauty_item_faceshape_natural">美型-自然</string>
