@@ -99,7 +99,7 @@ object RtcEngineInstance {
             innerRtcEngine = null
         }
         debugSettingModel.apply {
-            pvcEnabled = true
+            pvcEnabled = false
             autoFocusFaceModeEnabled = true
             exposurePositionX = null
             exposurePositionY = null
