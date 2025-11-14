@@ -109,7 +109,6 @@ object SceneConfigManager {
         }
         if (result.has("show")) {
             showExpireTime = result.getInt("show")
-            showExpireTime = 3600
         }
         if (result.has("showpk")) {
             showPkExpireTime = result.getInt("showpk")
