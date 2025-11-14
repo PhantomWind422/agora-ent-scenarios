@@ -25,6 +25,30 @@ extension BeautyModel {
         model.isSelected = true
         dataArray.append(model)
         
+        model = BeautyModel()
+        model.path = ""
+        model.key = "fsstyleFemale"
+        model.value = 0.0
+        model.name = "美型-女"
+        model.icon = "meiyan_fgz_tianmei"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "fsstyleMale"
+        model.value = 0.0
+        model.name = "美型-男"
+        model.icon = "meiyan_fgz_tianmei"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "fsstyleNatural"
+        model.value = 0.0
+        model.name = "美型-自然"
+        model.icon = "meiyan_fgz_tianmei"
+        dataArray.append(model)
+        
         // smoothness
         model = BeautyModel()
         model.path = ""
@@ -83,30 +107,6 @@ extension BeautyModel {
         model.path = ""
         model.key = "clarityLevel"
         model.value = 0.2
-        dataArray.append(model)
-        
-        model = BeautyModel()
-        model.path = ""
-        model.key = "fsstyleFemale"
-        model.value = 0.0
-        model.name = "美型-女"
-        model.icon = "meiyan_icon_shoulian"
-        dataArray.append(model)
-        
-        model = BeautyModel()
-        model.path = ""
-        model.key = "fsstyleMale"
-        model.value = 0.0
-        model.name = "美型-男"
-        model.icon = "meiyan_icon_shoulian"
-        dataArray.append(model)
-        
-        model = BeautyModel()
-        model.path = ""
-        model.key = "fsstyleNatural"
-        model.value = 0.0
-        model.name = "美型-自然"
-        model.icon = "meiyan_icon_shoulian"
         dataArray.append(model)
         
         // shoulian
