@@ -182,13 +182,13 @@ extension ShowAgoraKitManager {
         switch key {
         case .lowlightEnhance:
             let isOn = key.boolValue
-            engine?.setLowlightEnhanceOptions(isOn, options: AgoraLowlightEnhanceOptions())
+//            engine?.setLowlightEnhanceOptions(isOn, options: AgoraLowlightEnhanceOptions())
         case .colorEnhance:
             let isOn = key.boolValue
-            engine?.setColorEnhanceOptions(isOn, options: AgoraColorEnhanceOptions())
+//            engine?.setColorEnhanceOptions(isOn, options: AgoraColorEnhanceOptions())
         case .videoDenoiser:
             let isOn = key.boolValue
-            setDenoiserOn(isOn)
+//            setDenoiserOn(isOn)
         case .beauty:
             let isOn = key.boolValue
             engine?.setBeautyEffectOptions(isOn, options: AgoraBeautyOptions())

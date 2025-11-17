@@ -123,8 +123,11 @@ class AgoraBeautyManager: NSObject {
         // beauty has no template ui selection. use default template
         beautyTemplate = ""
         switch key ?? "" {
-        case "templateNormal":
-            beautyTemplate = "基础模板"
+        case "templateNormal1":
+            beautyTemplate = "抖音模板"
+        break
+        case "templateNormal2":
+            beautyTemplate = "相芯模板"
         break
         case "templateShow":
             beautyTemplate = "秀场模板"
@@ -206,6 +209,12 @@ class AgoraBeautyManager: NSObject {
             areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
             agoraKit?.setFaceShapeAreaOptions(areaOption)
         break
+        case "facelength":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.faceLength
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
         case "cheekbone":
             let areaOption = AgoraFaceShapeAreaOptions()
             areaOption.shapeArea = AgoraFaceShapeArea.cheekbone
@@ -215,6 +224,12 @@ class AgoraBeautyManager: NSObject {
         case "cheek":
             let areaOption = AgoraFaceShapeAreaOptions()
             areaOption.shapeArea = AgoraFaceShapeArea.cheek
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
+        case "mandible":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.mandible
             areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
             agoraKit?.setFaceShapeAreaOptions(areaOption)
         break
@@ -230,6 +245,11 @@ class AgoraBeautyManager: NSObject {
             areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
             agoraKit?.setFaceShapeAreaOptions(areaOption)
         break
+        case "eyepupil":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.eyePupils
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
         case "eyeposition":
             let areaOption = AgoraFaceShapeAreaOptions()
             areaOption.shapeArea = AgoraFaceShapeArea.eyePosition
@@ -239,6 +259,24 @@ class AgoraBeautyManager: NSObject {
         case "eyedistance":
             let areaOption = AgoraFaceShapeAreaOptions()
             areaOption.shapeArea = AgoraFaceShapeArea.eyeDistance
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
+        case "eyeinnercorner":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.eyeInnerCorner
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
+        case "eyeoutercorner":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.eyeOuterCorner
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
+        case "eyelid":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.lowerEyelid
             areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
             agoraKit?.setFaceShapeAreaOptions(areaOption)
         break
@@ -266,9 +304,45 @@ class AgoraBeautyManager: NSObject {
             areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
             agoraKit?.setFaceShapeAreaOptions(areaOption)
         break
+        case "nosewing":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.noseWing
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
+        case "noseroot":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.noseRoot
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
+        case "nosebridge":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.noseBridge
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
+        case "nosetip":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.noseTip
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
+        case "nosegeneral":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.noseGeneral
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
         case "mouthscale":
             let areaOption = AgoraFaceShapeAreaOptions()
             areaOption.shapeArea = AgoraFaceShapeArea.mouthScale
+            areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
+            agoraKit?.setFaceShapeAreaOptions(areaOption)
+        break
+        case "mouthlip":
+            let areaOption = AgoraFaceShapeAreaOptions()
+            areaOption.shapeArea = AgoraFaceShapeArea.mouthLip
             areaOption.shapeIntensity = AgoraBeautyManager.castToPositive100(Float(value))
             agoraKit?.setFaceShapeAreaOptions(areaOption)
         break

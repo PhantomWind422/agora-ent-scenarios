@@ -34,17 +34,17 @@ class AgoraControllerView : BaseControllerView {
                     ItemInfo(
                         R.string.show_beauty_item_normal,
                         R.mipmap.show_beauty_ic_effect_tianmei,
-                        isSelected = beautyConfig.beautyName == "基础模板",
+                        isSelected = beautyConfig.beautyName == "抖音模板",
                         onValueChanged = { _ ->
-                            beautyConfig.beautyName = "基础模板"
+                            beautyConfig.beautyName = "抖音模板"
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_show,
+                        R.string.show_beauty_item_normal2,
                         R.mipmap.show_beauty_ic_effect_tianmei,
-                        isSelected = beautyConfig.beautyName == "秀场模板",
+                        isSelected = beautyConfig.beautyName == "相芯模板",
                         onValueChanged = { _ ->
-                            beautyConfig.beautyName = "秀场模板"
+                            beautyConfig.beautyName = "相芯模板"
                         }
                     ),
                     ItemInfo(
@@ -141,9 +141,9 @@ class AgoraControllerView : BaseControllerView {
                     ItemInfo(
                         R.string.show_beauty_item_beauty_overall,
                         R.mipmap.show_beauty_ic_face_shoulian,
-                        beautyConfig.thinFace.toFloat(),
+                        beautyConfig.faceContour.toFloat(),
                         onValueChanged = { value ->
-                            beautyConfig.thinFace = value.toInt()
+                            beautyConfig.faceContour = value.toInt()
                         },
                         valueRange =  0f..100f
                     ),
@@ -166,11 +166,38 @@ class AgoraControllerView : BaseControllerView {
                         valueRange =  0f..100f
                     ),
                     ItemInfo(
+                        R.string.show_beauty_item_beauty_longface,
+                        R.mipmap.show_beauty_ic_face_shoulian,
+                        beautyConfig.faceLength.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.faceLength = value.toInt()
+                        },
+                        valueRange =  0f..100f
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_beauty_cheekbone,
+                        R.mipmap.show_beauty_ic_face_xiahegu,
+                        beautyConfig.cheekbone.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.cheekbone = value.toInt()
+                        },
+                        valueRange =  0f..100f
+                    ),
+                    ItemInfo(
                         R.string.show_beauty_item_beauty_xiahexian,
                         R.mipmap.show_beauty_ic_face_xiahegu,
                         beautyConfig.shrinkCheek.toFloat(),
                         onValueChanged = { value ->
                             beautyConfig.shrinkCheek = value.toInt()
+                        },
+                        valueRange =  0f..100f
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_beauty_mandible,
+                        R.mipmap.show_beauty_ic_face_xiahegu,
+                        beautyConfig.mandible.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.mandible = value.toInt()
                         },
                         valueRange =  0f..100f
                     ),
@@ -228,6 +255,42 @@ class AgoraControllerView : BaseControllerView {
                         valueRange =  0f..100f
                     ),
                     ItemInfo(
+                        R.string.show_beauty_item_beauty_eye_pupil,
+                        R.mipmap.show_beauty_ic_face_eye,
+                        beautyConfig.eyePupil.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.eyePupil = value.toInt()
+                        },
+                        valueRange =  0f..100f
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_beauty_eyelid,
+                        R.mipmap.show_beauty_ic_face_eye,
+                        beautyConfig.eyeLid.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.eyeLid = value.toInt()
+                        },
+                        valueRange =  0f..100f
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_beauty_eye_innercorner,
+                        R.mipmap.show_beauty_ic_face_eye,
+                        beautyConfig.eyeInnercorner.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.eyeInnercorner = value.toInt()
+                        },
+                        valueRange =  0f..100f
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_beauty_eye_outercorner,
+                        R.mipmap.show_beauty_ic_face_eye,
+                        beautyConfig.eyeOutercorner.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.eyeOutercorner = value.toInt()
+                        },
+                        valueRange =  0f..100f
+                    ),
+                    ItemInfo(
                         R.string.show_beauty_item_beauty_bright_eye,
                         R.mipmap.show_beauty_ic_face_bright_eye,
                         beautyConfig.brighten_eye,
@@ -262,6 +325,51 @@ class AgoraControllerView : BaseControllerView {
                         valueRange = 0f..100f
                     ),
                     ItemInfo(
+                        R.string.show_beauty_item_beauty_nose_wing,
+                        R.mipmap.show_beauty_ic_face_shoubi,
+                        beautyConfig.noseWing.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.noseWing = value.toInt()
+                        },
+                        valueRange = 0f..100f
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_beauty_nose_bridge,
+                        R.mipmap.show_beauty_ic_face_shoubi,
+                        beautyConfig.noseBridge.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.noseBridge = value.toInt()
+                        },
+                        valueRange = 0f..100f
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_beauty_nose_root,
+                        R.mipmap.show_beauty_ic_face_shoubi,
+                        beautyConfig.noseRoot.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.noseRoot = value.toInt()
+                        },
+                        valueRange = 0f..100f
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_beauty_nose_tip,
+                        R.mipmap.show_beauty_ic_face_shoubi,
+                        beautyConfig.noseTip.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.noseTip = value.toInt()
+                        },
+                        valueRange = 0f..100f
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_beauty_nose_general,
+                        R.mipmap.show_beauty_ic_face_shoubi,
+                        beautyConfig.noseGeneral.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.noseGeneral = value.toInt()
+                        },
+                        valueRange = 0f..100f
+                    ),
+                    ItemInfo(
                         R.string.show_beauty_item_beauty_mouth,
                         R.mipmap.show_beauty_ic_face_zuixing,
                         beautyConfig.mouthSize.toFloat(),
@@ -285,6 +393,15 @@ class AgoraControllerView : BaseControllerView {
                         beautyConfig.mouthSmile.toFloat(),
                         onValueChanged = { value ->
                             beautyConfig.mouthSmile = value.toInt()
+                        },
+                        valueRange = 0f..100f
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_beauty_mouth_lip,
+                        R.mipmap.show_beauty_ic_face_zuixing,
+                        beautyConfig.mouthLip.toFloat(),
+                        onValueChanged = { value ->
+                            beautyConfig.mouthLip = value.toInt()
                         },
                         valueRange = 0f..100f
                     ),
@@ -509,7 +626,7 @@ class AgoraControllerView : BaseControllerView {
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_sticker16,
+                        R.string.show_beauty_item_sticker_zhaocaimao,
                         R.mipmap.show_beauty_ic_sticer_zhaocaimao,
                         withPadding = false,
                         isSelected = beautyConfig.stickerName == "招财猫",
@@ -519,7 +636,7 @@ class AgoraControllerView : BaseControllerView {
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_sticker16,
+                        R.string.show_beauty_item_sticker17,
                         R.mipmap.show_beauty_ic_sticer_zhaocaimao,
                         withPadding = false,
                         isSelected = beautyConfig.stickerName == "国风",

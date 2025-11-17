@@ -34,7 +34,8 @@
     <string name="show_beauty_group_beauty">美颜</string>
     <string name="show_beauty_item_none">无</string>
     <string name="show_beauty_item_baitu">模板-白兔</string>
-    <string name="show_beauty_item_normal">模板-基础</string>
+    <string name="show_beauty_item_normal">模板-基础1</string>
+    <string name="show_beauty_item_normal2">模板-基础2</string>
     <string name="show_beauty_item_show">模板-秀场</string>
     <string name="show_beauty_item_faceshape_male">美型-男</string>
     <string name="show_beauty_item_faceshape_female">美型-女</string>
@@ -66,7 +67,10 @@
     <string name="show_beauty_item_beauty_whiten_super">超白</string>
     <string name="show_beauty_item_beauty_overall">瘦脸</string>
     <string name="show_beauty_item_beauty_cheekbone">瘦颧骨</string>
+    <string name="show_beauty_item_beauty_mandible">v脸</string>
     <string name="show_beauty_item_beauty_eye">大眼</string>
+    <string name="show_beauty_item_beauty_eye_pupil">瞳孔</string>
+    <string name="show_beauty_item_beauty_eyelid">眼睑下至</string>
     <string name="show_beauty_item_beauty_eye_position">眼移动</string>
     <string name="show_beauty_item_beauty_eye_distance">眼距</string>
     <string name="show_beauty_item_beauty_eye_innercorner">内眼角</string>
@@ -74,10 +78,16 @@
     <string name="show_beauty_item_beauty_eyebrow_position">眉上下</string>
     <string name="show_beauty_item_beauty_eyebrow_thickness">眉粗细</string>
     <string name="show_beauty_item_beauty_nose">瘦鼻</string>
+    <string name="show_beauty_item_beauty_nose_wing">鼻翼</string>
+    <string name="show_beauty_item_beauty_nose_bridge">鼻梁</string>
+    <string name="show_beauty_item_beauty_nose_root">山根</string>
+    <string name="show_beauty_item_beauty_nose_tip">鼻尖</string>
+    <string name="show_beauty_item_beauty_nose_general">鼻综合</string>
     <string name="show_beauty_item_beauty_chin">下巴</string>
     <string name="show_beauty_item_beauty_jawbone">下颌骨</string>
     <string name="show_beauty_item_beauty_forehead">额头</string>
     <string name="show_beauty_item_beauty_mouth">嘴型</string>
+    <string name="show_beauty_item_beauty_mouth_lip">丰唇</string>
     <string name="show_beauty_item_beauty_mouth_position">缩人中</string>
     <string name="show_beauty_item_beauty_mouth_smile">微笑</string>
     <string name="show_beauty_item_beauty_teeth">美牙</string>
@@ -330,6 +340,7 @@
     <string name="show_beauty_item_sticker14">兔子眼罩</string>
     <string name="show_beauty_item_sticker15">小熊眼罩</string>
     <string name="show_beauty_item_sticker16">新年快乐</string>
+    <string name="show_beauty_item_sticker17">国风</string>
     <string name="show_create_micseat_apply_error">网络异常, 申请上麦失败, 错误: %s</string>
     <string name="show_accept_micseat_apply_error">网络异常, 同意上麦失败, 错误: %s</string>
     <string name="show_create_micseat_invitation_error">网络异常, 邀请连麦失败, 错误: %s</string>

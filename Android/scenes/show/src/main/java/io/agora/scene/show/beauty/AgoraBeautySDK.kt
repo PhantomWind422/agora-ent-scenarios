@@ -352,6 +352,34 @@ object AgoraBeautySDK {
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
+        var eyePupil = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYEPUPILS, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
+        var eyeLid = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYELID, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
+        var eyeInnercorner = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYEINNERCORNER, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
+        var eyeOutercorner = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYEOUTERCORNER, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
         var eyebrowPosition = 0
             set(value) {
                 field = value
@@ -375,7 +403,7 @@ object AgoraBeautySDK {
             }
 
         // 瘦脸 对应修饰力度范围为 [0,100]，值越大瘦脸效果越强，预设值为 10。
-        var thinFace = 40
+        var faceContour = 40
             set(value) {
                 field = value
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_FACECONTOUR, value);
@@ -389,14 +417,6 @@ object AgoraBeautySDK {
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
-        // 瘦颧骨 对应修饰力度范围为 [0,100]，值越大颧骨越窄，预设值为 43。
-        var shrinkCheekbone = 0
-            set(value) {
-                field = value
-                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_CHEEKBONE, value);
-                rtcEngine?.setFaceShapeAreaOptions(areaOption)
-            }
-
         var faceWidth = 10
             set(value) {
                 field = value
@@ -404,10 +424,31 @@ object AgoraBeautySDK {
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
+        var faceLength = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_FACELENGTH, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
+        var cheekbone = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_CHEEKBONE, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
         var shrinkCheek = 30
             set(value) {
                 field = value
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_CHEEK, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
+        var mandible = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_MANDIBLE, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
@@ -423,6 +464,41 @@ object AgoraBeautySDK {
             set(value) {
                 field = value
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_NOSELENGTH, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
+        var noseWing = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_NOSEWING, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
+        var noseBridge = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_NOSEBRIDGE, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
+        var noseRoot = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_NOSEROOT, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
+        var noseTip = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_NOSETIP, value);
+                rtcEngine?.setFaceShapeAreaOptions(areaOption)
+            }
+
+        var noseGeneral = 0
+            set(value) {
+                field = value
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_NOSEGENERAL, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
@@ -448,11 +524,10 @@ object AgoraBeautySDK {
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
-        // 下颌骨 对应修饰力度范围为 [0,100]，值越大脸颊越窄，预设值为 50。
-        var shrinkJawbone = 0
+        var mouthLip = 0
             set(value) {
                 field = value
-                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_CHEEK, value);
+                val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_MOUTHLIP, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 

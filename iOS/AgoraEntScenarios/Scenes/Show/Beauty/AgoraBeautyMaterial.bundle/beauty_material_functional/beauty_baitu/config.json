@@ -11,7 +11,8 @@
         "brightness": 0.0
     },
     "face_shape_beauty_option": {
-        "enable": true
+        "enable": true,
+        "intensity": 0
     },
     "face_shape_area_option": [
         {

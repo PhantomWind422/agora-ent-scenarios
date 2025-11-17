@@ -8,7 +8,8 @@
         "beautify_max": 2
     },
     "user_interface_option": {
-        "基础模板": "beauty_basic/",
+        "抖音模板": "beauty_douyin/",
+        "相芯模板": "beauty_xiangxin/",
         "秀场模板": "beauty_show/",
         "白兔模板": "beauty_baitu/",
         "学姐妆": "stylemakeup_xuejie/",
@@ -23,7 +24,7 @@
         "招财猫": "sticker_招财猫/",
         "国风": "sticker_国风/"
     },
-    "beauty_config" : "基础模板",
+    "beauty_config" : "抖音模板",
     "beauty_custom_option": {
         "smooth_factor": 1.0
     },
@@ -31,6 +32,6 @@
         "face_custom_factor": 1.2,
         "eye_custom_factor": 1.2,
         "mouth_custom_factor": 1.2,
-        "max_crop_percent": 0.02
+        "max_crop_percent": 0.01
     }
 }

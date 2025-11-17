@@ -19,17 +19,17 @@ extension BeautyModel {
         // template
         model = BeautyModel()
         model.path = ""
-        model.key = "templateNormal"
+        model.key = "templateNormal1"
         model.value = 0
-        model.name = "模板-基础"
+        model.name = "模板-基础1"
         model.icon = "meiyan_fgz_tianmei"
         dataArray.append(model)
         
         model = BeautyModel()
         model.path = ""
-        model.key = "templateShow"
+        model.key = "templateNormal2"
         model.value = 0
-        model.name = "模板-秀场"
+        model.name = "模板-基础2"
         model.icon = "meiyan_fgz_tianmei"
         dataArray.append(model)
         
@@ -139,7 +139,7 @@ extension BeautyModel {
         model.path = ""
         model.key = "headscale"
         model.value = 0
-        model.name = "小脸"
+        model.name = "小头"
         model.icon = "meiyan_icon_shoulian"
         dataArray.append(model)
         
@@ -152,6 +152,24 @@ extension BeautyModel {
         model.icon = "meiyan_icon_shoulian"
         dataArray.append(model)
         
+        // changlian
+        model = BeautyModel()
+        model.path = ""
+        model.key = "facelength"
+        model.value = 0.0
+        model.name = "长脸"
+        model.icon = "meiyan_icon_shoulian"
+        dataArray.append(model)
+        
+        // cheekbone
+        model = BeautyModel()
+        model.path = ""
+        model.key = "cheekbone"
+        model.value = 0.0
+        model.name = "show_beauty_item_beauty_cheekbone".show_localized
+        model.icon = "meiyan_icon_shouquangu"
+        dataArray.append(model)
+        
         // Jawline
         model = BeautyModel()
         model.path = ""
@@ -159,6 +177,15 @@ extension BeautyModel {
         model.value = 0.3
         model.name = "show_beauty_item_beauty_jawbone".show_localized
         model.icon = "meiyan_icon_xiahegu"
+        dataArray.append(model)
+        
+        // mandible
+        model = BeautyModel()
+        model.path = ""
+        model.key = "mandible"
+        model.value = 0.0
+        model.name = "v脸"
+        model.icon = "meiyan_icon_cheekV"
         dataArray.append(model)
         
         // Chin lengthening
@@ -215,6 +242,42 @@ extension BeautyModel {
         model.icon = "meiyan_icon_eyeSpace"
         dataArray.append(model)
         
+        // eyelid
+        model = BeautyModel()
+        model.path = ""
+        model.key = "eyelid"
+        model.value = 0.0
+        model.name = "眼睑下至"
+        model.icon = "meiyan_icon_eyeLid"
+        dataArray.append(model)
+        
+        // pupil
+        model = BeautyModel()
+        model.path = ""
+        model.key = "eyepupil"
+        model.value = 0.0
+        model.name = "瞳孔"
+        model.icon = "meiyan_icon_dayan"
+        dataArray.append(model)
+        
+        // innercorner
+        model = BeautyModel()
+        model.path = ""
+        model.key = "eyeinnercorner"
+        model.value = 0.0
+        model.name = "内眼角"
+        model.icon = "meiyan_icon_dayan"
+        dataArray.append(model)
+        
+        // outercorner
+        model = BeautyModel()
+        model.path = ""
+        model.key = "eyeoutercorner"
+        model.value = 0.0
+        model.name = "外眼角"
+        model.icon = "meiyan_icon_dayan"
+        dataArray.append(model)
+        
         // brighten eye
         model = BeautyModel()
         model.path = ""
@@ -251,6 +314,51 @@ extension BeautyModel {
         model.icon = "meiyan_icon_changbi"
         dataArray.append(model)
         
+        // Nose Wing
+        model = BeautyModel()
+        model.path = ""
+        model.key = "nosewing"
+        model.value = 0.0
+        model.name = "鼻翼"
+        model.icon = "meiyan_icon_shoubi"
+        dataArray.append(model)
+        
+        // Nose Root
+        model = BeautyModel()
+        model.path = ""
+        model.key = "noseroot"
+        model.value = 0.0
+        model.name = "山根"
+        model.icon = "meiyan_icon_shoubi"
+        dataArray.append(model)
+        
+        // Nose Bridge
+        model = BeautyModel()
+        model.path = ""
+        model.key = "nosebridge"
+        model.value = 0.0
+        model.name = "鼻梁"
+        model.icon = "meiyan_icon_shoubi"
+        dataArray.append(model)
+        
+        // Nose Tip
+        model = BeautyModel()
+        model.path = ""
+        model.key = "nosetip"
+        model.value = 0.0
+        model.name = "鼻尖"
+        model.icon = "meiyan_icon_shoubi"
+        dataArray.append(model)
+        
+        // Nose General
+        model = BeautyModel()
+        model.path = ""
+        model.key = "nosegeneral"
+        model.value = 0.0
+        model.name = "鼻综合"
+        model.icon = "meiyan_icon_shoubi"
+        dataArray.append(model)
+        
         // Mouth shape
         model = BeautyModel()
         model.path = ""
@@ -276,6 +384,15 @@ extension BeautyModel {
         model.value = 0.0
         model.name = "微笑"
         model.icon = "meiyan_icon_smile"
+        dataArray.append(model)
+        
+        // lip
+        model = BeautyModel()
+        model.path = ""
+        model.key = "mouthlip"
+        model.value = 0.0
+        model.name = "丰唇"
+        model.icon = "meiyan_icon_zuixing"
         dataArray.append(model)
         
         // whiten teeth
