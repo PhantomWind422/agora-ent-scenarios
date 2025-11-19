@@ -17,7 +17,6 @@ import android.text.style.ForegroundColorSpan
 import android.util.Log
 import android.util.Size
 import android.view.LayoutInflater
-import android.view.SurfaceView
 import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
@@ -29,20 +28,21 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import io.agora.audioscenarioapi.AudioScenarioApi
 import io.agora.audioscenarioapi.AudioScenarioType
 import io.agora.audioscenarioapi.SceneType
-import io.agora.base.VideoFrame
 import io.agora.mediaplayer.IMediaPlayer
 import io.agora.mediaplayer.data.MediaPlayerSource
 import io.agora.rtc2.ChannelMediaOptions
 import io.agora.rtc2.Constants
 import io.agora.rtc2.Constants.AUDIENCE_LATENCY_LEVEL_LOW_LATENCY
-import io.agora.rtc2.Constants.VIDEO_MIRROR_MODE_DISABLED
-import io.agora.rtc2.Constants.VIDEO_MIRROR_MODE_ENABLED
 import io.agora.rtc2.IRtcEngineEventHandler
 import io.agora.rtc2.LeaveChannelOptions
 import io.agora.rtc2.RtcConnection
@@ -2018,23 +2018,32 @@ class LiveDetailFragment : Fragment() {
 
         override fun onRtcStats(stats: RtcStats) {
             super.onRtcStats(stats)
-            runOnUiThread {
-                val customCpuUsage = getAppCpuUsage()
-                // Priority: custom calculation > SDK value
-                // Use custom CPU calculation (DoKit implementation)
-                // Fallback to SDK value if custom method fails
-                val cpuUsage = if (customCpuUsage >= 0) {
-                    customCpuUsage
-                } else {
-                    // Fallback to SDK value (may be 0 on restricted systems)
-                    stats.cpuAppUsage
-                }
+            // Calculate CPU usage in background thread to avoid blocking main thread
+            // viewLifecycleOwner.lifecycleScope.launch can be called from any thread,
+            // and the coroutine body executes on main thread by default
+            viewLifecycleOwner.lifecycleScope.launch {
+                // Check if Fragment is attached and view exists to avoid IllegalStateException
+                // when accessing view after onDestroyView()
+                if (isAdded && view != null) {
+                    // Execute CPU and memory calculations sequentially to avoid resource contention
+                    val customCpuUsage = withContext(Dispatchers.IO) {
+                        getAppCpuUsage()
+                    }
+                    val appMemoryUsage = withContext(Dispatchers.IO) {
+                        getAppMemoryUsage()
+                    }
 
-                refreshStatisticInfo(
-                    cpuAppUsage = cpuUsage,
-                    cpuTotalUsage = stats.cpuTotalUsage,
-                    appMemory = getAppMemoryUsage()
-                )
+                    // Priority: custom calculation > SDK value
+                    // Use custom CPU calculation (DoKit implementation)
+                    // Fallback to SDK value if custom method fails
+                    val cpuUsage = customCpuUsage.takeIf { it >= 0 } ?: stats.cpuAppUsage
+
+                    refreshStatisticInfo(
+                        cpuAppUsage = cpuUsage,
+                        cpuTotalUsage = stats.cpuTotalUsage,
+                        appMemory = appMemoryUsage
+                    )
+                }
             }
         }
 
@@ -2969,7 +2978,6 @@ class LiveDetailFragment : Fragment() {
             mAudioMxingChannel = null
         }
     }
-
     private fun adjustAudioMixingVolume(volume: Int) {
         mMediaPlayer?.adjustPlayoutVolume(volume)
         mMediaPlayer?.adjustPublishSignalVolume(volume)
