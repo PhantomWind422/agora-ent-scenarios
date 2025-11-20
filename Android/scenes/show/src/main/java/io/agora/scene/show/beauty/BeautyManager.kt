@@ -44,6 +44,8 @@ object BeautyManager {
 
     private val workerExecutor = Executors.newSingleThreadExecutor()
     private val mainExecutor = android.os.Handler(Looper.getMainLooper())
+    private var createBeautyFuture: Future<*>? = null
+    private var destroyBeautyFuture: Future<*>? = null
 
     // Track initialization status of beauty SDKs
     private var senseTimeInitSuccess = false
@@ -53,6 +55,14 @@ object BeautyManager {
     // Beauty type
     var beautyType = BeautyType.Agora
         set(value) {
+            if (field == value) {
+                when (value) {
+                    BeautyType.SenseTime -> senseTimeBeautyAPI?.let { return }
+                    BeautyType.FaceUnity -> faceUnityBeautyAPI?.let { return }
+                    BeautyType.ByteDance -> byteDanceBeautyAPI?.let { return }
+                    BeautyType.Agora -> return
+                }
+            }
             val oldType = field
             field = value
             switchBeauty(oldType, value)
@@ -75,8 +85,9 @@ object BeautyManager {
     fun initialize(context: Context, rtcEngine: RtcEngine) {
         this.context = context.applicationContext as Application
         this.rtcEngine = rtcEngine
-        this.beautyType = BeautyType.Agora
+        this.beautyType = BeautyType.SenseTime
         this.enable = rtcEngine.queryDeviceScore() >= 75 // Disable beauty on low-end devices
+        rtcEngine.registerVideoFrameObserver(MultiBeautyVideoObserver())
     }
 
     fun setupLocalVideo(view: View, renderMode: Int) {
@@ -135,13 +146,16 @@ object BeautyManager {
                         view,
                         renderMode,
                         0
-                    )
+                    ).apply {
+                        mirrorMode = Constants.VIDEO_MIRROR_MODE_DISABLED
+                    }
                 )
             }
         }
     }
 
     fun destroy() {
+        rtcEngine?.registerVideoFrameObserver(null)
         mainExecutor.post {
             videoView?.get()?.let {
                 rtcEngine?.setupLocalVideo(VideoCanvas(null))
@@ -155,10 +169,12 @@ object BeautyManager {
 
 
     private fun switchBeauty(oldType: BeautyType, newType: BeautyType) {
-        if (oldType != newType) {
-            destroyBeauty(oldType)
-        }
-        createBeauty(newType)
+        createBeautyFuture?.cancel(true)
+        destroyBeautyFuture?.cancel(true)
+
+        destroyBeautyFuture = destroyBeauty(oldType)
+        createBeautyFuture = createBeauty(newType)
+
     }
 
     private fun createBeauty(type: BeautyType) =
@@ -211,7 +227,9 @@ object BeautyManager {
                                         it,
                                         renderMode,
                                         0
-                                    )
+                                    ).apply {
+                                        mirrorMode = Constants.VIDEO_MIRROR_MODE_AUTO
+                                    }
                                 )
                             }
                             setupLocalVideoCountDownLatch.countDown()
@@ -326,7 +344,9 @@ object BeautyManager {
                                     it,
                                     renderMode,
                                     0
-                                )
+                                ).apply {
+                                    mirrorMode = Constants.VIDEO_MIRROR_MODE_DISABLED
+                                }
                             )
                         }
                         setupLocalVideoCountDownLatch.countDown()
@@ -391,6 +411,12 @@ object BeautyManager {
     class MultiBeautyVideoObserver : IVideoFrameObserver {
         private var isFront = true
         override fun onCaptureVideoFrame(type: Int, videoFrame: VideoFrame?): Boolean {
+            if (destroyBeautyFuture?.isDone != true) {
+                return false
+            }
+            if (createBeautyFuture?.isDone != true) {
+                return false
+            }
             val frame = videoFrame ?: return false
             isFront = frame.sourceType == VideoFrame.SourceType.kFrontCamera
 
@@ -437,7 +463,12 @@ object BeautyManager {
         override fun getRotationApplied() = false
 
         override fun getMirrorApplied(): Boolean {
-            return false
+            return when (beautyType) {
+                BeautyType.SenseTime -> senseTimeBeautyAPI?.getMirrorApplied() ?: false
+                BeautyType.FaceUnity -> faceUnityBeautyAPI?.getMirrorApplied() ?: false
+                BeautyType.ByteDance -> byteDanceBeautyAPI?.getMirrorApplied() ?: false
+                BeautyType.Agora -> isFront
+            }
         }
 
         override fun getObservedFramePosition() = IVideoFrameObserver.POSITION_POST_CAPTURER

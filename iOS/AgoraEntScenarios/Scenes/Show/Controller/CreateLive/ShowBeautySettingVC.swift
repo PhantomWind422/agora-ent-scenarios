@@ -335,7 +335,7 @@ class ShowBeautySettingVC: UIViewController {
     @objc
     private func onClickBeautyVenderButton(sender: UIButton) {
         sender.isSelected = !sender.isSelected
-        beautyVenderViewH?.constant = sender.isSelected ? CGFloat(40) : 0
+        beautyVenderViewH?.constant = sender.isSelected ? CGFloat(40 * BeautyFactoryType.allCases.count) : 0
         beautyVenderViewH?.isActive = true
         beautyVenderButton.layer.maskedCorners = sender.isSelected ? [.layerMinXMaxYCorner, .layerMaxXMaxYCorner] : [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         UIView.animate(withDuration: 0.25) {
