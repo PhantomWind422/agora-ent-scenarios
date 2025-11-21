@@ -10,8 +10,8 @@ import AgoraCommon
 import RTMSyncManager
 import AgoraRtmKit
 
-private let kSceneId = "scene_show_6.0.0"
-private let kRoomPresenceChannelName = "scene_show_6_0_0_9999999"
+private let kSceneId = "scene_show_6.9.9"
+private let kRoomPresenceChannelName = "scene_show_6_9_9_9999999"
 
 private func agoraPrint(_ message: String) {
     ShowLogger.info(message, context: "Service")
@@ -198,7 +198,7 @@ extension ShowSyncManagerServiceImp {
                   let scene = self.syncManager.getScene(channelName: roomId) else { return }
             
             let duration = scene.getRoomDuration()
-            let expiredDuration = (AppContext.shared.sceneConfig?.show ?? 10 * 60) * 1000
+            let expiredDuration = (4800) * 1000
             if duration >= expiredDuration {
                 self.stopCheckExpireTimer(roomId: roomId)
                 
