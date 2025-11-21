@@ -560,6 +560,13 @@ extension BeautyModel {
         
         model = BeautyModel()
         model.path = ""
+        model.key = "麋鹿"
+        model.name = "麋鹿"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
         model.key = "兔子耳朵"
         model.name = "兔子耳朵"
         model.icon = "meiyan_sticker_zhaocaimao"

@@ -4,12 +4,13 @@
         "version": "2.0.0",
         "aspect": "16:9",
         "preferred_fps": 24,
-        "performance_mode": 0,
-        "beautify_max": 2
+        "performance_mode": 2,
+        "beautify_max": 1
     },
     "user_interface_option": {
         "抖音模板": "beauty_douyin/",
         "相芯模板": "beauty_xiangxin/",
+        "秀场模板": "beauty_show/",
         "白兔模板": "beauty_baitu/",
         "学姐妆": "stylemakeup_xuejie/",
         "学妹妆": "stylemakeup_xuemei/",
@@ -18,6 +19,7 @@
         "胶片" : "filter_jiaopian/",
         "蜜桃" : "filter_mitao/",
         "黑金" : "filter_heijin/",
+        "麋鹿" : "sticker_麋鹿/",
         "兔子耳朵": "sticker_兔子耳朵/",
         "小熊眼罩": "sticker_小熊眼罩/",
         "招财猫": "sticker_招财猫/",
@@ -31,6 +33,6 @@
         "face_custom_factor": 1.2,
         "eye_custom_factor": 1.2,
         "mouth_custom_factor": 1.2,
-        "max_crop_percent": 0.02
+        "max_crop_percent": 0.01
     }
 }

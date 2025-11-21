@@ -46,7 +46,7 @@ class MultiBeautyDialog : BottomSheetDialog {
         when (BeautyManager.beautyType) {
             BeautyManager.BeautyType.SenseTime -> {
                 mBinding.ctvBeauty.setText(R.string.show_multi_beauty_sensetime)
-                mBinding.rgBeauty.check(R.id.rbSenseTime)
+//                mBinding.rgBeauty.check(R.id.rbSenseTime)
             }
 
             BeautyManager.BeautyType.FaceUnity -> {
@@ -56,7 +56,7 @@ class MultiBeautyDialog : BottomSheetDialog {
 
             BeautyManager.BeautyType.ByteDance -> {
                 mBinding.ctvBeauty.setText(R.string.show_multi_beauty_bytedance)
-                mBinding.rgBeauty.check(R.id.rbByteDance)
+//                mBinding.rgBeauty.check(R.id.rbByteDance)
             }
 
             BeautyManager.BeautyType.Agora -> {
@@ -82,9 +82,9 @@ class MultiBeautyDialog : BottomSheetDialog {
         }
         mBinding.rgBeauty.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
-                R.id.rbSenseTime -> BeautyManager.beautyType = BeautyManager.BeautyType.SenseTime
+//                R.id.rbSenseTime -> BeautyManager.beautyType = BeautyManager.BeautyType.SenseTime
                 R.id.rbFaceUnity -> BeautyManager.beautyType = BeautyManager.BeautyType.FaceUnity
-                R.id.rbByteDance -> BeautyManager.beautyType = BeautyManager.BeautyType.ByteDance
+//                R.id.rbByteDance -> BeautyManager.beautyType = BeautyManager.BeautyType.ByteDance
                 R.id.rbAgora -> BeautyManager.beautyType = BeautyManager.BeautyType.Agora
             }
             // resetVirtualBackground()

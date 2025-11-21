@@ -42,7 +42,7 @@
     ],
     "face_buffing_option": {
         "eye_pouch": 0.5,
-        "brighten_eye": 0.0,
+        "brighten_eye": 0.2,
         "nasolabial_fold": 0.35,
         "whiten_teeth": 0.8
     }

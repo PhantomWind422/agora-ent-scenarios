@@ -23,7 +23,7 @@ class ShowBeautyVenderView: UIView {
         tableView.layer.masksToBounds = true
         return tableView
     }()
-    private lazy var dataArray: [BeautyFactoryType] = BeautyFactoryType.allCases
+    private lazy var dataArray: [BeautyFactoryType] = [BeautyFactoryType.agora, BeautyFactoryType.fu]
     
     private var preCell: UITableViewCell?
     

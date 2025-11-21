@@ -604,6 +604,17 @@ class AgoraControllerView : BaseControllerView {
                         }
                     ),
                     ItemInfo(
+                        R.string.show_beauty_item_sticker_sdlu,
+                        R.mipmap.show_beauty_ic_sticer_zhaocaimao,
+                        withPadding = false,
+                        isSelected = beautyConfig.stickerName == "麋鹿",
+                        onValueChanged = { value ->
+                            beautyConfig.sticker = true
+                            beautyConfig.stickerName = "麋鹿"
+
+                        }
+                    ),
+                    ItemInfo(
                         R.string.show_beauty_item_sticker13,
                         R.mipmap.show_beauty_ic_sticer_zhaocaimao,
                         withPadding = false,

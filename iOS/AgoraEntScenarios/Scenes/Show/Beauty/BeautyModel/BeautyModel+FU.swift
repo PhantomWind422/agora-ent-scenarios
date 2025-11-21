@@ -35,7 +35,7 @@ extension BeautyModel {
         model = BeautyModel()
         model.path = "face_beautification"
         model.key = "contouring"
-        model.value = 0
+        model.value = 0.3
         model.name = "show_beauty_item_beauty_contouring".show_localized
         model.icon = "meiyan_icon_contouring"
         dataArray.append(model)
@@ -59,7 +59,7 @@ extension BeautyModel {
         model = BeautyModel()
         model.path = "face_beautification"
         model.key = "enlarge"
-        model.value = 0
+        model.value = 0.3
         model.name = "show_beauty_item_beauty_eye".show_localized
         model.icon = "meiyan_icon_dayan"
         dataArray.append(model)
@@ -67,7 +67,7 @@ extension BeautyModel {
         model = BeautyModel()
         model.path = "face_beautification"
         model.key = "nose"
-        model.value = 0
+        model.value = 0.2
         model.name = "show_beauty_item_beauty_nose".show_localized
         model.icon = "meiyan_icon_shoubi"
         dataArray.append(model)
@@ -75,7 +75,7 @@ extension BeautyModel {
         model = BeautyModel()
         model.path = "face_beautification"
         model.key = "chin"
-        model.value = 0
+        model.value = 0.2
         model.name = "show_beauty_item_beauty_chin".show_localized
         model.icon = "meiyan_icon_xiaba"
         model.enableNegative = true
@@ -84,7 +84,7 @@ extension BeautyModel {
         model = BeautyModel()
         model.path = "face_beautification"
         model.key = "lowerJaw"
-        model.value = 0
+        model.value = 0.3
         model.name = "show_beauty_item_beauty_jawbone".show_localized
         model.icon = "meiyan_icon_xiahegu"
         dataArray.append(model)
@@ -92,7 +92,7 @@ extension BeautyModel {
         model = BeautyModel()
         model.path = "face_beautification"
         model.key = "forehead"
-        model.value = 0
+        model.value = 0.3
         model.name = "show_beauty_item_beauty_forehead".show_localized
         model.icon = "meiyan_icon_etou"
         model.enableNegative = true
@@ -101,7 +101,7 @@ extension BeautyModel {
         model = BeautyModel()
         model.path = "face_beautification"
         model.key = "mouth"
-        model.value = 0
+        model.value = 0.3
         model.name = "show_beauty_item_beauty_mouth".show_localized
         model.icon = "meiyan_icon_zuixing"
         model.enableNegative = true
@@ -110,7 +110,7 @@ extension BeautyModel {
         model = BeautyModel()
         model.path = "face_beautification"
         model.key = "toothWhiten"
-        model.value = 0
+        model.value = 0.3
         model.name = "show_beauty_item_beauty_teeth".show_localized
         model.icon = "meiyan_icon_meiya"
         dataArray.append(model)
@@ -118,7 +118,7 @@ extension BeautyModel {
         model = BeautyModel()
         model.path = "face_beautification"
         model.key = "eyeBright"
-        model.value = 0
+        model.value = 0.2
         model.name = "show_beauty_item_beauty_liangyan".show_localized
         model.icon = "meiyan_icon_liangyan"
         dataArray.append(model)
@@ -126,7 +126,7 @@ extension BeautyModel {
         model = BeautyModel()
         model.path = "face_beautification"
         model.key = "wrinkles"
-        model.value = 0
+        model.value = 0.3
         model.name = "show_beauty_item_beauty_qufalingwen".show_localized
         model.icon = "meiyan_icon_qufalingwen"
         dataArray.append(model)
@@ -134,7 +134,7 @@ extension BeautyModel {
         model = BeautyModel()
         model.path = "face_beautification"
         model.key = "pouchStrength"
-        model.value = 0
+        model.value = 0.3
         model.name = "show_beauty_item_beauty_heiyanquan".show_localized
         model.icon = "meiyan_icon_heiyanquan"
         dataArray.append(model)
@@ -205,6 +205,7 @@ extension BeautyModel {
                 
         model = BeautyModel()
         model.path = "sdlu"
+        model.key = "sdlu"
         model.name = "show_beauty_item_sticker_milu".show_localized
         model.icon = "sdlu"
         dataArray.append(model)

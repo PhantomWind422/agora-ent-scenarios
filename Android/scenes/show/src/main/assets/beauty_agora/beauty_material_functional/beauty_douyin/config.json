@@ -4,8 +4,8 @@
         "smoothness": 0.6,
         "sharpness": 0.4,
         "lightness": 0.3,
-        "redness": 0.0,
-        "contrast_strength": 0.0,
+        "redness": 0.1,
+        "contrast_strength": 0.2,
         "saturation": 0.0,
         "brightness": 0.0
     },
@@ -42,7 +42,7 @@
     ],
     "face_buffing_option": {
         "eye_pouch": 0.5,
-        "brighten_eye": 0.0,
+        "brighten_eye": 0.2,
         "nasolabial_fold": 0.35,
         "whiten_teeth": 0.8
     }

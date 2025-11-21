@@ -74,17 +74,17 @@ private func setupFuResource() -> Bool {
 
 extension ShowCreateLiveVC {
     func isBeautyDownloaded() -> Bool {
-//        if KeyCenter.DynamicResourceUrl?.isEmpty ?? true == true {
-//            return true
-//        }
-//           
-//        if setupStResource(), setupBeResource(), setupFuResource() {
-//            return true
-//        }
-//        checkAndSetupBeautyPath {[weak self] err in
-//            self?.markProgressCompletion(err: err)
-//        }
-        return true
+        if KeyCenter.DynamicResourceUrl?.isEmpty ?? true == true {
+            return true
+        }
+           
+        if setupFuResource() {
+            return true
+        }
+        checkAndSetupBeautyPath {[weak self] err in
+            self?.markProgressCompletion(err: err)
+        }
+        return false
     }
     
     func cancelBeautyResource() {
@@ -141,8 +141,8 @@ extension ShowCreateLiveVC {
 //            }
 //            return
 //        }
-        
-        //setup byte effect path
+//        
+//        //setup byte effect path
 //        guard setupBeResource() else {
 //            let type = BeautyFactoryType.byte
 //            self.updateDownloadProgress(title: type.title, progress: 0)
@@ -159,20 +159,20 @@ extension ShowCreateLiveVC {
 //        }
         
         //setup fu effect path
-//        guard setupFuResource() else {
-//            let type = BeautyFactoryType.fu
-//            self.updateDownloadProgress(title: type.title, progress: 0)
-//            AGResourceManager.autoDownload(uris: [kFuLicUri, kFuUri]) {[weak self] progress in
-//                self?.updateDownloadProgress(title: type.title, progress: progress)
-//            } completion: { [weak self] err in
-//                guard let self = self else {return}
-//                self.markProgressCompletion(err: err)
-//                if let _ = err { return }
-//                setupFuResource()
-//                self.checkAndSetupBeautyPath(completion: completion)
-//            }
-//            return
-//        }
+        guard setupFuResource() else {
+            let type = BeautyFactoryType.fu
+            self.updateDownloadProgress(title: type.title, progress: 0)
+            AGResourceManager.autoDownload(uris: [kFuLicUri, kFuUri]) {[weak self] progress in
+                self?.updateDownloadProgress(title: type.title, progress: progress)
+            } completion: { [weak self] err in
+                guard let self = self else {return}
+                self.markProgressCompletion(err: err)
+                if let _ = err { return }
+                setupFuResource()
+                self.checkAndSetupBeautyPath(completion: completion)
+            }
+            return
+        }
         
         ShowLogger.info("checkAndSetupBeautyPath done", context: kCreateLiveVCTag)
         completion?(nil)

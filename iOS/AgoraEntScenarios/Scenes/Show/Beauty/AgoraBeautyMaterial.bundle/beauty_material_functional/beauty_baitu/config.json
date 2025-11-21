@@ -6,8 +6,8 @@
         "redness": 0.2,
         "sharpness": 0.15,
         "contrast_strength": 0.2,
-        "hue": 0.0,
-        "saturation": 0.0,
+        "hue": 0.2,
+        "saturation": -0.4,
         "brightness": 0.0
     },
     "face_shape_beauty_option": {
