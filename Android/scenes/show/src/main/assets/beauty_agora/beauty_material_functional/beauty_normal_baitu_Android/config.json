@@ -5,9 +5,9 @@
         "lightness": 0.5,
         "sharpness": 0.15,
         "contrast_strength": 0.5,
-        "hue": -0.3,
-        "saturation": -0.3,
-        "temperature": -0.2
+        "hue": -0.2,
+        "saturation": -0.1,
+        "temperature": -0.3
     },
     "face_shape_beauty_option": {
         "enable": true,
