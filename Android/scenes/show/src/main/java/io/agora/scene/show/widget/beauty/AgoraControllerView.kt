@@ -62,36 +62,6 @@ class AgoraControllerView : BaseControllerView {
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_dark,
-                        R.mipmap.show_beauty_ic_effect_tianmei,
-                        isSelected = beautyConfig.beautyName == "模板-暗光",
-                        onValueChanged = { _ ->
-                            beautyConfig.beautyName = "模板-暗光"
-                            beautyConfig.autoSharp = false
-                            beautyConfig.smoothFactor = 1.0f
-                        }
-                    ),
-                    ItemInfo(
-                        R.string.show_beauty_item_show,
-                        R.mipmap.show_beauty_ic_effect_tianmei,
-                        isSelected = beautyConfig.beautyName == "模板-秀场",
-                        onValueChanged = { _ ->
-                            beautyConfig.beautyName = "模板-秀场"
-                            beautyConfig.autoSharp = true
-                            beautyConfig.smoothFactor = 1.0f
-                        }
-                    ),
-                    ItemInfo(
-                        R.string.show_beauty_item_makeup,
-                        R.mipmap.show_beauty_ic_effect_tianmei,
-                        isSelected = beautyConfig.beautyName == "模板-秀场带妆",
-                        onValueChanged = { _ ->
-                            beautyConfig.beautyName = "模板-秀场带妆"
-                            beautyConfig.autoSharp = true
-                            beautyConfig.smoothFactor = 0.0f
-                        }
-                    ),
-                    ItemInfo(
                         R.string.show_beauty_item_faceshape_female,
                         R.mipmap.show_beauty_ic_effect_tianmei,
                         beautyConfig.femaleStyle.toFloat(),
@@ -517,26 +487,26 @@ class AgoraControllerView : BaseControllerView {
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_effect_baitu1,
+                        R.string.show_beauty_item_effect_chengshu,
                         R.mipmap.show_beauty_ic_effect_oumei,
                         withPadding = false,
-                        isSelected = beautyConfig.makeupName == "白兔妆1",
+                        isSelected = beautyConfig.makeupName == "成熟妆",
                         value = beautyConfig.makeupStrength,
                         onValueChanged = { value ->
                             beautyConfig.stylemakeup = true
-                            beautyConfig.makeupName = "白兔妆1"
+                            beautyConfig.makeupName = "成熟妆"
                             beautyConfig.makeupStrength = value
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_effect_baitu2,
+                        R.string.show_beauty_item_effect_oumei,
                         R.mipmap.show_beauty_ic_effect_oumei,
                         withPadding = false,
-                        isSelected = beautyConfig.makeupName == "白兔妆2",
+                        isSelected = beautyConfig.makeupName == "欧美妆",
                         value = beautyConfig.makeupStrength,
                         onValueChanged = { value ->
                             beautyConfig.stylemakeup = true
-                            beautyConfig.makeupName = "白兔妆2"
+                            beautyConfig.makeupName = "欧美妆"
                             beautyConfig.makeupStrength = value
                         }
                     )

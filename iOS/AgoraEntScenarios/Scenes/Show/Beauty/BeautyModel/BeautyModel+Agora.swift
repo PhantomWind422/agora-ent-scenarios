@@ -43,30 +43,6 @@ extension BeautyModel {
         
         model = BeautyModel()
         model.path = ""
-        model.key = "templateBeauty4"
-        model.value = 0
-        model.name = "模板-暗光"
-        model.icon = "meiyan_fgz_tianmei"
-        dataArray.append(model)
-        
-        model = BeautyModel()
-        model.path = ""
-        model.key = "templateBeauty5"
-        model.value = 0
-        model.name = "模板-秀场"
-        model.icon = "meiyan_fgz_tianmei"
-        dataArray.append(model)
-        
-        model = BeautyModel()
-        model.path = ""
-        model.key = "templateBeauty6"
-        model.value = 0
-        model.name = "模板-带妆"
-        model.icon = "meiyan_fgz_tianmei"
-        dataArray.append(model)
-        
-        model = BeautyModel()
-        model.path = ""
         model.key = "fsstyleFemale"
         model.value = 0.0
         model.name = "美型-女"
@@ -833,18 +809,18 @@ extension BeautyModel {
         // baitu1
         model = BeautyModel()
         model.path = ""
-        model.key = "白兔妆1"
+        model.key = "成熟妆"
         model.value = 0.85
-        model.name = "白兔妆1"
+        model.name = "成熟妆"
         model.icon = "meiyan_oumei"
         dataArray.append(model)
         
         // baitu2
         model = BeautyModel()
         model.path = ""
-        model.key = "白兔妆2"
+        model.key = "欧美妆"
         model.value = 0.85
-        model.name = "白兔妆2"
+        model.name = "欧美妆"
         model.icon = "meiyan_oumei"
         dataArray.append(model)
         
