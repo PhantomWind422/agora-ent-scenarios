@@ -19,25 +19,41 @@ extension BeautyModel {
         // template
         model = BeautyModel()
         model.path = ""
-        model.key = "templateNormal1"
+        model.key = "templateBeauty1"
         model.value = 0
-        model.name = "模板-基础1"
+        model.name = "模板-通用"
         model.icon = "meiyan_fgz_tianmei"
         dataArray.append(model)
         
         model = BeautyModel()
         model.path = ""
-        model.key = "templateNormal2"
+        model.key = "templateBeauty2"
         model.value = 0
-        model.name = "模板-基础2"
+        model.name = "模板-素人"
         model.icon = "meiyan_fgz_tianmei"
         dataArray.append(model)
         
         model = BeautyModel()
         model.path = ""
-        model.key = "templateBaitu"
+        model.key = "templateBeauty3"
         model.value = 0
-        model.name = "模板-白兔"
+        model.name = "模板-主播"
+        model.icon = "meiyan_fgz_tianmei"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "templateBeauty4"
+        model.value = 0
+        model.name = "模板-秀场"
+        model.icon = "meiyan_fgz_tianmei"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "templateBeauty5"
+        model.value = 0
+        model.name = "模板-带妆"
         model.icon = "meiyan_fgz_tianmei"
         dataArray.append(model)
         
@@ -523,27 +539,36 @@ extension BeautyModel {
         // xuejie
         model = BeautyModel()
         model.path = ""
-        model.key = "xuejie"
+        model.key = "学姐妆"
         model.value = 0.85
-        model.name = "show_beauty_item_effect_xuejie".show_localized
+        model.name = "学姐妆"
         model.icon = "meiyan_hunxue"
         dataArray.append(model)
         
-        // xuemei
+        // qizhi
         model = BeautyModel()
         model.path = ""
-        model.key = "xuemei"
+        model.key = "气质妆"
         model.value = 0.85
-        model.name = "show_beauty_item_effect_xuemei".show_localized
+        model.name = "气质妆"
+        model.icon = "meiyan_oumei"
+        dataArray.append(model)
+        
+        // shaonv
+        model = BeautyModel()
+        model.path = ""
+        model.key = "少女妆"
+        model.value = 0.85
+        model.name = "少女妆"
         model.icon = "meiyan_oumei"
         dataArray.append(model)
         
         // baitu
         model = BeautyModel()
         model.path = ""
-        model.key = "baitu"
+        model.key = "白兔妆1"
         model.value = 0.85
-        model.name = "白兔妆"
+        model.name = "白兔妆1"
         model.icon = "meiyan_oumei"
         dataArray.append(model)
         

@@ -53,7 +53,7 @@ object BeautyManager {
     private var byteDanceInitSuccess = false
 
     // Beauty type
-    var beautyType = BeautyType.Agora
+    var beautyType = BeautyType.FaceUnity
         set(value) {
             if (field == value) {
                 when (value) {

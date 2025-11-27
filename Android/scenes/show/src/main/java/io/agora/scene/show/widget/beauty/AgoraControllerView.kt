@@ -32,27 +32,53 @@ class AgoraControllerView : BaseControllerView {
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_normal,
+                        R.string.show_beauty_item_general,
                         R.mipmap.show_beauty_ic_effect_tianmei,
-                        isSelected = beautyConfig.beautyName == "抖音模板",
+                        isSelected = beautyConfig.beautyName == "模板-通用",
                         onValueChanged = { _ ->
-                            beautyConfig.beautyName = "抖音模板"
+                            beautyConfig.beautyName = "模板-通用"
+                            beautyConfig.autoSharp = false
+                            beautyConfig.smoothFactor = 1.0f
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_normal2,
+                        R.string.show_beauty_item_suren,
                         R.mipmap.show_beauty_ic_effect_tianmei,
-                        isSelected = beautyConfig.beautyName == "相芯模板",
+                        isSelected = beautyConfig.beautyName == "模板-素人",
                         onValueChanged = { _ ->
-                            beautyConfig.beautyName = "相芯模板"
+                            beautyConfig.beautyName = "模板-素人"
+                            beautyConfig.autoSharp = false
+                            beautyConfig.smoothFactor = 1.0f
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_baitu,
+                        R.string.show_beauty_item_zhubo,
                         R.mipmap.show_beauty_ic_effect_tianmei,
-                        isSelected = beautyConfig.beautyName == "白兔模板",
+                        isSelected = beautyConfig.beautyName == "模板-主播Android",
                         onValueChanged = { _ ->
-                            beautyConfig.beautyName = "白兔模板"
+                            beautyConfig.beautyName = "模板-主播Android"
+                            beautyConfig.autoSharp = false
+                            beautyConfig.smoothFactor = 1.0f
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_show,
+                        R.mipmap.show_beauty_ic_effect_tianmei,
+                        isSelected = beautyConfig.beautyName == "模板-秀场",
+                        onValueChanged = { _ ->
+                            beautyConfig.beautyName = "模板-秀场"
+                            beautyConfig.autoSharp = true
+                            beautyConfig.smoothFactor = 1.0f
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_makeup,
+                        R.mipmap.show_beauty_ic_effect_tianmei,
+                        isSelected = beautyConfig.beautyName == "模板-秀场带妆",
+                        onValueChanged = { _ ->
+                            beautyConfig.beautyName = "模板-秀场带妆"
+                            beautyConfig.autoSharp = true
+                            beautyConfig.smoothFactor = 0.0f
                         }
                     ),
                     ItemInfo(
@@ -446,7 +472,7 @@ class AgoraControllerView : BaseControllerView {
                     ),
                     ItemInfo(
                         R.string.show_beauty_item_effect_xuejie,
-                        R.mipmap.show_beauty_ic_effect_hunxue,
+                        R.mipmap.show_beauty_ic_effect_oumei,
                         withPadding = false,
                         isSelected = beautyConfig.makeupName == "学姐妆",
                         value = beautyConfig.makeupStrength,
@@ -457,26 +483,38 @@ class AgoraControllerView : BaseControllerView {
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_effect_xuemei,
-                        R.mipmap.show_beauty_ic_effect_oumei,
+                        R.string.show_beauty_item_effect_shaonv,
+                        R.mipmap.show_beauty_ic_effect_hunxue,
                         withPadding = false,
-                        isSelected = beautyConfig.makeupName == "学妹妆",
+                        isSelected = beautyConfig.makeupName == "少女妆",
                         value = beautyConfig.makeupStrength,
                         onValueChanged = { value ->
                             beautyConfig.stylemakeup = true
-                            beautyConfig.makeupName = "学妹妆"
+                            beautyConfig.makeupName = "少女妆"
                             beautyConfig.makeupStrength = value
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_effect_baitu2,
+                        R.string.show_beauty_item_effect_qizhi,
                         R.mipmap.show_beauty_ic_effect_oumei,
                         withPadding = false,
-                        isSelected = beautyConfig.makeupName == "白兔妆",
+                        isSelected = beautyConfig.makeupName == "气质妆",
                         value = beautyConfig.makeupStrength,
                         onValueChanged = { value ->
                             beautyConfig.stylemakeup = true
-                            beautyConfig.makeupName = "白兔妆"
+                            beautyConfig.makeupName = "气质妆"
+                            beautyConfig.makeupStrength = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_effect_baitu1,
+                        R.mipmap.show_beauty_ic_effect_oumei,
+                        withPadding = false,
+                        isSelected = beautyConfig.makeupName == "白兔妆1",
+                        value = beautyConfig.makeupStrength,
+                        onValueChanged = { value ->
+                            beautyConfig.stylemakeup = true
+                            beautyConfig.makeupName = "白兔妆1"
                             beautyConfig.makeupStrength = value
                         }
                     )
@@ -556,15 +594,25 @@ class AgoraControllerView : BaseControllerView {
                             beautyConfig.hue = 0.0f
                             beautyConfig.saturation = 0.0f
                             beautyConfig.brightness = 0.0f
+                            beautyConfig.temperature = 0.0f
                         },
                     ),
                     ItemInfo(
                         R.string.show_beauty_item_beauty_redden,
                         R.mipmap.show_beauty_ic_face_redden,
-                        beautyConfig.sharpen,
+                        beautyConfig.redness,
                         onValueChanged = { value ->
                             beautyConfig.redness = value
                         }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_beauty_temp,
+                        R.mipmap.show_beauty_ic_adjust_clear,
+                        beautyConfig.temperature,
+                        onValueChanged = { value ->
+                            beautyConfig.temperature = value
+                        },
+                        valueRange = -1.0f..1.0f
                     ),
                     ItemInfo(
                         R.string.show_beauty_item_beauty_hue,
@@ -572,7 +620,8 @@ class AgoraControllerView : BaseControllerView {
                         beautyConfig.hue,
                         onValueChanged = { value ->
                             beautyConfig.hue = value
-                        }
+                        },
+                        valueRange = -1.0f..1.0f
                     ),
                     ItemInfo(
                         R.string.show_beauty_item_adjust_saturation,
@@ -580,7 +629,8 @@ class AgoraControllerView : BaseControllerView {
                         beautyConfig.saturation,
                         onValueChanged = { value ->
                             beautyConfig.saturation = value
-                        }
+                        },
+                        valueRange = -1.0f..1.0f
                     ),
                     ItemInfo(
                         R.string.show_beauty_item_beauty_brightness,

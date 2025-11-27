@@ -178,6 +178,18 @@ object AgoraBeautySDK {
                 }
             }
 
+        var autoSharp: Boolean = false
+            set(value) {
+                field = value
+                beautyEffect?.setVideoEffectBoolParam("beauty_custom_option", "auto_sharpness", value)
+            }
+
+        var smoothFactor: Float = 1.0f
+            set(value) {
+                field = value
+                beautyEffect?.setVideoEffectFloatParam("beauty_custom_option", "smooth_factor", value)
+            }
+
         // 磨皮程度，取值范围为 [0.0,1.0]，其中 0.0 表示原始磨皮程度，默认值为 0.5。取值越大，磨皮程度越大。
         var smooth: Float = 0.35f
             set(value) {
@@ -231,11 +243,18 @@ object AgoraBeautySDK {
                 beautyEffect?.setVideoEffectFloatParam("beauty_effect_option", "contrast_strength", value)
             }
 
-        var redness: Float = 0.2f
+        var redness: Float = 0.0f
             set(value) {
                 field = value
                 enableBeauty(true)
                 beautyEffect?.setVideoEffectFloatParam("beauty_effect_option", "redness", value)
+            }
+
+        var temperature: Float = 0.0f
+            set(value) {
+                field = value
+                enableBeauty(true)
+                beautyEffect?.setVideoEffectFloatParam("beauty_effect_option", "temperature", value)
             }
 
         var hue: Float = 0.0f

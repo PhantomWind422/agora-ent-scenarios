@@ -123,17 +123,30 @@ class AgoraBeautyManager: NSObject {
         // beauty has no template ui selection. use default template
         beautyTemplate = ""
         switch key ?? "" {
-        case "templateNormal1":
-            beautyTemplate = "抖音模板"
+        case "templateBeauty1":
+            beautyTemplate = "模板-通用"
+            beautyEffect?.setVideoEffectBoolParam(option: "beauty_custom_option", key: "auto_sharpness", boolValue: false)
+            beautyEffect?.setVideoEffectFloatParam(option: "beauty_custom_option", key: "smooth_factor", floatValue: 1.0)
         break
-        case "templateNormal2":
-            beautyTemplate = "相芯模板"
+        case "templateBeauty2":
+            beautyTemplate = "模板-素人"
+            beautyEffect?.setVideoEffectBoolParam(option: "beauty_custom_option", key: "auto_sharpness", boolValue: false)
+            beautyEffect?.setVideoEffectFloatParam(option: "beauty_custom_option", key: "smooth_factor", floatValue: 1.0)
         break
-        case "templateShow":
-            beautyTemplate = "秀场模板"
+        case "templateBeauty3":
+            beautyTemplate = "模板-主播iOS"
+            beautyEffect?.setVideoEffectBoolParam(option: "beauty_custom_option", key: "auto_sharpness", boolValue: false)
+            beautyEffect?.setVideoEffectFloatParam(option: "beauty_custom_option", key: "smooth_factor", floatValue: 1.0)
         break
-        case "templateBaitu":
-            beautyTemplate = "白兔模板"
+        case "templateBeauty4":
+            beautyTemplate = "模板-秀场"
+            beautyEffect?.setVideoEffectBoolParam(option: "beauty_custom_option", key: "auto_sharpness", boolValue: true)
+            beautyEffect?.setVideoEffectFloatParam(option: "beauty_custom_option", key: "smooth_factor", floatValue: 1.0)
+        break
+        case "templateBeauty5":
+            beautyTemplate = "模板-秀场带妆"
+            beautyEffect?.setVideoEffectBoolParam(option: "beauty_custom_option", key: "auto_sharpness", boolValue: true)
+            beautyEffect?.setVideoEffectFloatParam(option: "beauty_custom_option", key: "smooth_factor", floatValue: 0.0)
         break
         case "smoothnessLevel":
             beautyEffect?.setVideoEffectFloatParam(option: "beauty_effect_option", key: "smoothness", floatValue: Float(value))
@@ -379,27 +392,15 @@ class AgoraBeautyManager: NSObject {
         if key == nil {
             // close stylemakeup effect
             makeupTemplate = nil
+            return
         }
         else if key == "init" {
             // load stylemakeup default template
             makeupTemplate = ""
+            return
         }
-        switch key ?? "" {
-        case "xuejie":
-            makeupTemplate = "学姐妆"
-            beautyEffect?.setVideoEffectFloatParam(option: "style_makeup_option", key: "styleIntensity", floatValue: Float(value))
-        break
-        case "xuemei":
-            makeupTemplate = "学妹妆"
-            beautyEffect?.setVideoEffectFloatParam(option: "style_makeup_option", key: "styleIntensity", floatValue: Float(value))
-        break
-        case "baitu":
-            makeupTemplate = "白兔妆"
-            beautyEffect?.setVideoEffectFloatParam(option: "style_makeup_option", key: "styleIntensity", floatValue: Float(value))
-        break
-        default:
-        break
-        }
+        makeupTemplate = key
+        beautyEffect?.setVideoEffectFloatParam(option: "style_makeup_option", key: "styleIntensity", floatValue: Float(value))
     }
     
     func setSticker(path: String?, key: String?, value: CGFloat) {

@@ -200,9 +200,9 @@ extension ShowSyncManagerServiceImp {
             let duration = scene.getRoomDuration()
             let expiredDuration = (4800) * 1000
             if duration >= expiredDuration {
-                self.stopCheckExpireTimer(roomId: roomId)
-                
-                self.onSceneExpire(channelName: roomId)
+//                self.stopCheckExpireTimer(roomId: roomId)
+//                
+//                self.onSceneExpire(channelName: roomId)
                 return
             }
         }

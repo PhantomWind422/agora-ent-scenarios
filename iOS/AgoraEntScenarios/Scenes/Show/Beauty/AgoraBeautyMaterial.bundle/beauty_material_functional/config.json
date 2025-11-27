@@ -4,17 +4,22 @@
         "version": "2.0.0",
         "aspect": "16:9",
         "preferred_fps": 24,
-        "performance_mode": 2,
-        "beautify_max": 1
+        "performance_mode": 0
     },
     "user_interface_option": {
-        "抖音模板": "beauty_douyin/",
-        "相芯模板": "beauty_xiangxin/",
-        "秀场模板": "beauty_show/",
-        "白兔模板": "beauty_baitu/",
+        "模板-通用": "beauty_normal_douyin/",
+        "模板-素人": "beauty_normal_xiangxin/",
+        "模板-主播iOS": "beauty_normal_baitu_iOS/",
+        "模板-主播Android": "beauty_normal_baitu_Android/",
+        "模板-暗光": "beauty_normal_dark/",
+        "模板-秀场": "beauty_show_default/",
+        "模板-秀场带妆": "beauty_show_makeup/",
         "学姐妆": "stylemakeup_xuejie/",
-        "学妹妆": "stylemakeup_xuemei/",
-        "白兔妆": "stylemakeup_baitu/",
+        "少女妆": "stylemakeup_shaonv/",
+        "气质妆": "stylemakeup_qizhi/",
+        "少女妆": "stylemakeup_shaonv/",
+        "白兔妆1": "stylemakeup_baitu1/",
+        "白兔妆2": "stylemakeup_baitu2/",
         "暖黄" : "filter_nuanhuang/",
         "胶片" : "filter_jiaopian/",
         "蜜桃" : "filter_mitao/",
@@ -25,14 +30,8 @@
         "招财猫": "sticker_招财猫/",
         "国风": "sticker_国风/"
     },
-    "beauty_config" : "抖音模板",
-    "beauty_custom_option": {
-        "smooth_factor": 1.0
-    },
+    "beauty_config" : "模板-通用",
     "face_shape_custom_option": {
-        "face_custom_factor": 1.2,
-        "eye_custom_factor": 1.2,
-        "mouth_custom_factor": 1.2,
-        "max_crop_percent": 0.01
+        "max_crop_percent" : 0.015
     }
 }

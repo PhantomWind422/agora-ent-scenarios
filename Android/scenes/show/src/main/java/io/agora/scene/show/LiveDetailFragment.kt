@@ -169,8 +169,8 @@ class LiveDetailFragment : Fragment() {
     private val scenarioApi by lazy { AudioScenarioApi(mRtcEngine) }
 
     private val timerRoomEndRun = Runnable {
-        destroy(false) // Room has reached its limit time
-        showLivingEndLayout() // Room has reached its limit time
+//        destroy(false) // Room has reached its limit time
+//        showLivingEndLayout() // Room has reached its limit time
         ShowLogger.d("showLivingEndLayout", "timer end!")
     }
 
@@ -255,8 +255,8 @@ class LiveDetailFragment : Fragment() {
             initRtcEngine()
             initServiceWithJoinRoom()
         } else {
-            val roomLeftTime =
-                ShowServiceProtocol.ROOM_AVAILABLE_DURATION - (TimeUtils.currentTimeMillis() - mRoomInfo.createdAt.toLong())
+            val roomLeftTime = 1
+                //ShowServiceProtocol.ROOM_AVAILABLE_DURATION - (TimeUtils.currentTimeMillis() - mRoomInfo.createdAt.toLong())
             if (roomLeftTime > 0) {
                 mBinding.root.postDelayed(
                     timerRoomEndRun,
