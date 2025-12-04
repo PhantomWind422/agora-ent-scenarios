@@ -471,26 +471,38 @@ class AgoraControllerView : BaseControllerView {
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_effect_xuejie,
+                        R.string.show_beauty_item_effect_baixi,
                         R.mipmap.show_beauty_ic_effect_oumei,
                         withPadding = false,
-                        isSelected = beautyConfig.makeupName == "学姐妆",
+                        isSelected = beautyConfig.makeupName == "白皙妆",
                         value = beautyConfig.makeupStrength,
                         onValueChanged = { value ->
                             beautyConfig.stylemakeup = true
-                            beautyConfig.makeupName = "学姐妆"
+                            beautyConfig.makeupName = "白皙妆"
                             beautyConfig.makeupStrength = value
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_effect_shaonv,
+                        R.string.show_beauty_item_effect_fenyun,
                         R.mipmap.show_beauty_ic_effect_hunxue,
                         withPadding = false,
-                        isSelected = beautyConfig.makeupName == "少女妆",
+                        isSelected = beautyConfig.makeupName == "粉晕妆",
                         value = beautyConfig.makeupStrength,
                         onValueChanged = { value ->
                             beautyConfig.stylemakeup = true
-                            beautyConfig.makeupName = "少女妆"
+                            beautyConfig.makeupName = "粉晕妆"
+                            beautyConfig.makeupStrength = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_effect_qiaopi,
+                        R.mipmap.show_beauty_ic_effect_oumei,
+                        withPadding = false,
+                        isSelected = beautyConfig.makeupName == "俏皮妆",
+                        value = beautyConfig.makeupStrength,
+                        onValueChanged = { value ->
+                            beautyConfig.stylemakeup = true
+                            beautyConfig.makeupName = "俏皮妆"
                             beautyConfig.makeupStrength = value
                         }
                     ),
@@ -507,14 +519,74 @@ class AgoraControllerView : BaseControllerView {
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_effect_baitu1,
+                        R.string.show_beauty_item_effect_shaonv,
                         R.mipmap.show_beauty_ic_effect_oumei,
                         withPadding = false,
-                        isSelected = beautyConfig.makeupName == "白兔妆1",
+                        isSelected = beautyConfig.makeupName == "少女妆",
                         value = beautyConfig.makeupStrength,
                         onValueChanged = { value ->
                             beautyConfig.stylemakeup = true
-                            beautyConfig.makeupName = "白兔妆1"
+                            beautyConfig.makeupName = "少女妆"
+                            beautyConfig.makeupStrength = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_effect_shenshui,
+                        R.mipmap.show_beauty_ic_effect_oumei,
+                        withPadding = false,
+                        isSelected = beautyConfig.makeupName == "深邃妆",
+                        value = beautyConfig.makeupStrength,
+                        onValueChanged = { value ->
+                            beautyConfig.stylemakeup = true
+                            beautyConfig.makeupName = "深邃妆"
+                            beautyConfig.makeupStrength = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_effect_xuejie,
+                        R.mipmap.show_beauty_ic_effect_oumei,
+                        withPadding = false,
+                        isSelected = beautyConfig.makeupName == "学姐妆",
+                        value = beautyConfig.makeupStrength,
+                        onValueChanged = { value ->
+                            beautyConfig.stylemakeup = true
+                            beautyConfig.makeupName = "学姐妆"
+                            beautyConfig.makeupStrength = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_effect_xuemei,
+                        R.mipmap.show_beauty_ic_effect_oumei,
+                        withPadding = false,
+                        isSelected = beautyConfig.makeupName == "学妹妆",
+                        value = beautyConfig.makeupStrength,
+                        onValueChanged = { value ->
+                            beautyConfig.stylemakeup = true
+                            beautyConfig.makeupName = "学妹妆"
+                            beautyConfig.makeupStrength = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_effect_yinyun,
+                        R.mipmap.show_beauty_ic_effect_oumei,
+                        withPadding = false,
+                        isSelected = beautyConfig.makeupName == "氤氲妆",
+                        value = beautyConfig.makeupStrength,
+                        onValueChanged = { value ->
+                            beautyConfig.stylemakeup = true
+                            beautyConfig.makeupName = "氤氲妆"
+                            beautyConfig.makeupStrength = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_effect_youya,
+                        R.mipmap.show_beauty_ic_effect_oumei,
+                        withPadding = false,
+                        isSelected = beautyConfig.makeupName == "优雅妆",
+                        value = beautyConfig.makeupStrength,
+                        onValueChanged = { value ->
+                            beautyConfig.stylemakeup = true
+                            beautyConfig.makeupName = "优雅妆"
                             beautyConfig.makeupStrength = value
                         }
                     )

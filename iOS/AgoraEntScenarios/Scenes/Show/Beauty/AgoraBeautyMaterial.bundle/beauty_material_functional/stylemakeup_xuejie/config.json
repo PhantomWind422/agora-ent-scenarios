@@ -14,14 +14,19 @@
         "pupilStrength": 0.0,
         "blushStyle": 7,
         "blushColor": 4,
-        "blushStrength": 0.9,
-        "lipStyle": 4,
-        "lipColor": 7,
-        "lipStrength": 1.0,
+        "blushStrength": 0.7,
+        "lipStyle": 2,
+        "lipColor": 8,
+        "lipStrength": 0.7,
         "facialStyle": 6,
-        "facialStrength": 0.7,
+        "facialStrength": 1.0,
         "wocanStyle": 4,
         "wocanStrength": 0.0
+    },
+    "filter_effect_option": {
+        "enable": true,
+        "path": "../../resource/filters/naiyou.png",
+        "strength": 0.3
     },
     "style_makeup_option" : {
       "styleIntensity" : 0.95

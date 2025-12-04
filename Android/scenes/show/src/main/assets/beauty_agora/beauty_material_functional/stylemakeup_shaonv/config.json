@@ -14,14 +14,19 @@
         "pupilStrength": 0.0,
         "blushStyle": 2,
         "blushColor": 5,
-        "blushStrength": 0.8,
-        "lipStyle": 2,
-        "lipColor": 9,
-        "lipStrength": 0.8,
+        "blushStrength": 0.7,
+        "lipStyle": 6,
+        "lipColor": 7,
+        "lipStrength": 0.4,
         "facialStyle": 2,
         "facialStrength": 1.0,
         "wocanStyle": 2,
         "wocanStrength": 0.0
+    },
+    "filter_effect_option": {
+        "enable": true,
+        "path": "../../resource/filters/liuguang.png",
+        "strength": 0.3
     },
     "style_makeup_option" : {
       "styleIntensity" : 0.95
