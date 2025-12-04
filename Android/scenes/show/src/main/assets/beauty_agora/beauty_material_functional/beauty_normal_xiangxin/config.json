@@ -3,7 +3,7 @@
         "enable": true,
         "smoothness": 0.55,
         "sharpness": 0.6,
-        "lightness": 0.5,
+        "lightness": 0.6,
         "redness": 0.3,
         "contrast_strength": 0.0,
         "saturation": -0.1,

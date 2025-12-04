@@ -7,7 +7,8 @@
         "redness": 0.3,
         "contrast_strength": 0.0,
         "saturation": -0.2,
-        "temperature": -0.4
+        "temperature": -0.4,
+        "brightness": 0.1
     },
     "face_shape_beauty_option": {
         "enable": true,

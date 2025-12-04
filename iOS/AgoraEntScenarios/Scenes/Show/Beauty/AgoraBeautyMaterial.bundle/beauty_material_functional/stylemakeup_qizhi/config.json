@@ -13,15 +13,20 @@
         "pupilStyle": 1,
         "pupilStrength": 0.0,
         "blushStyle": 1,
-        "blushColor": 1,
-        "blushStrength": 0.8,
+        "blushColor": 2,
+        "blushStrength": 0.7,
         "lipStyle": 1,
-        "lipColor": 1,
-        "lipStrength": 1.0,
-        "facialStyle": 1,
-        "facialStrength": 0.7,
+        "lipColor": 2,
+        "lipStrength": 0.6,
+        "facialStyle": 2,
+        "facialStrength": 0.9,
         "wocanStyle": 4,
         "wocanStrength": 0.0
+    },
+    "filter_effect_option": {
+        "enable": true,
+        "path": "../../resource/filters/cool/menghuan.png",
+        "strength": 0.3
     },
     "style_makeup_option" : {
       "styleIntensity" : 0.95

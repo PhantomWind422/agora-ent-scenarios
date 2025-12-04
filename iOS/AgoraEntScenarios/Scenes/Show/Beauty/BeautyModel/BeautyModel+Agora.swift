@@ -779,12 +779,30 @@ extension BeautyModel {
         model.isSelected = true
         dataArray.append(model)
         
-        // xuejie
+        // baixi
         model = BeautyModel()
         model.path = ""
-        model.key = "学姐妆"
+        model.key = "白皙妆"
         model.value = 0.85
-        model.name = "学姐妆"
+        model.name = "白皙妆"
+        model.icon = "meiyan_hunxue"
+        dataArray.append(model)
+        
+        // fenyun
+        model = BeautyModel()
+        model.path = ""
+        model.key = "粉晕妆"
+        model.value = 0.85
+        model.name = "粉晕妆"
+        model.icon = "meiyan_oumei"
+        dataArray.append(model)
+        
+        // qiaopi
+        model = BeautyModel()
+        model.path = ""
+        model.key = "俏皮妆"
+        model.value = 0.85
+        model.name = "俏皮妆"
         model.icon = "meiyan_hunxue"
         dataArray.append(model)
         
@@ -806,22 +824,58 @@ extension BeautyModel {
         model.icon = "meiyan_hunxue"
         dataArray.append(model)
         
-        // baitu1
+        // qizhi
         model = BeautyModel()
         model.path = ""
-        model.key = "成熟妆"
+        model.key = "气质妆"
         model.value = 0.85
-        model.name = "成熟妆"
+        model.name = "气质妆"
         model.icon = "meiyan_oumei"
         dataArray.append(model)
         
-        // baitu2
+        // shenshui
         model = BeautyModel()
         model.path = ""
-        model.key = "欧美妆"
+        model.key = "深邃妆"
         model.value = 0.85
-        model.name = "欧美妆"
+        model.name = "深邃妆"
+        model.icon = "meiyan_hunxue"
+        dataArray.append(model)
+        
+        // xuejie
+        model = BeautyModel()
+        model.path = ""
+        model.key = "学姐妆"
+        model.value = 0.85
+        model.name = "学姐妆"
         model.icon = "meiyan_oumei"
+        dataArray.append(model)
+        
+        // xuemei
+        model = BeautyModel()
+        model.path = ""
+        model.key = "学妹妆"
+        model.value = 0.85
+        model.name = "学妹妆"
+        model.icon = "meiyan_hunxue"
+        dataArray.append(model)
+        
+        // yinyun
+        model = BeautyModel()
+        model.path = ""
+        model.key = "氤氲妆"
+        model.value = 0.85
+        model.name = "氤氲妆"
+        model.icon = "meiyan_oumei"
+        dataArray.append(model)
+        
+        // youya
+        model = BeautyModel()
+        model.path = ""
+        model.key = "优雅妆"
+        model.value = 0.85
+        model.name = "优雅妆"
+        model.icon = "meiyan_hunxue"
         dataArray.append(model)
         
         return dataArray
