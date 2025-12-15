@@ -121,33 +121,8 @@ class AgoraBeautyManager: NSObject {
             return
         }
         // beauty has no template ui selection. use default template
-        beautyTemplate = ""
+        beautyTemplate = "模板-素人"
         switch key ?? "" {
-        case "templateBeauty1":
-            beautyTemplate = "模板-通用"
-            beautyEffect?.setVideoEffectBoolParam(option: "beauty_custom_option", key: "auto_sharpness", boolValue: false)
-            beautyEffect?.setVideoEffectFloatParam(option: "beauty_custom_option", key: "smooth_factor", floatValue: 1.0)
-        break
-        case "templateBeauty2":
-            beautyTemplate = "模板-素人"
-            beautyEffect?.setVideoEffectBoolParam(option: "beauty_custom_option", key: "auto_sharpness", boolValue: false)
-            beautyEffect?.setVideoEffectFloatParam(option: "beauty_custom_option", key: "smooth_factor", floatValue: 1.0)
-        break
-        case "templateBeauty3":
-            beautyTemplate = "模板-主播iOS"
-            beautyEffect?.setVideoEffectBoolParam(option: "beauty_custom_option", key: "auto_sharpness", boolValue: false)
-            beautyEffect?.setVideoEffectFloatParam(option: "beauty_custom_option", key: "smooth_factor", floatValue: 1.0)
-        break
-        case "templateBeauty4":
-            beautyTemplate = "模板-秀场"
-            beautyEffect?.setVideoEffectBoolParam(option: "beauty_custom_option", key: "auto_sharpness", boolValue: true)
-            beautyEffect?.setVideoEffectFloatParam(option: "beauty_custom_option", key: "smooth_factor", floatValue: 1.0)
-        break
-        case "templateBeauty5":
-            beautyTemplate = "模板-秀场带妆"
-            beautyEffect?.setVideoEffectBoolParam(option: "beauty_custom_option", key: "auto_sharpness", boolValue: true)
-            beautyEffect?.setVideoEffectFloatParam(option: "beauty_custom_option", key: "smooth_factor", floatValue: 0.0)
-        break
         case "smoothnessLevel":
             beautyEffect?.setVideoEffectFloatParam(option: "beauty_effect_option", key: "smoothness", floatValue: Float(value))
         break

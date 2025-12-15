@@ -11,35 +11,6 @@ extension BeautyModel {
     static func createAgoraBeautyData() -> [BeautyModel] {
         var dataArray = [BeautyModel]()
         var model = BeautyModel()
-        model.name = "show_beauty_item_none".show_localized
-        model.icon = "show_beauty_none"
-        model.isSelected = true
-        dataArray.append(model)
-        
-        // template
-        model = BeautyModel()
-        model.path = ""
-        model.key = "templateBeauty1"
-        model.value = 0
-        model.name = "模板-通用"
-        model.icon = "meiyan_fgz_tianmei"
-        dataArray.append(model)
-        
-        model = BeautyModel()
-        model.path = ""
-        model.key = "templateBeauty2"
-        model.value = 0
-        model.name = "模板-素人"
-        model.icon = "meiyan_fgz_tianmei"
-        dataArray.append(model)
-        
-        model = BeautyModel()
-        model.path = ""
-        model.key = "templateBeauty3"
-        model.value = 0
-        model.name = "模板-主播"
-        model.icon = "meiyan_fgz_tianmei"
-        dataArray.append(model)
         
         model = BeautyModel()
         model.path = ""
@@ -479,9 +450,9 @@ extension BeautyModel {
         
         model = BeautyModel()
         model.path = ""
-        model.key = "暖黄"
+        model.key = "白桃"
         model.value = 0.5
-        model.name = "暖黄"
+        model.name = "白桃"
         model.icon = "meiyan_icon_nenbai"
         dataArray.append(model)
         
@@ -495,18 +466,42 @@ extension BeautyModel {
         
         model = BeautyModel()
         model.path = ""
-        model.key = "蜜桃"
+        model.key = "棉绒"
         model.value = 0.5
-        model.name = "蜜桃"
+        model.name = "棉绒"
         model.icon = "meiyan_icon_lengbai"
         dataArray.append(model)
         
         model = BeautyModel()
         model.path = ""
-        model.key = "黑金"
+        model.key = "漫画"
         model.value = 0.5
-        model.name = "黑金"
+        model.name = "漫画"
         model.icon = "meiyan_icon_yuansheng"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "流光"
+        model.value = 0.5
+        model.name = "流光"
+        model.icon = "meiyan_icon_lengbai"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "ins风"
+        model.value = 0.5
+        model.name = "ins风"
+        model.icon = "meiyan_icon_yuansheng"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "焦糖"
+        model.value = 0.5
+        model.name = "焦糖"
+        model.icon = "meiyan_icon_lengbai"
         dataArray.append(model)
         
         return dataArray
@@ -632,36 +627,85 @@ extension BeautyModel {
         
         model = BeautyModel()
         model.path = ""
-        model.key = "麋鹿"
-        model.name = "麋鹿"
+        model.key = "圣诞节"
+        model.name = "圣诞节"
         model.icon = "meiyan_sticker_zhaocaimao"
         dataArray.append(model)
         
         model = BeautyModel()
         model.path = ""
-        model.key = "兔子耳朵"
-        model.name = "兔子耳朵"
+        model.key = "章鱼"
+        model.name = "章鱼"
         model.icon = "meiyan_sticker_zhaocaimao"
         dataArray.append(model)
         
         model = BeautyModel()
         model.path = ""
-        model.key = "小熊眼罩"
-        model.name = "小熊眼罩"
+        model.key = "猪可爱"
+        model.name = "猪可爱"
         model.icon = "meiyan_sticker_zhaocaimao"
         dataArray.append(model)
         
         model = BeautyModel()
         model.path = ""
-        model.key = "招财猫"
-        model.name = "招财猫"
+        model.key = "辫子猫"
+        model.name = "辫子猫"
         model.icon = "meiyan_sticker_zhaocaimao"
         dataArray.append(model)
         
         model = BeautyModel()
         model.path = ""
-        model.key = "国风"
-        model.name = "国风"
+        model.key = "粉色发箍"
+        model.name = "粉色发箍"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "没有烦恼"
+        model.name = "没有烦恼"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "卡通猫"
+        model.name = "卡通猫"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "蝴蝶"
+        model.name = "蝴蝶"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "粉刷时光"
+        model.name = "粉刷时光"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "赛博眼镜"
+        model.name = "赛博眼镜"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "霓虹皇冠"
+        model.name = "霓虹皇冠"
+        model.icon = "meiyan_sticker_zhaocaimao"
+        dataArray.append(model)
+        
+        model = BeautyModel()
+        model.path = ""
+        model.key = "爱心眼镜"
+        model.name = "爱心眼镜"
         model.icon = "meiyan_sticker_zhaocaimao"
         dataArray.append(model)
         

@@ -1,0 +1,16 @@
+{
+    "lists" : [
+        {
+            "name": "jinqiglass_glass",
+            "type": 3,
+            "resourceType": "png",
+            "path": "pic/glasses.png",
+            "anchor": 1,
+            "follow": 3,
+            "followIndex": 3,
+            "followCtrls": [124, 77, 303, 77, 214, 155],
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        }
+    ]
+}

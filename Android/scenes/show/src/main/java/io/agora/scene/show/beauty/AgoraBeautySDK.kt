@@ -162,7 +162,7 @@ object AgoraBeautySDK {
             }
 
         // 美颜模板，空字符串表示素材默认
-        var beautyName: String? = "基础模板"
+        var beautyName: String? = "模板-素人"
             set(value) {
                 if (field == value) {
                     return
@@ -178,20 +178,22 @@ object AgoraBeautySDK {
                 }
             }
 
-        var autoSharp: Boolean = false
+        var autoSharp: Boolean = true
             set(value) {
                 field = value
+                enableBeauty(true)
                 beautyEffect?.setVideoEffectBoolParam("beauty_custom_option", "auto_sharpness", value)
             }
 
         var smoothFactor: Float = 1.0f
             set(value) {
                 field = value
+                enableBeauty(true)
                 beautyEffect?.setVideoEffectFloatParam("beauty_custom_option", "smooth_factor", value)
             }
 
         // 磨皮程度，取值范围为 [0.0,1.0]，其中 0.0 表示原始磨皮程度，默认值为 0.5。取值越大，磨皮程度越大。
-        var smooth: Float = 0.35f
+        var smooth: Float = 0.0f
             set(value) {
                 field = value
                 enableBeauty(true)
@@ -199,28 +201,28 @@ object AgoraBeautySDK {
             }
 
         // 美白程度，取值范围为 [0.0,1.0]，其中 0.0 表示原始亮度，默认值为 0.6。取值越大，美白程度越大。
-        var whitenNatural: Float = 0.25f
+        var whitenNatural: Float = 0.0f
             set(value) {
                 field = value
                 enableBeauty(true)
                 beautyEffect?.setVideoEffectStringParam("beauty_effect_option", "whiten_lut_path", "")
                 beautyEffect?.setVideoEffectFloatParam("beauty_effect_option", "lightness", value)
             }
-        var whitenCold: Float = 0.25f
+        var whitenCold: Float = 0.0f
             set(value) {
                 field = value
                 enableBeauty(true)
                 beautyEffect?.setVideoEffectStringParam("beauty_effect_option", "whiten_lut_path", "../resource/whiten/lengbai.png")
                 beautyEffect?.setVideoEffectFloatParam("beauty_effect_option", "lightness", value)
             }
-        var whitenPink: Float = 0.25f
+        var whitenPink: Float = 0.0f
             set(value) {
                 field = value
                 enableBeauty(true)
                 beautyEffect?.setVideoEffectStringParam("beauty_effect_option", "whiten_lut_path", "../resource/whiten/fenbai.png")
                 beautyEffect?.setVideoEffectFloatParam("beauty_effect_option", "lightness", value)
             }
-        var whitenSuper: Float = 0.25f
+        var whitenSuper: Float = 0.0f
             set(value) {
                 field = value
                 enableBeauty(true)
@@ -229,14 +231,14 @@ object AgoraBeautySDK {
             }
 
         // 锐化程度，取值范围为 [0.0,1.0]，其中 0.0 表示原始锐度，默认值为 0.3。取值越大，锐化程度越大。
-        var sharpen: Float = 0.15f
+        var sharpen: Float = 0.0f
             set(value) {
                 field = value
                 enableBeauty(true)
                 beautyEffect?.setVideoEffectFloatParam("beauty_effect_option", "sharpness", value)
             }
 
-        var clarity: Float = 0.2f
+        var clarity: Float = 0.0f
             set(value) {
                 field = value
                 enableBeauty(true)
@@ -278,28 +280,28 @@ object AgoraBeautySDK {
                 beautyEffect?.setVideoEffectFloatParam("beauty_effect_option", "brightness", value)
             }
 
-        var whiten_teeth: Float = 0.35f
+        var whiten_teeth: Float = 0.0f
             set(value) {
                 field = value
                 enableBeauty(true)
                 beautyEffect?.setVideoEffectFloatParam("face_buffing_option", "whiten_teeth", value)
             }
 
-        var brighten_eye: Float = 0.4f
+        var brighten_eye: Float = 0.0f
             set(value) {
                 field = value
                 enableBeauty(true)
                 beautyEffect?.setVideoEffectFloatParam("face_buffing_option", "brighten_eye", value)
             }
 
-        var nasolabial_folds: Float = 0.35f
+        var nasolabial_folds: Float = 0.0f
             set(value) {
                 field = value
                 enableBeauty(true)
                 beautyEffect?.setVideoEffectFloatParam("face_buffing_option", "nasolabial_fold", value)
             }
 
-        var eye_pouch: Float = 0.3f
+        var eye_pouch: Float = 0.0f
             set(value) {
                 field = value
                 enableBeauty(true)
@@ -331,6 +333,7 @@ object AgoraBeautySDK {
         var femaleStyle = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 beautyEffect?.setVideoEffectIntParam("face_shape_beauty_option", "style", 0)
                 beautyEffect?.setVideoEffectIntParam("face_shape_beauty_option", "intensity", value)
             }
@@ -338,6 +341,7 @@ object AgoraBeautySDK {
         var maleStyle = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 beautyEffect?.setVideoEffectIntParam("face_shape_beauty_option", "style", 1)
                 beautyEffect?.setVideoEffectIntParam("face_shape_beauty_option", "intensity", value)
             }
@@ -345,14 +349,16 @@ object AgoraBeautySDK {
         var naturalStyle = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 beautyEffect?.setVideoEffectIntParam("face_shape_beauty_option", "style", 2)
                 beautyEffect?.setVideoEffectIntParam("face_shape_beauty_option", "intensity", value)
             }
 
         // 大眼 对应修饰力度范围为 [0,100]，值越大，眼睛越大，预设值为 53。
-        var enlargeEye = 30
+        var enlargeEye = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYESCALE, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -360,6 +366,7 @@ object AgoraBeautySDK {
         var eyePosition = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYEPOSITION, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -367,6 +374,7 @@ object AgoraBeautySDK {
         var eyeDistance = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYEDISTANCE, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -374,6 +382,7 @@ object AgoraBeautySDK {
         var eyePupil = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYEPUPILS, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -381,6 +390,7 @@ object AgoraBeautySDK {
         var eyeLid = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYELID, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -388,6 +398,7 @@ object AgoraBeautySDK {
         var eyeInnercorner = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYEINNERCORNER, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -395,6 +406,7 @@ object AgoraBeautySDK {
         var eyeOutercorner = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYEOUTERCORNER, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -402,6 +414,7 @@ object AgoraBeautySDK {
         var eyebrowPosition = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYEBROWPOSITION, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -409,22 +422,25 @@ object AgoraBeautySDK {
         var eyebrowThickness = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_EYEBROWTHICKNESS, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
         // 下巴 对应修饰力度范围为 [-100,100]，正值为拉长，负值为变短，绝对值越大修饰效果越强，预设值为 -20。
-        var chinLength = 15
+        var chinLength = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_CHIN, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
         // 瘦脸 对应修饰力度范围为 [0,100]，值越大瘦脸效果越强，预设值为 10。
-        var faceContour = 40
+        var faceContour = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_FACECONTOUR, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -432,13 +448,15 @@ object AgoraBeautySDK {
         var headScale = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_HEADSCALE, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
-        var faceWidth = 10
+        var faceWidth = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_FACEWIDTH, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -446,6 +464,7 @@ object AgoraBeautySDK {
         var faceLength = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_FACELENGTH, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -453,13 +472,15 @@ object AgoraBeautySDK {
         var cheekbone = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_CHEEKBONE, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
-        var shrinkCheek = 30
+        var shrinkCheek = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_CHEEK, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -467,14 +488,16 @@ object AgoraBeautySDK {
         var mandible = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_MANDIBLE, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
         // 瘦鼻 对应修饰力度范围为 [-100,100]，正值为变宽，负值为变窄，绝对值越大修饰效果越强，预设值为 72。
-        var narrowNose = 15
+        var narrowNose = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_NOSEWIDTH, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -482,6 +505,7 @@ object AgoraBeautySDK {
         var noseLength = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_NOSELENGTH, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -489,6 +513,7 @@ object AgoraBeautySDK {
         var noseWing = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_NOSEWING, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -496,6 +521,7 @@ object AgoraBeautySDK {
         var noseBridge = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_NOSEBRIDGE, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -503,6 +529,7 @@ object AgoraBeautySDK {
         var noseRoot = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_NOSEROOT, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -510,6 +537,7 @@ object AgoraBeautySDK {
         var noseTip = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_NOSETIP, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -517,14 +545,16 @@ object AgoraBeautySDK {
         var noseGeneral = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_NOSEGENERAL, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
         // 嘴型 对应修饰力度范围为 [-100,100]，正值为变大，负值为变小，绝对值越大修饰效果越强，预设值为 20。
-        var mouthSize = 15
+        var mouthSize = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_MOUTHSCALE, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -532,6 +562,7 @@ object AgoraBeautySDK {
         var mouthPosition = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_MOUTHPOSITION, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -539,6 +570,7 @@ object AgoraBeautySDK {
         var mouthSmile = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_MOUTHSMILE, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -546,14 +578,16 @@ object AgoraBeautySDK {
         var mouthLip = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_MOUTHLIP, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
 
         // 发际线 对应修饰力度范围为 [-100,100]，正值为调高，负值为调低，绝对值越大修饰效果越强，预设值为 50。
-        var hairlineHeight = 50
+        var hairlineHeight = 0
             set(value) {
                 field = value
+                enableBeauty(true)
                 val areaOption = FaceShapeAreaOptions(FaceShapeAreaOptions.FACE_SHAPE_AREA_FOREHEAD, value);
                 rtcEngine?.setFaceShapeAreaOptions(areaOption)
             }
@@ -605,7 +639,7 @@ object AgoraBeautySDK {
         }
 
         internal fun resume() {
-            beautyName = beautyName
+            beautyName = "模板-素人"
             filterName = filterName
             makeupName = makeupName
             stickerName = stickerName

@@ -1,0 +1,28 @@
+{
+    "lists" : [
+        {
+            "name": "jinqilove_headband",
+            "type": 3,
+            "resourceType": "png",
+            "path": "pic/love_head.png",
+            "anchor": 1,
+            "follow": 2,
+            "followIndex": 3,
+            "followCtrls": [60, 266, 414, 266, 237, 164],
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        },
+        {
+            "name": "jinqilove_blush",
+            "type": 3,
+            "resourceType": "png",
+            "path": "pic/love_blush.png",
+            "anchor": 1,
+            "follow": 3,
+            "followIndex": 3,
+            "followCtrls": [131, -18, 310, -18, 221, 60],
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        }
+    ]
+}

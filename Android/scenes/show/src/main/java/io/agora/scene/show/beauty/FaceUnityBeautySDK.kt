@@ -131,7 +131,7 @@ object FaceUnityBeautySDK {
         private val resourceBase = "beauty_faceunity"
 
         // 磨皮
-        var smooth = 0.65f
+        var smooth = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -140,7 +140,7 @@ object FaceUnityBeautySDK {
             }
 
         // 美白
-        var whiten = 0.65f
+        var whiten = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -149,7 +149,7 @@ object FaceUnityBeautySDK {
             }
 
         // 瘦脸
-        var thinFace = 0.3f
+        var thinFace = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -158,7 +158,7 @@ object FaceUnityBeautySDK {
             }
 
         // 大眼
-        var enlargeEye = 0.2f
+        var enlargeEye = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -167,7 +167,7 @@ object FaceUnityBeautySDK {
             }
 
         // 红润
-        var redden = 0.2f
+        var redden = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -176,7 +176,7 @@ object FaceUnityBeautySDK {
             }
 
         // 五官立体
-        var faceThree = 0.2f
+        var faceThree = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -185,7 +185,7 @@ object FaceUnityBeautySDK {
             }
 
         // 瘦颧骨
-        var shrinkCheekbone = 0.3f
+        var shrinkCheekbone = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -194,7 +194,7 @@ object FaceUnityBeautySDK {
             }
 
         // 下颌骨
-        var shrinkJawbone = 0.2f
+        var shrinkJawbone = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -203,7 +203,7 @@ object FaceUnityBeautySDK {
             }
 
         // 美牙
-        var whiteTeeth = 0.2f
+        var whiteTeeth = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -212,7 +212,7 @@ object FaceUnityBeautySDK {
             }
 
         // 额头
-        var hairlineHeight = 0.2f
+        var hairlineHeight = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -221,7 +221,7 @@ object FaceUnityBeautySDK {
             }
 
         // 瘦鼻
-        var narrowNose = 0.2f
+        var narrowNose = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -230,7 +230,7 @@ object FaceUnityBeautySDK {
             }
 
         // 嘴形
-        var mouthSize = 0.2f
+        var mouthSize = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -239,7 +239,7 @@ object FaceUnityBeautySDK {
             }
 
         // 下巴
-        var chinLength = 0.2f
+        var chinLength = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -248,7 +248,7 @@ object FaceUnityBeautySDK {
             }
 
         // 亮眼
-        var brightEye = 0.2f
+        var brightEye = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -257,7 +257,7 @@ object FaceUnityBeautySDK {
             }
 
         // 祛黑眼圈
-        var darkCircles = 0.3f
+        var darkCircles = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -266,7 +266,7 @@ object FaceUnityBeautySDK {
             }
 
         // 祛法令纹
-        var nasolabialFolds = 0.3f
+        var nasolabialFolds = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -275,7 +275,7 @@ object FaceUnityBeautySDK {
             }
 
         // 锐化
-        var sharpen = 0.2f
+        var sharpen = 0.0f
             set(value) {
                 field = value
                 runOnBeautyThread {
@@ -325,22 +325,22 @@ object FaceUnityBeautySDK {
 
 
         internal fun reset() {
-            smooth = 0.65f
-            whiten = 0.65f
-            thinFace = 0.3f
-            enlargeEye = 0.2f
-            redden = 0.2f
-            shrinkCheekbone = 0.3f
-            shrinkJawbone = 0.2f
-            whiteTeeth = 0.2f
-            hairlineHeight = 0.2f
-            narrowNose = 0.2f
-            mouthSize = 0.2f
-            chinLength = 0.2f
-            brightEye = 0.2f
-            darkCircles = 0.2f
-            nasolabialFolds = 0.2f
-            faceThree = 0.2f
+            smooth = 0.0f
+            whiten = 0.0f
+            thinFace = 0.0f
+            enlargeEye = 0.0f
+            redden = 0.0f
+            shrinkCheekbone = 0.0f
+            shrinkJawbone = 0.0f
+            whiteTeeth = 0.0f
+            hairlineHeight = 0.0f
+            narrowNose = 0.0f
+            mouthSize = 0.0f
+            chinLength = 0.0f
+            brightEye = 0.0f
+            darkCircles = 0.0f
+            nasolabialFolds = 0.0f
+            faceThree = 0.0f
 
             makeUp = null
             sticker = null

@@ -25,7 +25,7 @@
     },
     "filter_effect_option": {
         "enable": true,
-        "path": "../../resource/filters/xiangcao.png",
+        "path": "../../resource/filters/warm/xiangcao.png",
         "strength": 0.3
     },
     "style_makeup_option" : {

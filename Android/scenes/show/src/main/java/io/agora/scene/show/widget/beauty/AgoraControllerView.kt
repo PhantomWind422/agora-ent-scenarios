@@ -25,66 +25,10 @@ class AgoraControllerView : BaseControllerView {
                 R.string.show_beauty_group_beauty,
                 listOf(
                     ItemInfo(
-                        R.string.show_beauty_item_none,
-                        R.mipmap.show_beauty_ic_none,
-                        onValueChanged = { _ ->
-                            beautyConfig.beautyName = null
-                        }
-                    ),
-                    ItemInfo(
-                        R.string.show_beauty_item_general,
-                        R.mipmap.show_beauty_ic_effect_tianmei,
-                        isSelected = beautyConfig.beautyName == "模板-通用",
-                        onValueChanged = { _ ->
-                            beautyConfig.beautyName = "模板-通用"
-                            beautyConfig.autoSharp = false
-                            beautyConfig.smoothFactor = 1.0f
-                        }
-                    ),
-                    ItemInfo(
-                        R.string.show_beauty_item_suren,
-                        R.mipmap.show_beauty_ic_effect_tianmei,
-                        isSelected = beautyConfig.beautyName == "模板-素人",
-                        onValueChanged = { _ ->
-                            beautyConfig.beautyName = "模板-素人"
-                            beautyConfig.autoSharp = false
-                            beautyConfig.smoothFactor = 1.0f
-                        }
-                    ),
-                    ItemInfo(
-                        R.string.show_beauty_item_zhubo,
-                        R.mipmap.show_beauty_ic_effect_tianmei,
-                        isSelected = beautyConfig.beautyName == "模板-主播Android",
-                        onValueChanged = { _ ->
-                            beautyConfig.beautyName = "模板-主播Android"
-                            beautyConfig.autoSharp = false
-                            beautyConfig.smoothFactor = 1.0f
-                        }
-                    ),
-                    ItemInfo(
-                        R.string.show_beauty_item_show,
-                        R.mipmap.show_beauty_ic_effect_tianmei,
-                        isSelected = beautyConfig.beautyName == "模板-秀场",
-                        onValueChanged = { _ ->
-                            beautyConfig.beautyName = "模板-秀场"
-                            beautyConfig.autoSharp = true
-                            beautyConfig.smoothFactor = 1.0f
-                        }
-                    ),
-                    ItemInfo(
-                        R.string.show_beauty_item_makeup,
-                        R.mipmap.show_beauty_ic_effect_tianmei,
-                        isSelected = beautyConfig.beautyName == "模板-秀场带妆",
-                        onValueChanged = { _ ->
-                            beautyConfig.beautyName = "模板-秀场带妆"
-                            beautyConfig.autoSharp = true
-                            beautyConfig.smoothFactor = 0.0f
-                        }
-                    ),
-                    ItemInfo(
                         R.string.show_beauty_item_faceshape_female,
                         R.mipmap.show_beauty_ic_effect_tianmei,
                         beautyConfig.femaleStyle.toFloat(),
+                        isSelected = true,
                         onValueChanged = { value ->
                             beautyConfig.femaleStyle = value.toInt()
                         },
@@ -604,19 +548,19 @@ class AgoraControllerView : BaseControllerView {
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_filter_nuanhuang,
+                        R.string.show_beauty_item_filter_baitao,
                         R.mipmap.show_beauty_ic_filter_nenbai,
                         withPadding = false,
-                        isSelected = beautyConfig.filterName == "暖黄",
+                        isSelected = beautyConfig.filterName == "白桃",
                         value = beautyConfig.filterStrength,
                         onValueChanged = { value ->
                             beautyConfig.filter = true
-                            beautyConfig.filterName = "暖黄"
+                            beautyConfig.filterName = "白桃"
                             beautyConfig.filterStrength = value
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_filter_landiaojiaopian,
+                        R.string.show_beauty_item_filter_jiaopian,
                         R.mipmap.show_beauty_ic_filter_nenbai,
                         withPadding = false,
                         isSelected = beautyConfig.filterName == "胶片",
@@ -628,26 +572,62 @@ class AgoraControllerView : BaseControllerView {
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_filter_mitao,
+                        R.string.show_beauty_item_filter_mianrong,
                         R.mipmap.show_beauty_ic_filter_lengbai,
                         withPadding = false,
-                        isSelected = beautyConfig.filterName == "蜜桃",
+                        isSelected = beautyConfig.filterName == "棉绒",
                         value = beautyConfig.filterStrength,
                         onValueChanged = { value ->
                             beautyConfig.filter = true
-                            beautyConfig.filterName = "蜜桃"
+                            beautyConfig.filterName = "棉绒"
                             beautyConfig.filterStrength = value
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_filter_heijin,
+                        R.string.show_beauty_item_filter_manhua,
                         R.mipmap.show_beauty_ic_filter_yuansheng,
                         withPadding = false,
-                        isSelected = beautyConfig.filterName == "黑金",
+                        isSelected = beautyConfig.filterName == "漫画",
                         value = beautyConfig.filterStrength,
                         onValueChanged = { value ->
                             beautyConfig.filter = true
-                            beautyConfig.filterName = "黑金"
+                            beautyConfig.filterName = "漫画"
+                            beautyConfig.filterStrength = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_filter_liuguang,
+                        R.mipmap.show_beauty_ic_filter_yuansheng,
+                        withPadding = false,
+                        isSelected = beautyConfig.filterName == "流光",
+                        value = beautyConfig.filterStrength,
+                        onValueChanged = { value ->
+                            beautyConfig.filter = true
+                            beautyConfig.filterName = "流光"
+                            beautyConfig.filterStrength = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_filter_ins,
+                        R.mipmap.show_beauty_ic_filter_yuansheng,
+                        withPadding = false,
+                        isSelected = beautyConfig.filterName == "ins风",
+                        value = beautyConfig.filterStrength,
+                        onValueChanged = { value ->
+                            beautyConfig.filter = true
+                            beautyConfig.filterName = "ins风"
+                            beautyConfig.filterStrength = value
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_filter_jiaotang,
+                        R.mipmap.show_beauty_ic_filter_yuansheng,
+                        withPadding = false,
+                        isSelected = beautyConfig.filterName == "焦糖",
+                        value = beautyConfig.filterStrength,
+                        onValueChanged = { value ->
+                            beautyConfig.filter = true
+                            beautyConfig.filterName = "焦糖"
                             beautyConfig.filterStrength = value
                         }
                     )
@@ -656,19 +636,6 @@ class AgoraControllerView : BaseControllerView {
             PageInfo(
                 R.string.show_beauty_group_adjust,
                 listOf(
-                    ItemInfo(
-                        R.string.show_beauty_item_none,
-                        R.mipmap.show_beauty_ic_none,
-                        0.0f,
-                        isSelected = true,
-                        onValueChanged = { _ ->
-                            beautyConfig.redness = 0.0f
-                            beautyConfig.hue = 0.0f
-                            beautyConfig.saturation = 0.0f
-                            beautyConfig.brightness = 0.0f
-                            beautyConfig.temperature = 0.0f
-                        },
-                    ),
                     ItemInfo(
                         R.string.show_beauty_item_beauty_redden,
                         R.mipmap.show_beauty_ic_face_redden,
@@ -726,56 +693,126 @@ class AgoraControllerView : BaseControllerView {
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_sticker_sdlu,
+                        R.string.show_beauty_item_sticker1,
                         R.mipmap.show_beauty_ic_sticer_zhaocaimao,
                         withPadding = false,
-                        isSelected = beautyConfig.stickerName == "麋鹿",
+                        isSelected = beautyConfig.stickerName == "圣诞节",
                         onValueChanged = { value ->
                             beautyConfig.sticker = true
-                            beautyConfig.stickerName = "麋鹿"
+                            beautyConfig.stickerName = "圣诞节"
 
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_sticker13,
+                        R.string.show_beauty_item_sticker2,
                         R.mipmap.show_beauty_ic_sticer_zhaocaimao,
                         withPadding = false,
-                        isSelected = beautyConfig.stickerName == "兔子耳朵",
+                        isSelected = beautyConfig.stickerName == "章鱼",
                         onValueChanged = { value ->
                             beautyConfig.sticker = true
-                            beautyConfig.stickerName = "兔子耳朵"
+                            beautyConfig.stickerName = "章鱼"
 
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_sticker15,
+                        R.string.show_beauty_item_sticker3,
                         R.mipmap.show_beauty_ic_sticer_zhaocaimao,
                         withPadding = false,
-                        isSelected = beautyConfig.stickerName == "小熊眼罩",
+                        isSelected = beautyConfig.stickerName == "猪可爱",
                         onValueChanged = { value ->
                             beautyConfig.sticker = true
-                            beautyConfig.stickerName = "小熊眼罩"
+                            beautyConfig.stickerName = "猪可爱"
 
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_sticker_zhaocaimao,
+                        R.string.show_beauty_item_sticker4,
                         R.mipmap.show_beauty_ic_sticer_zhaocaimao,
                         withPadding = false,
-                        isSelected = beautyConfig.stickerName == "招财猫",
+                        isSelected = beautyConfig.stickerName == "辫子猫",
                         onValueChanged = { value ->
                             beautyConfig.sticker = true
-                            beautyConfig.stickerName = "招财猫"
+                            beautyConfig.stickerName = "辫子猫"
                         }
                     ),
                     ItemInfo(
-                        R.string.show_beauty_item_sticker17,
+                        R.string.show_beauty_item_sticker5,
                         R.mipmap.show_beauty_ic_sticer_zhaocaimao,
                         withPadding = false,
-                        isSelected = beautyConfig.stickerName == "国风",
+                        isSelected = beautyConfig.stickerName == "粉色发箍",
                         onValueChanged = { value ->
                             beautyConfig.sticker = true
-                            beautyConfig.stickerName = "国风"
+                            beautyConfig.stickerName = "粉色发箍"
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_sticker6,
+                        R.mipmap.show_beauty_ic_sticer_zhaocaimao,
+                        withPadding = false,
+                        isSelected = beautyConfig.stickerName == "没有烦恼",
+                        onValueChanged = { value ->
+                            beautyConfig.sticker = true
+                            beautyConfig.stickerName = "没有烦恼"
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_sticker7,
+                        R.mipmap.show_beauty_ic_sticer_zhaocaimao,
+                        withPadding = false,
+                        isSelected = beautyConfig.stickerName == "卡通猫",
+                        onValueChanged = { value ->
+                            beautyConfig.sticker = true
+                            beautyConfig.stickerName = "卡通猫"
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_sticker8,
+                        R.mipmap.show_beauty_ic_sticer_zhaocaimao,
+                        withPadding = false,
+                        isSelected = beautyConfig.stickerName == "蝴蝶",
+                        onValueChanged = { value ->
+                            beautyConfig.sticker = true
+                            beautyConfig.stickerName = "蝴蝶"
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_sticker9,
+                        R.mipmap.show_beauty_ic_sticer_zhaocaimao,
+                        withPadding = false,
+                        isSelected = beautyConfig.stickerName == "粉刷时光",
+                        onValueChanged = { value ->
+                            beautyConfig.sticker = true
+                            beautyConfig.stickerName = "粉刷时光"
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_sticker10,
+                        R.mipmap.show_beauty_ic_sticer_zhaocaimao,
+                        withPadding = false,
+                        isSelected = beautyConfig.stickerName == "赛博眼镜",
+                        onValueChanged = { value ->
+                            beautyConfig.sticker = true
+                            beautyConfig.stickerName = "赛博眼镜"
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_sticker11,
+                        R.mipmap.show_beauty_ic_sticer_zhaocaimao,
+                        withPadding = false,
+                        isSelected = beautyConfig.stickerName == "霓虹皇冠",
+                        onValueChanged = { value ->
+                            beautyConfig.sticker = true
+                            beautyConfig.stickerName = "霓虹皇冠"
+                        }
+                    ),
+                    ItemInfo(
+                        R.string.show_beauty_item_sticker12,
+                        R.mipmap.show_beauty_ic_sticer_zhaocaimao,
+                        withPadding = false,
+                        isSelected = beautyConfig.stickerName == "爱心眼镜",
+                        onValueChanged = { value ->
+                            beautyConfig.sticker = true
+                            beautyConfig.stickerName = "爱心眼镜"
                         }
                     )
                 )

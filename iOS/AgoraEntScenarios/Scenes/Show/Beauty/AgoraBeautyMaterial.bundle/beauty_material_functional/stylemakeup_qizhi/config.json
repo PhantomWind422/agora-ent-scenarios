@@ -25,7 +25,7 @@
     },
     "filter_effect_option": {
         "enable": true,
-        "path": "../../resource/filters/menghuan.png",
+        "path": "../../resource/filters/cool/menghuan.png",
         "strength": 0.3
     },
     "style_makeup_option" : {

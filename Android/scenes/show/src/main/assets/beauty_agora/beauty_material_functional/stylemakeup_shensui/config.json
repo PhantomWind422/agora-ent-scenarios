@@ -25,7 +25,7 @@
     },
     "filter_effect_option": {
         "enable": true,
-        "path": "../../resource/filters/weixun.png",
+        "path": "../../resource/filters/environment/weixun.png",
         "strength": 0.3
     },
     "style_makeup_option" : {

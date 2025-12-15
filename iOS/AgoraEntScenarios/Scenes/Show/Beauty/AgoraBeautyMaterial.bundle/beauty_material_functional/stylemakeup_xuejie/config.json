@@ -25,7 +25,7 @@
     },
     "filter_effect_option": {
         "enable": true,
-        "path": "../../resource/filters/naiyou.png",
+        "path": "../../resource/filters/warm/naiyou.png",
         "strength": 0.3
     },
     "style_makeup_option" : {

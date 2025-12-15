@@ -1,0 +1,11 @@
+{
+    "beauty_effect_option": {
+        "enable": true,
+        "saturation": -0.2,
+        "temperature": -0.4,
+        "brightness": 0.1
+    },
+    "face_shape_beauty_option": {
+        "enable": true
+    }
+}

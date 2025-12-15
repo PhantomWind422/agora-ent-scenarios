@@ -1,0 +1,28 @@
+{
+    "lists" : [
+        {
+            "name": "jinqimao_headband",
+            "type": 3,
+            "resourceType": "png",
+            "path": "pic/cat_head.png",
+            "anchor": 1,
+            "follow": 2,
+            "followIndex": 3,
+            "followCtrls": [44, 216, 398, 216, 221, 114],
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        },
+        {
+            "name": "jinqimao_blush",
+            "type": 3,
+            "resourceType": "png",
+            "path": "pic/cat_blush.png",
+            "anchor": 1,
+            "follow": 3,
+            "followIndex": 3,
+            "followCtrls": [132, -13, 311, -13, 222, 65],
+            "followOffset": [0.0, 0.0],
+            "blendMode": 0
+        }
+    ]
+}

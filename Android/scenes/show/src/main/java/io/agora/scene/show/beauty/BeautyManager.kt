@@ -53,14 +53,14 @@ object BeautyManager {
     private var byteDanceInitSuccess = false
 
     // Beauty type
-    var beautyType = BeautyType.FaceUnity
+    var beautyType = BeautyType.Agora
         set(value) {
             if (field == value) {
                 when (value) {
                     BeautyType.SenseTime -> senseTimeBeautyAPI?.let { return }
                     BeautyType.FaceUnity -> faceUnityBeautyAPI?.let { return }
                     BeautyType.ByteDance -> byteDanceBeautyAPI?.let { return }
-                    BeautyType.Agora -> return
+                    BeautyType.Agora -> {}
                 }
             }
             val oldType = field
