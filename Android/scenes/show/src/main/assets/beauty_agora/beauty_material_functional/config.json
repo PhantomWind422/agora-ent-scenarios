@@ -7,10 +7,9 @@
         "performance_mode": 1
     },
     "user_interface_option": {
-        "模板-通用": "beauty_normal_douyin/",
-        "模板-素人": "beauty_normal_xiangxin/",
-        "模板-主播iOS": "beauty_normal_baitu_iOS/",
-        "模板-主播Android": "beauty_normal_baitu_Android/",
+        "模板-通用": "beauty_normal_basic/",
+        "模板-素人": "beauty_normal_ordinary/",
+        "模板-主播": "beauty_normal_anchor_Android/",
         "模板-秀场": "beauty_show_default/",
         "模板-秀场带妆": "beauty_show_makeup/",
         "白皙妆": "stylemakeup_baixi/",
@@ -60,10 +59,18 @@
         "私藏": "filter_sicang/",
         "白茶": "filter_baicha/",
         "老街": "filter_laojie/",
-        "兔子耳朵": "sticker_兔子耳朵/",
-        "小熊眼罩": "sticker_小熊眼罩/",
-        "招财猫": "sticker_招财猫/",
-        "国风": "sticker_国风/"
+        "圣诞节": "sticker_圣诞节/",
+        "章鱼": "sticker_章鱼/",
+        "猪可爱": "sticker_猪可爱/",
+        "辫子猫": "sticker_辫子猫/",
+        "粉色发箍": "sticker_粉色发箍/",
+        "没有烦恼": "sticker_没有烦恼/",
+        "卡通猫": "sticker_卡通猫/",
+        "蝴蝶": "sticker_蝴蝶/",
+        "粉刷时光": "sticker_粉刷时光/",
+        "赛博眼镜": "sticker_赛博眼镜/",
+        "霓虹皇冠": "sticker_霓虹皇冠/",
+        "爱心眼镜": "sticker_爱心眼镜/"
     },
     "beauty_config" : "模板-通用",
     "beauty_custom_option" : {
@@ -71,7 +78,6 @@
         "smooth_factor": 1.0
     },
     "face_shape_custom_option": {
-        "face_custom_factor" : 1.1,
         "max_crop_percent": 0.015
     }
 }
